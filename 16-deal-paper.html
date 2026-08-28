@@ -18,24 +18,39 @@
   <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
   <symbol id="i-chevron-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
   <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-loader" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></symbol>
   <symbol id="i-log-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
 </svg>
 
 <div class="app">
-  <aside class="app-sidebar">
-    <div class="brand-mark">C</div>
-    <a class="nav-item active" href="11-deals.html" title="Deals"><svg class="ico"><use href="#i-grid"/></svg></a>
-    <a class="nav-item" href="#" title="Credit Papers"><svg class="ico"><use href="#i-file"/></svg></a>
-    <a class="nav-item" href="#" title="Templates"><svg class="ico"><use href="#i-layers"/></svg></a>
-    <a class="nav-item" href="#" title="Data Rooms"><svg class="ico"><use href="#i-db"/></svg></a>
-    <a class="nav-item" href="#" title="Reports"><svg class="ico"><use href="#i-clipboard"/></svg></a>
-    <a class="nav-item" href="#" title="Activity"><svg class="ico"><use href="#i-activity"/></svg></a>
-    <a class="nav-item" href="19-settings-profile.html" title="Settings"><svg class="ico"><use href="#i-cog"/></svg></a>
-    <div class="spacer"></div>
-    <div class="av sm" style="margin-bottom:8px">JS</div>
-    <a class="nav-item" href="#" title="Sign Out"><svg class="ico"><use href="#i-log-out"/></svg></a>
+  <!-- App Sidebar (text labels) -->
+  <aside class="app-text-sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">CreditPaper</span>
+    </div>
+    <div class="nav">
+      <a class="nav-item" href="11-deals.html"><svg class="ico"><use href="#i-grid"/></svg> Deals</a>
+      <a class="nav-item active" href="#"><svg class="ico"><use href="#i-file"/></svg> Credit Papers</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-layers"/></svg> Templates</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-db"/></svg> Data Rooms</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-clipboard"/></svg> Reports</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
+      <a class="nav-item" href="19-settings-profile.html"><svg class="ico"><use href="#i-cog"/></svg> Settings</a>
+    </div>
+    <div class="sidebar-user">
+      <div class="av sm">JS</div>
+      <div class="who" style="min-width:0">
+        <div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div>
+        <div class="em" style="font-size:10px;color:var(--text-3)">Maker</div>
+      </div>
+    </div>
   </aside>
 
+  <!-- Deal Sidebar -->
   <aside class="deal-sidebar">
     <div class="nav">
       <a class="nav-item" href="13-deal-overview.html"><svg class="ico"><use href="#i-home"/></svg> Overview</a>
@@ -53,30 +68,249 @@
       <div style="height:1px;background:var(--border);margin:8px 10px"></div>
       <a class="nav-item" href="18-deal-activity.html"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
     </div>
-    <div class="sidebar-user"><div class="av sm">JS</div><div class="who" style="min-width:0"><div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div><div class="em" style="font-size:10px;color:var(--text-3)">Maker</div></div></div>
+    <div class="sidebar-user">
+      <div class="av sm">JS</div>
+      <div class="who" style="min-width:0">
+        <div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div>
+        <div class="em" style="font-size:10px;color:var(--text-3)">Maker</div>
+      </div>
+    </div>
   </aside>
 
   <div class="main">
+    <!-- Header Bar -->
     <div class="header-bar">
-      <div class="crumb"><a href="11-deals.html" style="color:var(--text-3);text-decoration:none">Deals</a><svg class="ico-sm"><use href="#i-chevron-r"/></svg><b>Riverbend Rise</b><span class="badge blue" style="margin-left:4px"><span class="dot"></span> in review</span></div>
+      <div class="crumb">
+        <a href="11-deals.html" style="color:var(--text-3);text-decoration:none">Deals</a>
+        <svg class="ico-sm"><use href="#i-chevron-r"/></svg>
+        <b>Riverbend Rise</b>
+        <span class="badge blue" style="margin-left:4px"><span class="dot"></span> in review</span>
+      </div>
+      <div style="margin-left:8px;font-size:11px;color:var(--text-3);font-weight:500">Last saved 2m ago · <span style="color:var(--green)">Auto-saved</span></div>
       <div class="spacer"></div>
+      <div style="text-align:right;margin-right:8px">
+        <div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Current Stage</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">In Review</div>
+      </div>
+      <div style="text-align:right;margin-right:8px">
+        <div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Progress</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">5 / 9 sections</div>
+        <div class="bar" style="margin-top:4px;width:100px"><i style="width:56%"></i></div>
+      </div>
       <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-share"/></svg> Share</button>
       <button class="btn btn-sm btn-icon">⋯</button>
+      <div style="display:flex">
+        <div class="av sm" style="border:2px solid var(--surface);margin-left:-6px">JS</div>
+        <div class="av sm c2" style="border:2px solid var(--surface);margin-left:-6px">SW</div>
+        <div class="av sm c3" style="border:2px solid var(--surface);margin-left:-6px">TR</div>
+        <div class="av sm c4" style="border:2px solid var(--surface);margin-left:-6px;font-size:9px">+2</div>
+      </div>
     </div>
+
+    <!-- Content -->
     <div class="canvas" style="overflow:auto">
-      <div class="page-head"><div><h1 class="page-title">Credit Paper</h1><p class="page-sub">Thesis checkpoint: <span style="color:var(--amber);font-weight:600">2 issues need attention</span></p></div><button class="btn btn-primary btn-sm">Generate Paper</button></div>
-      <div class="card"><div class="card-head"><div class="card-title">Sections</div></div><div class="card-body" style="padding:0">
-        <table class="table"><thead><tr><th>Section</th><th>Word Count</th><th>Status</th><th>Issues</th><th></th></tr></thead><tbody>
-          <tr><td class="strong">§1 Facility Summary</td><td class="num">842</td><td><span class="badge green"><span class="dot"></span> approved</span></td><td class="num">0</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§2 Deal Summary</td><td class="num">1,247</td><td><span class="badge green"><span class="dot"></span> approved</span></td><td class="num">0</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§4 Zoning &amp; Location</td><td class="num">631</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td class="num">1</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§5 Borrower Analysis</td><td class="num">1,892</td><td><span class="badge amber"><span class="dot"></span> needs attention</span></td><td class="num">3</td><td class="act"><a class="btn btn-sm" href="17-deal-section-review.html">Edit</a></td></tr>
-          <tr><td class="strong">§6 Valuation Analysis</td><td class="num">2,104</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td class="num">1</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§7 Risks &amp; Mitigations</td><td class="num">1,567</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td class="num">2</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§8 Other Considerations</td><td class="num">423</td><td><span class="badge slate"><span class="dot"></span> draft</span></td><td class="num">0</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-          <tr><td class="strong">§9 Conclusion</td><td class="num">312</td><td><span class="badge red"><span class="dot"></span> needs work</span></td><td class="num">4</td><td class="act"><button class="btn btn-sm">Edit</button></td></tr>
-        </tbody></table>
-      </div></div>
+      <!-- Paper Title & Actions -->
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Credit Paper</h1>
+          <p class="page-sub">Thesis checkpoint: <span style="color:var(--amber);font-weight:600">2 issues need attention</span> · Last generated 4 hours ago</p>
+        </div>
+        <div class="row">
+          <button class="btn btn-sm">
+            <svg class="ico-sm"><use href="#i-clock"/></svg> Version History
+          </button>
+          <button class="btn btn-primary btn-sm">
+            <svg class="ico-sm"><use href="#i-loader"/></svg> Generate Paper
+          </button>
+        </div>
+      </div>
+
+      <!-- Issue Banners -->
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="issue-banner amber">
+          <svg class="ico"><use href="#i-alert"/></svg>
+          <div>
+            <div style="font-weight:700">2 issues need attention</div>
+            <div style="font-size:11px;opacity:.8;margin-top:1px">Contingency analysis in §7 and QS cost line contradictions in Facts</div>
+          </div>
+          <a href="15-deal-facts.html" class="sp link" style="font-size:11px;font-weight:600">View Facts →</a>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="grid g-3">
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico green"><svg class="ico"><use href="#i-check"/></svg></div>
+            <div class="stat-label">Approved</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 3px">2 of 8</div>
+          <div class="bar"><i style="width:25%;background:linear-gradient(90deg,var(--green),#34D399)"></i></div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico blue"><svg class="ico"><use href="#i-loader"/></svg></div>
+            <div class="stat-label">In Review</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 3px">3 of 8</div>
+          <div class="bar"><i style="width:37.5%;background:linear-gradient(90deg,var(--blue),#60A5FA)"></i></div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico amber"><svg class="ico"><use href="#i-alert"/></svg></div>
+            <div class="stat-label">Needs Attention</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 3px">1 of 8</div>
+          <div class="bar"><i style="width:12.5%;background:linear-gradient(90deg,var(--amber),#FBBF24)"></i></div>
+        </div>
+      </div>
+
+      <!-- Sections List -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Sections</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:2px">8 sections · 8,018 total words · Est. 6 min read</div>
+          </div>
+          <div class="row">
+            <button class="btn btn-sm">
+              <svg class="ico-sm"><use href="#i-file"/></svg> Export PDF
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="padding:12px">
+          <div class="sec-group">
+            <div class="sec-group-title">Core Analysis</div>
+            
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check done">
+                <svg class="ico-sm"><use href="#i-check"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§1 Facility Summary</div>
+                <div class="sec-desc">Loan amount, term, LVR, key conditions</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">842 words</span>
+                <span class="status-pill approved"><span class="dot"></span> Approved</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check done">
+                <svg class="ico-sm"><use href="#i-check"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§2 Deal Summary</div>
+                <div class="sec-desc">Project overview, location, borrower, financial structure</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">1,247 words</span>
+                <span class="status-pill approved"><span class="dot"></span> Approved</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check review">
+                <svg class="ico-sm"><use href="#i-loader"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§4 Zoning &amp; Location</div>
+                <div class="sec-desc">Site analysis, planning compliance, access, infrastructure</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">631 words</span>
+                <span class="status-pill review"><span class="dot"></span> In Review</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+
+            <a class="sec-card" href="17-deal-section-review.html">
+              <div class="sec-check warn">
+                <svg class="ico-sm"><use href="#i-alert"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§5 Borrower Analysis</div>
+                <div class="sec-desc">Background, financial capacity, track record, key personnel</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">1,892 words</span>
+                <span class="status-pill attention"><span class="dot"></span> Needs Attention</span>
+                <button class="btn btn-sm btn-soft">Review</button>
+              </div>
+            </a>
+          </div>
+
+          <div class="sec-group" style="margin-top:16px">
+            <div class="sec-group-title">Valuation &amp; Risk</div>
+            
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check review">
+                <svg class="ico-sm"><use href="#i-loader"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§6 Valuation Analysis</div>
+                <div class="sec-desc">Market value, comparable sales, DV, sensitivity analysis</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">2,104 words</span>
+                <span class="status-pill review"><span class="dot"></span> In Review</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check review">
+                <svg class="ico-sm"><use href="#i-loader"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§7 Risks &amp; Mitigations</div>
+                <div class="sec-desc">Market, construction, title, environmental risks</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">1,567 words</span>
+                <span class="status-pill review"><span class="dot"></span> In Review</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check">
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§8 Other Considerations</div>
+                <div class="sec-desc">Regulatory, tax, structuring considerations</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">423 words</span>
+                <span class="status-pill draft"><span class="dot"></span> Draft</span>
+                <button class="btn btn-sm">Edit</button>
+              </div>
+            </a>
+          </div>
+
+          <div class="sec-group" style="margin-top:16px">
+            <div class="sec-group-title">Conclusion</div>
+            
+            <a class="sec-card" href="16-deal-paper.html">
+              <div class="sec-check fail">
+                <svg class="ico-sm"><use href="#i-alert"/></svg>
+              </div>
+              <div class="sec-body">
+                <div class="sec-title">§9 Conclusion</div>
+                <div class="sec-desc">Recommendation, conditions, next steps</div>
+              </div>
+              <div class="sec-meta">
+                <span class="sec-words">312 words</span>
+                <span class="status-pill fail"><span class="dot"></span> Needs Work</span>
+                <button class="btn btn-sm btn-soft">Review</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1196,3 +1196,265 @@ a { color: inherit; text-decoration: none; }
 .p-16 { padding: 16px; }
 .nb { border-bottom: 0 !important; }
 .right { text-align: right; }
+
+/* ============================= App Sidebar — Text Labels ============================= */
+
+.app-text-sidebar {
+  width: 180px;
+  flex: none;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.app-text-sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 19px 18px 17px;
+  border-bottom: 1px solid var(--border);
+}
+.app-text-sidebar .nav { padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; }
+.app-text-sidebar .nav-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  padding: 16px 8px 7px;
+}
+.app-text-sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+.app-text-sidebar .nav-item svg { color: var(--text-3); flex: none; }
+.app-text-sidebar .nav-item:hover { background: var(--surface-2); color: var(--text); }
+.app-text-sidebar .nav-item.active {
+  background: var(--accent-soft);
+  color: var(--primary-ink);
+  font-weight: 600;
+}
+.app-text-sidebar .nav-item.active svg { color: var(--accent-hover); }
+.app-text-sidebar .nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -10px; top: 7px; bottom: 7px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+.app-text-sidebar .sidebar-user {
+  margin: auto 12px 12px;
+  padding: 10px;
+  border-radius: var(--r);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+/* ============================= Section Card ============================= */
+
+.sec-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  transition: box-shadow .15s, border-color .15s;
+  cursor: pointer;
+}
+.sec-card:hover {
+  border-color: var(--accent-line);
+  box-shadow: var(--sh-2);
+}
+.sec-card .sec-check {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  display: grid; place-items: center;
+  flex: none;
+}
+.sec-card .sec-check.done {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.sec-card .sec-check.review {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.sec-card .sec-check.warn {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #fff;
+}
+.sec-card .sec-check.fail {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.sec-card .sec-body { flex: 1; min-width: 0; }
+.sec-card .sec-title { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.sec-card .sec-desc { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.sec-card .sec-meta {
+  display: flex; align-items: center; gap: 10px;
+  flex: none;
+}
+.sec-card .sec-words { font-size: 11px; color: var(--text-4); font-variant-numeric: tabular-nums; }
+
+/* ============================= Paper Header ============================= */
+
+.paper-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 16px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.paper-head-left { display: flex; align-items: center; gap: 14px; }
+.paper-head .doc-title { font-size: 16px; font-weight: 700; letter-spacing: -.3px; }
+.paper-head .doc-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+/* ============================= Issue Banner ============================= */
+
+.issue-banner {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px;
+  border-radius: var(--r);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.issue-banner.amber {
+  background: var(--amber-soft);
+  border: 1px solid rgba(180,83,9,.25);
+  color: var(--amber);
+}
+.issue-banner.blue {
+  background: var(--blue-soft);
+  border: 1px solid rgba(37,99,235,.2);
+  color: var(--blue);
+}
+.issue-banner.red {
+  background: var(--red-soft);
+  border: 1px solid rgba(220,38,38,.2);
+  color: var(--red);
+}
+.issue-banner.green {
+  background: var(--green-soft);
+  border: 1px solid rgba(5,150,105,.2);
+  color: var(--green);
+}
+.issue-banner .ico { flex: none; }
+.issue-banner .sp { margin-left: auto; }
+
+/* ============================= Section Group ============================= */
+
+.sec-group {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.sec-group-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--text-4);
+  padding: 0 2px 4px;
+}
+
+/* ============================= Draft Banner ============================= */
+
+.draft-banner {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r);
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+/* ============================= Quick Action Row ============================= */
+
+.quick-actions {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 0;
+}
+
+/* ============================= Section Status Pill ============================= */
+
+.status-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: var(--r-pill);
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-pill.approved { background: var(--green-soft); color: var(--green); }
+.status-pill.review { background: var(--blue-soft); color: var(--blue); }
+.status-pill.attention { background: var(--amber-soft); color: var(--amber); }
+.status-pill.fail { background: var(--red-soft); color: var(--red); }
+.status-pill.draft { background: var(--slate-soft); color: var(--slate); }
+.status-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+/* ============================= Editor Enhancements ============================= */
+
+.editor-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 14px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.editor-header .title-group { display: flex; flex-direction: column; gap: 2px; }
+.editor-header .doc-title { font-size: 15px; font-weight: 700; letter-spacing: -.2px; }
+.editor-header .doc-meta { display: flex; align-items: center; gap: 10px; font-size: 10.5px; color: var(--text-3); }
+
+/* ============================= Comment Card ============================= */
+
+.comment-card {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  margin-bottom: 8px;
+}
+.comment-card .comment-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+}
+.comment-card .comment-author { font-size: 11px; font-weight: 600; color: var(--text); }
+.comment-card .comment-time { font-size: 10px; color: var(--text-4); margin-left: auto; }
+.comment-card .comment-body { font-size: 11.5px; color: var(--text-2); line-height: 1.6; }
+
+/* ============================= AI Suggestion ============================= */
+
+.ai-card {
+  padding: 12px 14px;
+  border: 1px solid rgba(20,184,166,.3);
+  border-radius: var(--r);
+  background: var(--accent-softer);
+  margin-bottom: 8px;
+}
+.ai-card .ai-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+}
+.ai-card .ai-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700; color: var(--primary-ink);
+  background: var(--accent-soft);
+  padding: 2px 7px;
+  border-radius: var(--r-pill);
+}
+.ai-card .ai-body { font-size: 11.5px; color: var(--text-2); line-height: 1.6; }
+.ai-card .ai-actions { display: flex; gap: 6px; margin-top: 8px; }
+

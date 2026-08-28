@@ -23,18 +23,27 @@
 </svg>
 
 <div class="app">
-  <aside class="app-sidebar">
-    <div class="brand-mark">C</div>
-    <a class="nav-item active" href="11-deals.html" title="Deals"><svg class="ico"><use href="#i-grid"/></svg></a>
-    <a class="nav-item" href="#" title="Credit Papers"><svg class="ico"><use href="#i-file"/></svg></a>
-    <a class="nav-item" href="#" title="Templates"><svg class="ico"><use href="#i-layers"/></svg></a>
-    <a class="nav-item" href="#" title="Data Rooms"><svg class="ico"><use href="#i-db"/></svg></a>
-    <a class="nav-item" href="#" title="Reports"><svg class="ico"><use href="#i-clipboard"/></svg></a>
-    <a class="nav-item" href="#" title="Activity"><svg class="ico"><use href="#i-activity"/></svg></a>
-    <a class="nav-item" href="19-settings-profile.html" title="Settings"><svg class="ico"><use href="#i-cog"/></svg></a>
-    <div class="spacer"></div>
-    <div class="av sm" style="margin-bottom:8px">JS</div>
-    <a class="nav-item" href="#" title="Sign Out"><svg class="ico"><use href="#i-log-out"/></svg></a>
+  <aside class="app-text-sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">CreditPaper</span>
+    </div>
+    <div class="nav">
+      <a class="nav-item active" href="11-deals.html"><svg class="ico"><use href="#i-grid"/></svg> Deals</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-file"/></svg> Credit Papers</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-layers"/></svg> Templates</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-db"/></svg> Data Rooms</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-clipboard"/></svg> Reports</a>
+      <a class="nav-item" href="#"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
+      <a class="nav-item" href="19-settings-profile.html"><svg class="ico"><use href="#i-cog"/></svg> Settings</a>
+    </div>
+    <div class="sidebar-user">
+      <div class="av sm">JS</div>
+      <div class="who" style="min-width:0">
+        <div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div>
+        <div class="em" style="font-size:10px;color:var(--text-3)">Maker</div>
+      </div>
+    </div>
   </aside>
 
   <div class="main">
@@ -47,12 +56,12 @@
     </div>
     <div class="canvas" style="overflow:auto">
       <div class="card"><div class="card-body" style="padding:0">
-        <table class="table"><thead><tr><th>Deal Name</th><th>Borrower</th><th>Status</th><th>Updated</th><th></th></tr></thead><tbody>
-          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Riverbend Rise</td><td>Riverbend Developments</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td>2 hours ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
-          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Harbour Lane Residences</td><td>Harbour Group</td><td><span class="badge green"><span class="dot"></span> approved</span></td><td>Yesterday</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
-          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Pier Street Commercial</td><td>Pier Holdings</td><td><span class="badge amber"><span class="dot"></span> needs attention</span></td><td>3 days ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
-          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Central Park Towers</td><td>Central Developments</td><td><span class="badge slate"><span class="dot"></span> draft</span></td><td>1 week ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
-          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Westfield Industrial</td><td>Westfield Holdings</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td>2 weeks ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
+        <table class="table"><thead><tr><th>Deal Name</th><th>Borrower</th><th>Status</th><th>Documents</th><th>Updated</th><th></th></tr></thead><tbody>
+          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Riverbend Rise</td><td>Riverbend Developments</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td>18 / 23</td><td>2 hours ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
+          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Harbour Lane Residences</td><td>Harbour Group</td><td><span class="badge green"><span class="dot"></span> approved</span></td><td>23 / 23</td><td>Yesterday</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
+          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Pier Street Commercial</td><td>Pier Holdings</td><td><span class="badge amber"><span class="dot"></span> needs attention</span></td><td>12 / 20</td><td>3 days ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
+          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Central Park Towers</td><td>Central Developments</td><td><span class="badge slate"><span class="dot"></span> draft</span></td><td>0 / 25</td><td>1 week ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
+          <tr onclick="location.href='13-deal-overview.html'" style="cursor:pointer"><td class="strong">Westfield Industrial</td><td>Westfield Holdings</td><td><span class="badge blue"><span class="dot"></span> in review</span></td><td>15 / 18</td><td>2 weeks ago</td><td class="act"><button class="btn btn-sm">Open</button></td></tr>
         </tbody></table>
       </div></div>
     </div>
