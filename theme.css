@@ -722,9 +722,66 @@ a { color: inherit; text-decoration: none; }
   padding: 18px;
 }
 
+/* App Sidebar — persistent left nav for all app pages */
+.app-sidebar {
+  width: 56px;
+  flex: none;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+  gap: 4px;
+}
+.app-sidebar .brand-mark {
+  width: 32px; height: 32px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.app-sidebar .nav-item {
+  width: 40px; height: 40px;
+  border-radius: var(--r);
+  display: grid; place-items: center;
+  color: var(--text-3);
+  position: relative;
+  cursor: pointer;
+}
+.app-sidebar .nav-item:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.app-sidebar .nav-item.active {
+  background: var(--accent-soft);
+  color: var(--primary-ink);
+}
+.app-sidebar .nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -10px; top: 10px; bottom: 10px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+.app-sidebar .spacer { flex: 1; }
+.app-sidebar .nav-item[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 48px;
+  background: var(--text);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: var(--r-sm);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 100;
+}
+
 /* Deal Sidebar — vertical nav for deal pages */
 .deal-sidebar {
-  width: 200px;
+  width: 180px;
   flex: none;
   background: var(--surface);
   border-right: 1px solid var(--border);
@@ -1054,12 +1111,71 @@ a { color: inherit; text-decoration: none; }
 
 /* ============================= Settings ============================= */
 
-.settings-nav {
-  width: 210px; flex: none;
+/* Settings Sidebar — vertical nav for settings pages */
+.settings-sidebar {
+  width: 200px;
+  flex: none;
   background: var(--surface);
   border-right: 1px solid var(--border);
-  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
+.settings-sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 19px 18px 17px;
+  border-bottom: 1px solid var(--border);
+}
+.settings-sidebar .nav { padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; }
+.settings-sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+.settings-sidebar .nav-item svg { color: var(--text-3); flex: none; }
+.settings-sidebar .nav-item:hover { background: var(--surface-2); color: var(--text); }
+.settings-sidebar .nav-item.active {
+  background: var(--accent-soft);
+  color: var(--primary-ink);
+  font-weight: 600;
+}
+.settings-sidebar .nav-item.active svg { color: var(--accent-hover); }
+.settings-sidebar .nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -10px; top: 7px; bottom: 7px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+.settings-sidebar .nav-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  padding: 16px 8px 7px;
+}
+.settings-sidebar .sidebar-user {
+  margin: auto 12px 12px;
+  padding: 10px;
+  border-radius: var(--r);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));

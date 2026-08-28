@@ -18,11 +18,25 @@
   <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
   <symbol id="i-chevron-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
   <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
-  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></symbol>
+  <symbol id="i-log-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
 </svg>
+
 <div class="app">
+  <aside class="app-sidebar">
+    <div class="brand-mark">C</div>
+    <a class="nav-item active" href="11-deals.html" title="Deals"><svg class="ico"><use href="#i-grid"/></svg></a>
+    <a class="nav-item" href="#" title="Credit Papers"><svg class="ico"><use href="#i-file"/></svg></a>
+    <a class="nav-item" href="#" title="Templates"><svg class="ico"><use href="#i-layers"/></svg></a>
+    <a class="nav-item" href="#" title="Data Rooms"><svg class="ico"><use href="#i-db"/></svg></a>
+    <a class="nav-item" href="#" title="Reports"><svg class="ico"><use href="#i-clipboard"/></svg></a>
+    <a class="nav-item" href="#" title="Activity"><svg class="ico"><use href="#i-activity"/></svg></a>
+    <a class="nav-item" href="19-settings-profile.html" title="Settings"><svg class="ico"><use href="#i-cog"/></svg></a>
+    <div class="spacer"></div>
+    <div class="av sm" style="margin-bottom:8px">JS</div>
+    <a class="nav-item" href="#" title="Sign Out"><svg class="ico"><use href="#i-log-out"/></svg></a>
+  </aside>
+
   <aside class="deal-sidebar">
-    <div class="brand"><div class="brand-mark">C</div><div class="brand-name">CREDITPAPER</div></div>
     <div class="nav">
       <a class="nav-item" href="13-deal-overview.html"><svg class="ico"><use href="#i-home"/></svg> Overview</a>
       <a class="nav-item" href="14-deal-documents.html"><svg class="ico"><use href="#i-file"/></svg> Documents</a>
@@ -41,28 +55,25 @@
     </div>
     <div class="sidebar-user"><div class="av sm">JS</div><div class="who" style="min-width:0"><div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div><div class="em" style="font-size:10px;color:var(--text-3)">Maker</div></div></div>
   </aside>
+
   <div class="main">
     <div class="header-bar">
       <div class="crumb"><a href="11-deals.html" style="color:var(--text-3);text-decoration:none">Deals</a><svg class="ico-sm"><use href="#i-chevron-r"/></svg><b>Riverbend Rise</b><span class="badge blue" style="margin-left:4px"><span class="dot"></span> in review</span></div>
-      <div style="margin-left:8px;font-size:11px;color:var(--text-3);font-weight:500">Last saved 2m ago · <span style="color:var(--green)">Auto-saved</span></div>
       <div class="spacer"></div>
-      <div style="text-align:right;margin-right:8px"><div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Current Stage</div><div style="font-size:13px;font-weight:600;color:var(--text)">In Review</div></div>
-      <div style="text-align:right;margin-right:8px"><div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Progress</div><div style="font-size:13px;font-weight:600;color:var(--text)">5 / 9 sections</div><div class="bar" style="margin-top:4px;width:100px"><i style="width:56%"></i></div></div>
       <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-share"/></svg> Share</button>
       <button class="btn btn-sm btn-icon">⋯</button>
-      <div style="display:flex"><div class="av sm" style="border:2px solid var(--surface);margin-left:-6px">JS</div><div class="av sm c2" style="border:2px solid var(--surface);margin-left:-6px">SW</div><div class="av sm c3" style="border:2px solid var(--surface);margin-left:-6px">TR</div><div class="av sm c4" style="border:2px solid var(--surface);margin-left:-6px;font-size:9px">+2</div></div>
     </div>
     <div class="canvas" style="overflow:auto">
-      <div class="page-head"><div><h1 class="page-title">Activity</h1><p class="page-sub">Full audit trail for this deal</p></div></div>
-      <div class="card"><div class="card-body"><div class="feed">
-        <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-file"/></svg></div><div class="feed-body"><div class="feed-title">Section §5 Borrower Analysis marked ready for review</div><div class="feed-meta">by Jordan Smith</div></div><div class="feed-time">10:32 AM</div></div>
-        <div class="feed-item"><div class="feed-ico amber"><svg class="ico-sm"><use href="#i-activity"/></svg></div><div class="feed-body"><div class="feed-title">QS report revised — construction cost updated</div><div class="feed-meta">by System · auto-extracted</div></div><div class="feed-time">10:15 AM</div></div>
-        <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-file"/></svg></div><div class="feed-body"><div class="feed-title">Section §4 Zoning &amp; Location human-edited</div><div class="feed-meta">by Sarah Williams</div></div><div class="feed-time">9:48 AM</div></div>
-        <div class="feed-item"><div class="feed-ico blue"><svg class="ico-sm"><use href="#i-sparkles"/></svg></div><div class="feed-body"><div class="feed-title">AI suggestions generated for §6 Valuation Analysis</div><div class="feed-meta">3 suggestions applied</div></div><div class="feed-time">9:30 AM</div></div>
-        <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-file"/></svg></div><div class="feed-body"><div class="feed-title">Section §1 Facility Summary approved</div><div class="feed-meta">by Tom Reid</div></div><div class="feed-time">Yesterday</div></div>
-        <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-file"/></svg></div><div class="feed-body"><div class="feed-title">Section §2 Deal Summary approved</div><div class="feed-meta">by Tom Reid</div></div><div class="feed-time">Yesterday</div></div>
-        <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-grid"/></svg></div><div class="feed-body"><div class="feed-title">Deal created — Riverbend Rise</div><div class="feed-meta">by Jordan Smith · Construction · $7.76m</div></div><div class="feed-time">2 days ago</div></div>
-      </div></div></div>
+      <div class="page-head"><div><h1 class="page-title">Activity</h1><p class="page-sub">Timeline of all actions on this deal</p></div></div>
+      <div class="card"><div class="card-body">
+        <div class="feed">
+          <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-file"/></svg></div><div class="feed-body"><div class="feed-title">Jordan Smith uploaded QS Cost Report</div><div class="feed-meta">Document added to Data Room</div></div><div class="feed-time">2 hours ago</div></div>
+          <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-activity"/></svg></div><div class="feed-body"><div class="feed-title">Sarah Williams reviewed §4 Zoning &amp; Location</div><div class="feed-meta">Section marked as "In Review"</div></div><div class="feed-time">5 hours ago</div></div>
+          <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-db"/></svg></div><div class="feed-body"><div class="feed-title">AI extracted 47 new facts from Bank Statements</div><div class="feed-meta">Facts table updated</div></div><div class="feed-time">Yesterday</div></div>
+          <div class="feed-item"><div class="feed-ico amber"><svg class="ico-sm"><use href="#i-activity"/></svg></div><div class="feed-body"><div class="feed-title">Contradiction detected: Contingency % mismatch</div><div class="feed-meta">QS Report vs Financial Model — flagged for review</div></div><div class="feed-time">Yesterday</div></div>
+          <div class="feed-item"><div class="feed-ico"><svg class="ico-sm"><use href="#i-layers"/></svg></div><div class="feed-body"><div class="feed-title">Jordan Smith approved §1 Facility Summary</div><div class="feed-meta">Section moved to "Approved"</div></div><div class="feed-time">2 days ago</div></div>
+        </div>
+      </div></div>
     </div>
   </div>
 </div>
