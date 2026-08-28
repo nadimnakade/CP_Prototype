@@ -1,0 +1,736 @@
+<title>Creditpaper Site Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --paper:      #F1F4F4;
+    --surface:    #FBFCFC;
+    --surface-2:  #E7ECEC;
+    --ink:        #12191C;
+    --ink-soft:   #4A585C;
+    --ink-faint:  #7C8B8F;
+    --rule:       #D2DBDB;
+    --rule-soft:  #E2E9E9;
+    --accent:     #0F5C5B;
+    --accent-soft:#DCEAE9;
+    --brass:      #8A6A2B;
+    --attention:  #A6591B;
+    --blocked:    #8E2F2F;
+    --approved:   #2C6650;
+    --shadow:     0 1px 2px rgba(18,25,28,.05), 0 8px 24px -16px rgba(18,25,28,.22);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #0D1214;
+      --surface:    #141C1F;
+      --surface-2:  #1C2529;
+      --ink:        #E3EAEA;
+      --ink-soft:   #A2B1B4;
+      --ink-faint:  #6F8084;
+      --rule:       #273437;
+      --rule-soft:  #1E292C;
+      --accent:     #63B3AE;
+      --accent-soft:#16302F;
+      --brass:      #C6A15E;
+      --attention:  #D08A45;
+      --blocked:    #D97070;
+      --approved:   #6FBF98;
+      --shadow:     0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #0D1214;
+    --surface:    #141C1F;
+    --surface-2:  #1C2529;
+    --ink:        #E3EAEA;
+    --ink-soft:   #A2B1B4;
+    --ink-faint:  #6F8084;
+    --rule:       #273437;
+    --rule-soft:  #1E292C;
+    --accent:     #63B3AE;
+    --accent-soft:#16302F;
+    --brass:      #C6A15E;
+    --attention:  #D08A45;
+    --blocked:    #D97070;
+    --approved:   #6FBF98;
+    --shadow:     0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.62;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px 120px; }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding: 72px 0 34px; border-bottom: 2px solid var(--ink); }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 18px;
+  }
+  h1 {
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    font-weight: 600; font-size: clamp(2.3rem, 5.2vw, 3.4rem);
+    line-height: 1.06; letter-spacing: -.015em; margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .standfirst {
+    font-family: Spectral, Georgia, serif; font-size: 1.16rem; line-height: 1.55;
+    color: var(--ink-soft); max-width: 62ch; margin: 0;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 28px;
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .meta-row b { color: var(--ink-soft); font-weight: 500; }
+
+  /* ---------- section headings ---------- */
+  section { margin-top: 76px; scroll-margin-top: 20px; }
+  h2 {
+    font-family: Spectral, Georgia, serif; font-weight: 600;
+    font-size: 1.85rem; letter-spacing: -.01em; margin: 0 0 6px; text-wrap: balance;
+  }
+  .sec-note { color: var(--ink-soft); max-width: 66ch; margin: 0 0 30px; }
+  h3 {
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+    margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--rule-soft);
+  }
+
+  p { max-width: 68ch; }
+
+  /* ---------- the map diagram ---------- */
+  .map {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+    padding: 26px 28px; overflow-x: auto; box-shadow: var(--shadow);
+  }
+  .map pre {
+    font-family: "IBM Plex Mono", monospace; font-size: 13px; line-height: 1.75;
+    margin: 0; color: var(--ink-soft); white-space: pre;
+  }
+  .map .z { color: var(--accent); font-weight: 500; }
+  .map .r { color: var(--ink); }
+  .map .c { color: var(--ink-faint); }
+  .map .w { color: var(--brass); font-weight: 500; }
+
+  /* ---------- visual site map ---------- */
+  .diagram { border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  .lane { display: grid; grid-template-columns: 118px 1fr; gap: 22px; padding: 20px 24px; align-items: start; }
+  .lane + .lane { border-top: 1px solid var(--rule-soft); }
+  .lane-l .zn {
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 500;
+  }
+  .lane-l .zd { font-size: 12px; color: var(--ink-faint); margin-top: 5px; line-height: 1.45; }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .node {
+    border: 1px solid var(--rule); border-radius: 2px; padding: 8px 12px;
+    background: var(--paper); min-width: 0;
+  }
+  .node .nl { font-size: 13px; font-weight: 600; white-space: nowrap; letter-spacing: -.005em; }
+  .node .nr {
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+    color: var(--ink-faint); white-space: nowrap; margin-top: 2px;
+  }
+  .node.key { border-color: var(--accent); background: var(--accent-soft); }
+  .node.key .nl, .node.key .nr { color: var(--accent); }
+  .node.land { border-color: var(--brass); }
+  .node.land .nl { color: var(--brass); }
+  .arw { color: var(--ink-faint); font-size: 13px; flex: none; }
+  .subgroup {
+    border: 1px dashed var(--rule); border-radius: 3px; padding: 12px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center; flex: 1; min-width: 300px;
+  }
+  .subgroup .sgl {
+    width: 100%; font-family: "IBM Plex Mono", monospace; font-size: 10px;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px;
+  }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; font-size: 12px; color: var(--ink-faint); }
+  .legend span { display: flex; align-items: center; gap: 7px; }
+  .swatch { width: 11px; height: 11px; border-radius: 2px; border: 1px solid var(--rule); display: block; }
+
+  /* ---------- principle list ---------- */
+  .principles { display: grid; gap: 2px; background: var(--rule-soft); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+  .principle { background: var(--surface); padding: 20px 24px; display: grid; grid-template-columns: 34px 1fr; gap: 18px; }
+  .principle .n {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent);
+    padding-top: 3px; font-weight: 500;
+  }
+  .principle h4 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
+  .principle p { margin: 0; color: var(--ink-soft); font-size: 14.5px; max-width: 74ch; }
+
+  /* ---------- page cards ---------- */
+  .page {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+    margin-bottom: 18px; box-shadow: var(--shadow); overflow: hidden;
+  }
+  .page-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px;
+    padding: 17px 24px; border-bottom: 1px solid var(--rule-soft); background: var(--surface-2);
+  }
+  .route {
+    font-family: "IBM Plex Mono", monospace; font-size: 13.5px; font-weight: 500;
+    color: var(--accent);
+  }
+  .page-name { font-weight: 600; font-size: 15px; }
+  .page-body { padding: 20px 24px 22px; }
+  .field { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 9px 0; align-items: start; }
+  .field + .field { border-top: 1px dashed var(--rule-soft); }
+  .field .k {
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-faint); padding-top: 4px;
+  }
+  .field .v { margin: 0; font-size: 14.5px; max-width: 70ch; }
+  .field .v ul { margin: 0; padding-left: 17px; }
+  .field .v li { margin-bottom: 3px; }
+  .field .v li::marker { color: var(--ink-faint); }
+
+  code, .m {
+    font-family: "IBM Plex Mono", monospace; font-size: .885em;
+    background: var(--accent-soft); color: var(--accent);
+    padding: 1px 5px; border-radius: 2px;
+  }
+
+  /* ---------- pills ---------- */
+  .pill {
+    font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .09em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 2px;
+    border: 1px solid currentColor; white-space: nowrap;
+  }
+  .pill.role { color: var(--ink-faint); }
+  .pill.admin { color: var(--brass); }
+  .pill.wow { color: var(--accent); background: var(--accent-soft); border-color: transparent; font-weight: 500; }
+  .pill.p2 { color: var(--ink-faint); }
+
+  .stage-key { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
+  .stage {
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em;
+    padding: 4px 10px; border-radius: 2px; border: 1px solid var(--rule);
+    background: var(--surface); color: var(--ink-soft);
+  }
+  .stage.att { color: var(--attention); border-color: var(--attention); }
+  .stage.app { color: var(--approved); border-color: var(--approved); }
+  .stage.blk { color: var(--blocked); border-color: var(--blocked); }
+
+  /* ---------- phase 2 ---------- */
+  .later {
+    border: 1px dashed var(--rule); border-radius: 3px; padding: 24px 26px;
+    background: transparent;
+  }
+  .later ul { margin: 0; padding-left: 18px; columns: 2; column-gap: 40px; }
+  .later li { margin-bottom: 7px; color: var(--ink-soft); break-inside: avoid; font-size: 14.5px; }
+
+  .callout {
+    border-left: 3px solid var(--accent); background: var(--surface);
+    padding: 16px 22px; margin: 22px 0; border-radius: 0 3px 3px 0;
+  }
+  .callout p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
+  .callout strong { color: var(--ink); }
+
+  footer {
+    margin-top: 84px; padding-top: 26px; border-top: 1px solid var(--rule);
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+    letter-spacing: .05em; color: var(--ink-faint); text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .field { grid-template-columns: 1fr; gap: 4px; }
+    .later ul { columns: 1; }
+    .wrap { padding: 0 18px 80px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Design handoff · Phase 1 MVP</p>
+    <h1>Creditpaper Site Map</h1>
+    <p class="standfirst">Twenty-three screens that take an Australian commercial-property lender from sign-up to a signed-off credit paper. The structure and the job of every page. Layout and visual identity are yours — a clickable walkthrough of the same journey is a separate document.</p>
+    <div class="meta-row">
+      <span><b>Zones</b> 4</span>
+      <span><b>Screens</b> 23</span>
+      <span><b>Roles</b> analyst · credit officer · admin</span>
+      <span><b>Status</b> scoping in progress</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>What the product does</h2>
+    <p class="sec-note">A lender drops a folder of deal documents — valuations, term sheets, quantity-surveyor reports, building contracts — and gets back a credit-committee paper written in their own house voice, where every figure traces to the page and clause it came from. A human writes the recommendation. Always.</p>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="n">01</div>
+        <div>
+          <h4>The wow lands in ninety seconds</h4>
+          <p>New tenants see one section of a credit paper in <em>their own</em> house voice — learned from their website and two or three of their signed papers — before they are ever asked for a card. Onboarding is a demo, not a form.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">02</div>
+        <div>
+          <h4>A run takes about sixteen minutes</h4>
+          <p>Generating a paper is a long job, not a request. Progress belongs on the deal and in a global indicator. <strong>Never build a screen a user has to sit on and watch.</strong></p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">03</div>
+        <div>
+          <h4>Nothing is ever silently dropped</h4>
+          <p>Unrecognised documents, held checks, contradictory figures — all of it surfaces. This is a regulated document. A quiet omission is the worst failure the product can have.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">04</div>
+        <div>
+          <h4>The machine proposes, the human confirms</h4>
+          <p>Document mapping, house style, findings — all are proposals until a person affirms them. Design for review and correction, not for acceptance.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">05</div>
+        <div>
+          <h4>Institutional register, not SaaS cheer</h4>
+          <p>The product's own writing rule is "findings, not enthusiasm". No exclamation marks, no confetti, no celebratory empty states. Confident and quiet.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">06</div>
+        <div>
+          <h4>A gap is written, not reported</h4>
+          <p>Where information is missing, the product does not print "not available". It writes the structure that section <em>should</em> have — real headings, the shape a strong paper would take — with each unknown left as a labelled blank and a note on where the answer usually comes from. The analyst accepts it inline and the section drops in fully scaffolded, marked incomplete until the document arrives. <strong>This behaviour shapes the review screen more than any other.</strong></p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="n">07</div>
+        <div>
+          <h4>Delivered means final</h4>
+          <p>Sections arrive one at a time as they are written, so a reviewer can start on section two while section six is still drafting. That only works if <strong>nothing shown to a person is ever changed by the machine afterwards</strong> — so a section appears only once it has been drafted, checked and proofread. The one thing that can still move is the facts underneath, when a new document arrives; then the reviewer is told precisely what changed and chooses when to take it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The map</h2>
+    <p class="sec-note">Four zones. The tenant is resolved from the session and never appears in a URL, so there is no account or workspace segment in any path.</p>
+
+    <div class="diagram">
+      <div class="lane"><div class="lane-l"><div class="zn">Public</div><div class="zd">No session required. Five screens, all fast.</div></div><div class="flow"><div class="node "><div class="nl">Create account</div><div class="nr">/signup</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">Confirm email</div><div class="nr">/verify</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">Sign in</div><div class="nr">/login</div></div> <span class="arw">·</span> <div class="node "><div class="nl">Reset password</div><div class="nr">/forgot &rarr; /reset</div></div></div></div>
+      <div class="lane"><div class="lane-l"><div class="zn">Onboarding</div><div class="zd">Verified, setup incomplete. Resumable — each step remembers.</div></div><div class="flow"><div class="node "><div class="nl">Your brand</div><div class="nr">/onboarding/brand</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">Teach it your voice</div><div class="nr">/onboarding/papers</div></div><span class="arw">&rarr;</span><div class="node key"><div class="nl">In your voice</div><div class="nr">/onboarding/preview</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">Confirm house style</div><div class="nr">/onboarding/profile</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">Payment method</div><div class="nr">/onboarding/plan</div></div></div></div>
+      <div class="lane"><div class="lane-l"><div class="zn">Workspace</div><div class="zd">Verified and onboarded. The deal is the unit; everything hangs beneath one.</div></div><div class="flow"><div class="node land"><div class="nl">Deals</div><div class="nr">/</div></div><span class="arw">&rarr;</span><div class="node "><div class="nl">New deal</div><div class="nr">/deals/new</div></div><span class="arw">&rarr;</span><div class="subgroup"><span class="sgl">one deal — /deals/:dealId</span><div class="node "><div class="nl">Overview</div><div class="nr">/</div></div><div class="node "><div class="nl">Documents</div><div class="nr">/documents</div></div><div class="node "><div class="nl">Facts</div><div class="nr">/facts</div></div><div class="node "><div class="nl">The paper</div><div class="nr">/paper</div></div><div class="node "><div class="nl">Section review</div><div class="nr">/paper/:section</div></div><div class="node "><div class="nl">Activity</div><div class="nr">/activity</div></div></div></div></div>
+      <div class="lane"><div class="lane-l"><div class="zn">Settings</div><div class="zd">Firm-level. Two of these shape how the AI writes.</div></div><div class="flow"><div class="node "><div class="nl">House style</div><div class="nr">/settings/profile</div></div> <div class="node "><div class="nl">Guardrails</div><div class="nr">/settings/guardrails</div></div> <div class="node "><div class="nl">Team</div><div class="nr">/settings/team</div></div> <div class="node "><div class="nl">Billing</div><div class="nr">/settings/billing</div></div> <div class="node "><div class="nl">Your account</div><div class="nr">/settings/account</div></div></div></div>
+    </div>
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--accent-soft);border-color:var(--accent)"></i> the wow — where a new customer is convinced</span>
+      <span><i class="swatch" style="border-color:var(--brass)"></i> the landing page</span>
+      <span><i class="swatch" style="border-style:dashed"></i> nested under one deal</span>
+    </div>
+
+    <div class="callout">
+      <p><strong>A clickable walkthrough of all of this is a separate document.</strong> This page is the
+      reference — what each screen is for, and why. The walkthrough shows the journey end to end.</p>
+    </div>
+
+    <div class="callout">
+      <p><strong>Where a user lands, in order.</strong> No session → <span class="m">/login</span>. Unverified → <span class="m">/verify</span>. Setup incomplete → the first unfinished onboarding step. Otherwise → <span class="m">/</span>. If the trial is spent and there is no valid card they still land on <span class="m">/</span>: reading and exporting keep working, only generating and approving are blocked. <strong>A failed payment never locks someone out of papers they have already finished.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Public</h2>
+    <p class="sec-note">Five screens, all of them fast. The firm's identity comes from the email domain, so sign-up asks for almost nothing.</p>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/signup</span><span class="page-name">Create an account</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Get a real person to a verified account in under thirty seconds.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li><strong>Microsoft</strong>, Google, or email and password — Microsoft first</li>
+          <li>Nothing else — no firm name, no role, no phone number</li>
+          <li>Link to sign in</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · submitting · email already registered · <strong>firm already has an account</strong> (see note) · weak password</p></div>
+        <div class="field"><div class="k">Note</div><p class="v"><strong>Microsoft is the primary button</strong> — a boutique Australian lender is on Microsoft 365, so a work account brings their existing multi-factor policy, their conditional access and a verified domain with it, for no build. Restrict both providers to work and school accounts: a personal <code>outlook.com</code> or <code>gmail.com</code> is free-mail and must never identify a firm. The email domain identifies the firm. If someone signs up at a domain that already has an account, they do not get a second one — they see <em>"Acme Capital already has an account"</em> and can request access, which an admin approves. Consumer email addresses always get their own account.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/login</span><span class="page-name">Sign in</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Return a known user to wherever they were going.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul><li>Microsoft and Google buttons, then email and password</li><li>Forgot password link</li><li>Link to create an account</li></ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · submitting · wrong credentials · account not yet verified · access request still pending approval</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">If they arrived from a deep link, send them there after sign-in rather than to the dashboard.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/forgot</span><span class="page-name">Reset your password</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Send a reset link without revealing whether an address exists.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Email field, submit, and a confirmation that reads the same whether or not the address was found.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · submitting · sent · rate-limited</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/reset</span><span class="page-name">Choose a new password</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Set a new password from an emailed one-time link.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">New password, confirmation, strength indication, and a line stating that all other sessions will be signed out.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Valid token · expired token · already used · success</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/verify</span><span class="page-name">Confirm your email</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Hold the user until their address is confirmed.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Clear statement that a link was sent, the address it went to, a resend control with a cooldown, and a way to correct a mistyped address.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Awaiting · resent · verified (auto-advances to onboarding) · link expired</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">This is a real gate, not a nag: nothing downstream runs until it passes. Design it as a calm waiting room, not an error.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Onboarding</h2>
+    <p class="sec-note">Five steps, resumable, each remembering where the user got to. The whole sequence is built to reach step three fast — that is where the product proves itself.</p>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/onboarding/brand</span><span class="page-name">Your brand</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Read the firm's website and show the product already wearing their identity. First small win, about ten seconds in.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>The firm's domain, <strong>prefilled from their email</strong> — they should not have to type it</li>
+          <li>A live result: logo, colour palette, typefaces, and the words this firm uses for things</li>
+          <li>Confirm or correct, then continue</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Scraping · found · thin result (site is sparse) · site unreachable · consumer email, so ask for the URL</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">The website supplies <em>look</em> and <em>vocabulary</em> only. It must never influence how the paper is written — marketing language has no place in a credit document, and this boundary is enforced in the system, not by convention. Worth showing the user what was taken and what was not.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/onboarding/papers</span><span class="page-name">Teach it your voice</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Collect two or three of the firm's own signed credit papers, from which the product learns their structure and voice.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Drop zone for two or three documents</li>
+          <li>A plain statement of why: these are papers their credit committee already approved, so they are the standard</li>
+          <li>Assurance that they stay private to this firm and can be deleted at any time</li>
+          <li><strong>A skip path</strong> — a new firm may not have any</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Empty · uploading · learning · learned · skipped (falls back to a general style) · unreadable file</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">This step must never dead-end. A firm with no prior papers still reaches the next screen and still sees the wow.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/onboarding/preview</span><span class="page-name">In your voice</span><span class="pill wow">the wow</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v"><strong>The most important screen in the product.</strong> Show one section of a real credit paper written in this firm's voice, beside the generic version, so the difference is unmissable.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Side-by-side comparison: generic draft against theirs</li>
+          <li>Enough of the section to actually read — this is not a thumbnail</li>
+          <li>A short note on what was learned: their structure, their register, their terms</li>
+          <li>One forward action</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Generating (about ninety seconds, and it should feel purposeful) · ready · fell back to general style</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">The waiting state matters as much as the result. Show what is happening — reading your papers, learning your structure, drafting — because the wait <em>is</em> the demonstration. Written on a sample deal, so nothing of theirs is needed yet.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/onboarding/profile</span><span class="page-name">Confirm your house style</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Let the firm read back what was learned and correct it before it is used.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Voice and register, in plain words</li>
+          <li>Section order and headings</li>
+          <li>Their terminology — what they call a facility, a sponsor, a security</li>
+          <li>Every part editable</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Learned · edited · fallback profile (nothing was uploaded)</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">Same page as <span class="m">/settings/profile</span> later, so build it once. Nothing is this firm's house style until they say it is.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/onboarding/plan</span><span class="page-name">Add a payment method</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Take a card, immediately after the product has proved itself.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>What is included and what a paper costs</li>
+          <li>Three tiers banded on papers per month — 3, 8, or unlimited by quote</li>
+          <li><strong>Embedded card fields — never a redirect to a hosted page</strong></li>
+          <li><strong>"Your first paper is on us. Nothing is charged today."</strong> — the card is stored now, and the plan starts once the first paper is approved</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · processing · card declined · saved</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">Deliberately placed <em>after</em> the wow. The user has already seen a paper in their own voice, so this reads as the next step rather than a toll gate. Bouncing them to another domain here would break the moment. The card is taken now but not charged: the friction of entering it belongs here, while intent is highest, not later when they are mid-deal and want a paper.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Workspace</h2>
+    <p class="sec-note">Where the work happens. The deal is the unit — everything meaningful hangs beneath one.</p>
+
+    <div class="stage-key">
+      <span class="stage">intake</span>
+      <span class="stage">extracting</span>
+      <span class="stage">drafting</span>
+      <span class="stage">in review</span>
+      <span class="stage app">approved</span>
+      <span class="stage att">needs attention</span>
+      <span class="stage blk">blocked</span>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/</span><span class="page-name">Deals</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">The landing page. Show every deal and its state, and make starting a new one obvious.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>A grid of deal cards, most recently touched first</li>
+          <li><strong>New deal as the first tile, always</strong></li>
+          <li>Per card: name, deal type, stage, last activity, who owns it</li>
+          <li>An attention marker when something is stuck — a held check, a figure that changed, an approval withdrawn</li>
+          <li>Search and filter</li>
+          <li><strong>A menu on each tile</strong> — open, rename, export, archive. Delete appears only on deals that never reached approval</li>
+          <li>Progress labelled in words — <em>"5 of 9 sections approved"</em>, <em>"4 of 7 documents extracted"</em></li>
+        </ul></div></div>
+        <div class="field"><div class="k">Progress</div><p class="v">Bars measure <strong>the current stage only</strong>, never the whole journey — a lifecycle percentage would need invented weightings. Every stage has an exact count available, so nothing is estimated, and the count is always written out beside the bar. If the denominator is not yet known, there is no bar. <strong>It measures work items, not time</strong>: six of nine sections approved is not two thirds of the remaining effort, because review is the slow part.</p></div>
+        <div class="field"><div class="k">Deleting</div><p class="v">An approved paper is a record and must be <strong>archived, not deleted</strong> — financial-services retention runs to years, and an approved paper carries an audit trail a regulator may later ask for. Archive hides it from the grid and is fully recoverable, which also keeps the active count meaningful. Every tile action is written to the deal's activity trail.</p></div>
+        <div class="field"><div class="k">States</div><p class="v"><strong>Empty (first ever visit)</strong> · populated · filtered to nothing · generating in the background · billing blocked</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">A project dashboard, not an analytics one — think of a design tool's home screen rather than a reporting suite. <strong>No charts.</strong> Its job is to show what is stuck, not only what exists. The empty state is a conversion moment: one clear invitation to create the first deal.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/new</span><span class="page-name">New deal</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Get from intent to dragging documents in as few steps as possible.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Deal name and deal type — construction, bridge, or residual stock. Everything else optional and inline.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · submitting · duplicate name</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">On save, land <strong>directly on the drop zone</strong>, not on an empty overview. The first thing anyone does in a new deal is add documents; do not make them find that.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId</span><span class="page-name">Deal overview</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Answer "where is this deal up to, and what needs me?"</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Stage, and what moves it forward</li>
+          <li>Any job currently running, with progress and elapsed time</li>
+          <li>Outstanding documents — what is still missing</li>
+          <li>Anything held or contradictory, as work to do rather than a log entry</li>
+          <li>Tabs into documents, facts, paper, activity</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Fresh · extracting · drafting · needs attention · in review · approved</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId/documents</span><span class="page-name">Documents</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Take a folder of forty to a hundred and eighty unsorted files and end with every one accounted for.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li><strong>One drop zone.</strong> The user never picks a category before uploading</li>
+          <li>A board of every document type this deal needs — filled, processing, checked, flagged, or empty</li>
+          <li>For each proposed match: the filename and <em>why</em> this file was chosen over the others</li>
+          <li>Confirm or correct, <strong>one at a time — no confirm-all</strong></li>
+          <li>An <strong>Unassigned</strong> tray for anything unrecognised</li>
+          <li>Superseded versions, still reachable</li>
+          <li><strong>A failed extraction</strong> shown with a retry, and repeated in the deal's needs-you list</li>
+        </ul></div></div>
+        <div class="field"><div class="k">Removing</div><p class="v">Three cases, and the difference matters. A document <strong>nothing has read yet</strong> is simply removed. Once facts cite it, removal is a <strong>withdrawal</strong>: the facts that came from it are invalidated and surfaced, never silently dropped. If an approved section cites it, withdrawal also <strong>revokes approval on that section</strong>. The document itself stays in the record as withdrawn — an approved paper that once cited it is an audit artefact.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Empty · uploading · proposals awaiting confirmation · all confirmed · unassigned files remain · a document was replaced by a newer one</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">The hardest and most important screen in the product. Order the review <strong>by doubt</strong> — ambiguous and competing matches first, obvious ones below — so attention goes where it is needed. Empty slots are not a gap in the UI; they are the outstanding-items list that ends up disclosed in the paper. Better documents arrive weeks later and supersede earlier ones, so nothing here is ever final.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId/facts</span><span class="page-name">Facts</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Show everything read out of the documents, and let any figure be traced to its source.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Facts grouped the way a credit person thinks — the facility, the security, the borrower, the valuation, the build</li>
+          <li>Every value showing its source document, page, and the exact wording it came from</li>
+          <li>Status on each: read, confirmed by a second document, flagged, or missing</li>
+          <li>Contradictions shown as pairs, with both figures visible</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Empty · extracting · complete · contradictions outstanding</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">This screen is the product's honesty made visible — every number in the paper can be traced back to a clause on a page. Click-through to the source should feel immediate. Numbers align in columns; use tabular figures.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId/paper</span><span class="page-name">The paper</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Start a draft, then show every section and where it stands.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Generate, with an honest estimate of time and cost before committing</li>
+          <li>Every section listed with its state: draft, edited, evidence incomplete, approved</li>
+          <li>Comment and edit counts per section</li>
+          <li>Export, and a free re-render after edits</li>
+          <li><strong>A checkpoint after the overall read</strong>, about a minute in — every section inherits it, so a wrong read is worth catching before nine sections are written against it. It continues on its own if nobody is there</li>
+          <li><strong>Issue history</strong>, and a change summary between any two issues</li>
+        </ul></div></div>
+        <div class="field"><div class="k">Issuing</div><p class="v">A paper is <strong>issued</strong> as often as it needs to be — sometimes it is final at credit committee and sometimes it is not, so there is no committee stage to move through. Each issue is a fixed snapshot that can be compared with any other. The <strong>change summary leads with figures that moved</strong>, then material prose, then editorial, because a committee member cares far more that a cost changed than that a sentence was rephrased. It is generated without a model call and renders into the paper itself, beside the approval page.</p></div>
+        <div class="field"><div class="k">Waiting</div><p class="v">The first section arrives in about four minutes and the rest follow. <strong>Never build a screen someone must sit and watch</strong> — progress follows them, and a queued run says so with its position rather than appearing to hang.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Not yet generated · generating · drafted · partly approved · fully approved · a section failed · blocked on billing</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">Generation takes roughly sixteen minutes. The user must be free to leave — progress follows them. A failed section does not lose the run; show which one and why, and let it be retried on its own.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId/paper/:section</span><span class="page-name">Section review</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Read a section, mark it up, and approve it. This is where a credit professional spends their time.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>The section as a proper document, not a text box</li>
+          <li><strong>Tracked changes and suggestion mode</strong> — every edit attributed, reviewable, and reversible</li>
+          <li>Comments anchored to selected text</li>
+          <li>Cited figures traceable to source without leaving the page</li>
+          <li><strong>Scaffolded gaps</strong> — where information is missing, the structure the section should have, with <strong>accept or reject inline</strong></li>
+          <li><strong>Points the system flagged for a human — accept or reject</strong>, never auto-corrected</li>
+          <li><strong>Who else is in this section right now</strong>, and a lock while someone is editing</li>
+          <li><strong>A figure slot</strong> — the engine proposes an image from a document the user already provided ("stamped site plan, DA pack page 3"), captioned with its source</li>
+          <li>Section navigation, and approve</li>
+          <li>Clear marking of what was machine-written and what a person changed</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Draft · edited · open suggestions awaiting review · open comments · <strong>evidence incomplete</strong> · <strong>locked — someone else is editing</strong> · approved · approval withdrawn because a figure changed</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">The busiest screen in the product, and the one to prototype first. Three things to get right:</p></div>
+        <div class="field"><div class="k">Scaffolds</div><p class="v">Accept and reject need to be <em>fast</em> — an analyst will move through several in a section. On accept, the structure drops into the prose and the section is marked incomplete until the missing document arrives. <strong>Link each accepted scaffold to the document slot that would fill it</strong>, so the gap becomes something to act on rather than a label. That closes the loop: gap accepted → outstanding item → document uploaded → section completes.</p></div>
+        <div class="field"><div class="k">Editing</div><p class="v">Redlining, suggestions and comments come from the editor library already chosen for this product, so follow its conventions rather than inventing new ones. Every edit is attributed and kept — the record of who changed what is a regulatory artefact, not a convenience.</p></div>
+        <div class="field"><div class="k">Provenance</div><p class="v">Clicking any cited figure opens its chain: the value, where it came from, and — for a calculated number — the inputs it was derived from, each clickable in turn. <strong>Every walk ends at a clause in a document</strong>, quoted, with a link to that page. That is not a promise about the interface, it is a property of the system: a figure cannot exist in the paper without a source. Worth saying out loud in the product, because it is the strongest trust claim available and it is provably true.</p></div>
+        <div class="field"><div class="k">Reasoning</div><p class="v">On request, never in the prose — the paper must read as a credit paper, not as annotated machine output. Two things are available: <strong>what this passage cites</strong>, and <strong>what shaped it</strong> — the overall read of the deal that every section inherits, and which of the firm's own rules were in force. Fuller rationale arrives later with the engine's typed findings; do not promise it before then.</p></div>
+        <div class="field"><div class="k">Facts moving</div><p class="v">A new document can land while someone is reading. <strong>Nothing changes under them</strong> — they stay on the version they opened and are told precisely what moved: <em>"construction cost $4,703,611 → $4,850,000, from a revised QS report, in paragraph 3."</em> Naming the change is what stops it feeling like unbounded rework. They keep reading, editing and commenting; <strong>only approval waits</strong>, because approving is the regulated act.</p></div>
+        <div class="field"><div class="k">Together</div><p class="v">Several people work a paper at once, but <strong>one section at a time each</strong>. Show who is where; lock a section while it is being edited rather than merging two people's keystrokes. For a document that has to answer "who wrote this sentence" with one name, an orderly queue beats live co-editing.</p></div>
+        <div class="field"><div class="k">Sign-off</div><p class="v">Deep-linkable — people will send each other a link to a section. The final section carries a recommendation that <strong>a human must write</strong>; it cannot be approved without one, and that is a regulatory requirement rather than a preference. Design it as a deliberate, weighty moment.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/deals/:dealId/activity</span><span class="page-name">Activity</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">A complete, ordered record of what happened to this deal and who did it.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Documents added and superseded, extractions run, sections drafted and regenerated, comments, edits, the recommendation being written, approvals granted and withdrawn — each with a person and a timestamp.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Populated · filtered by kind or person</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">This is an audit record under financial-services rules, so it reads as a register rather than a social feed. No avatars-and-verbs styling; plain, dense, and exportable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Settings</h2>
+    <p class="sec-note">Firm-level configuration. Two of these shape how the AI writes, which makes them more consequential than settings screens usually are.</p>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/settings/profile</span><span class="page-name">House style</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Review and adjust the voice, structure and brand learned at onboarding — and learn again from newer papers.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Same content as the onboarding confirmation step, plus brand assets, the papers it was learned from, a re-learn action, and the ability to delete an uploaded paper.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Current · re-learning · never learned (using the general profile)</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/settings/guardrails</span><span class="page-name">Guardrails</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Let a firm set its own rules for how the AI works — the things it must always do, always surface, and always call by the right name.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li><strong>Wording</strong> — "we say facility, not loan"</li>
+          <li><strong>Structure</strong> — section order, what must always appear</li>
+          <li><strong>Always do this</strong> — an analytical step to run on every deal</li>
+          <li><strong>Always flag this</strong> — a threshold that must be surfaced</li>
+          <li><strong>Outside our appetite</strong> — property types to be flagged, not silently ignored</li>
+          <li>Each rule editable, removable, and dated</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">None set · rules active · rule being edited</p></div>
+        <div class="field"><div class="k">Two layers</div><p class="v">Above a firm's own rules sits <strong>platform safety, which applies to everyone and cannot be switched off</strong>: no unsupported claims, no promotional language, no machine-made recommendation, nothing adverse said about a person beyond the evidence, no reasoning from protected attributes, no legal determinations, and no motive imputed to a professional. <strong>A firm's rules only ever add to that; they can never relax it.</strong> Show the two clearly separated — a firm should be able to see what protects them as well as what they have configured.</p></div>
+        <div class="field"><div class="k">Timing</div><p class="v">Rules apply <strong>at the moment a paper is written</strong> and never retroactively, so adding a rule today cannot invalidate a paper signed last month. Each paper records which rules were in force when it was generated.</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">Deliberately <strong>not a free-text box</strong>. Each rule is one of a fixed set of kinds, chosen so a firm cannot accidentally instruct the system to hide a problem or to decide a recommendation. Design it as composing rules from parts, not as writing instructions. The framing throughout is "add analysis", never "suppress it".</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/settings/team</span><span class="page-name">Team</span><span class="pill admin">admin</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Manage who is in the firm's account and what they may do.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Members, their role, and when they were last active</li>
+          <li>Invite by email — an invitation works regardless of the invitee's email domain</li>
+          <li><strong>Pending access requests</strong> from people who signed up at the firm's domain</li>
+          <li>Change role, remove member</li>
+          <li><strong>No seat count.</strong> Users are unlimited at every tier — invite the whole credit team, including committee members who only read and comment</li>
+          <li><strong>Sign-in policy</strong> — require two-factor for password sign-ins, and a place for single sign-on when it arrives</li>
+        </ul></div></div>
+        <div class="field"><div class="k">States</div><p class="v">Sole member · several members · requests waiting · invitation sent</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">Three roles. An <em>analyst</em> runs deals and marks up papers. A <em>credit officer</em> also writes the recommendation and approves. An <em>admin</em> also manages people and billing. Only a credit officer can approve, and that is a regulatory line, not a convenience.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/settings/billing</span><span class="page-name">Billing</span><span class="pill admin">admin</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Show what has been used, what it cost, and keep the card current.</p></div>
+        <div class="field"><div class="k">Contains</div><div class="v"><ul>
+          <li>Current tier, <strong>papers used against papers included</strong>, and a way to change plan</li>
+          <li>Whether the free first paper is still available, payment method, invoice history</li>
+          <li>Usage — <strong>a list of the papers approved this month, not an abstract meter</strong></li>
+        </ul></div></div>
+        <div class="field"><div class="k">Note</div><p class="v">Three tiers banded on papers per month — 3, 8, or unlimited by quote. <strong>Users are unlimited at every tier</strong>, so there is no seat count to manage anywhere in the product. Going over the band never blocks a paper: extras are charged at the tier rate, and the arithmetic makes the upgrade obvious without a sales email.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">First paper still free · first paper used · card valid · <strong>payment failed</strong> · no card yet · over the monthly band</p></div>
+        <div class="field"><div class="k">Note</div><p class="v">When payment fails, be direct about what stops and what does not: no new papers, no approvals — but everything already finished stays readable and exportable. Never hold a firm's completed work hostage.</p></div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page-head"><span class="route">/settings/account</span><span class="page-name">Your account</span></div>
+      <div class="page-body">
+        <div class="field"><div class="k">Job</div><p class="v">Personal settings, distinct from the firm's.</p></div>
+        <div class="field"><div class="k">Contains</div><p class="v">Name, email, password change, sign out of other sessions, and <strong>two-factor setup with recovery codes</strong>. Someone who signed in through Microsoft or Google already has their organisation's policy applied and should be told so rather than asked to set it up twice.</p></div>
+        <div class="field"><div class="k">States</div><p class="v">Default · saving · saved</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Not in this phase</h2>
+    <p class="sec-note">Deliberately excluded, so nothing here needs designing yet. Several will arrive soon after launch — worth knowing they exist so the structure can accommodate them, but they should not shape the first build.</p>
+    <div class="later">
+      <ul>
+        <li>Firm-branded subdomains</li>
+        <li>Two people editing the <em>same</em> section simultaneously</li>
+        <li>Notifications and email digests</li>
+        <li>Single sign-on for identity providers other than Microsoft and Google</li>
+        <li>Sending papers for external signature</li>
+        <li>Direct publishing into design tools</li>
+        <li>Free-text guardrails</li>
+        <li>Folders, archiving, portfolio views</li>
+        <li>Multiple email domains for one firm</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Phase 1 MVP · 23 screens · scoping in progress — page structure is settled, visual design is open
+  </footer>
+
+</div>

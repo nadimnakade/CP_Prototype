@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In Your Voice — CreditPaper</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .onb-page { min-height:100vh; background:var(--page); padding:40px 20px 60px; }
+  .onb-wrap { max-width:680px; margin:0 auto; }
+  .onb-steps { display:flex; align-items:center; gap:0; margin-bottom:32px; }
+  .onb-step { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-4); white-space:nowrap; }
+  .onb-step .n { width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:700; background:var(--surface-3); color:var(--text-4); flex:none; }
+  .onb-step.done { color:var(--text-2); }
+  .onb-step.done .n { background:var(--accent-soft); color:var(--accent-hover); }
+  .onb-step.active { color:var(--text); font-weight:600; }
+  .onb-step.active .n { background:var(--accent); color:#fff; box-shadow:var(--sh-teal); }
+  .onb-line { flex:1; height:1px; background:var(--border); margin:0 10px; min-width:16px; }
+  .onb-title { font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 4px; }
+  .onb-sub { font-size:12.5px; color:var(--text-3); margin:0 0 22px; }
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+  .compare-col { border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+  .compare-col.theirs { border-color:var(--green); box-shadow:0 0 0 3px rgba(5,150,105,.08); }
+  .compare-head { padding:10px 14px; border-bottom:1px solid var(--border); font-size:12px; font-weight:600; color:var(--text-3); background:var(--surface-2); }
+  .compare-col.theirs .compare-head { color:var(--text); background:var(--green-soft); }
+  .compare-body { padding:14px; font-size:12.5px; line-height:1.7; color:var(--text-2); }
+  .compare-col.theirs .compare-body { color:var(--text); }
+  .vocab-badge { display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 9px; border-radius:var(--r-pill); font-size:11px; font-weight:600; background:var(--surface-2); border:1px solid var(--border); color:var(--text-2); }
+</style>
+</head>
+<body>
+<div class="onb-page">
+  <div class="onb-wrap">
+    <div class="onb-steps">
+      <div class="onb-step done"><span class="n">✓</span> Brand</div>
+      <div class="onb-line"></div>
+      <div class="onb-step done"><span class="n">✓</span> Papers</div>
+      <div class="onb-line"></div>
+      <div class="onb-step active"><span class="n">3</span> Preview</div>
+      <div class="onb-line"></div>
+      <div class="onb-step"><span class="n">4</span> Style</div>
+      <div class="onb-line"></div>
+      <div class="onb-step"><span class="n">5</span> Plan</div>
+    </div>
+
+    <h1 class="onb-title">This is your voice</h1>
+    <p class="onb-sub">The same deal summary, written two ways. On the right is yours.</p>
+
+    <div class="compare">
+      <div class="compare-col">
+        <div class="compare-head">Generic</div>
+        <div class="compare-body">
+          The borrower is requesting a construction facility of $7,758,697 for a project located in the metropolitan area. The loan-to-value ratio is 44.93%. The valuation was completed recently. The sponsor has experience in property development. Security will be a first mortgage.
+        </div>
+      </div>
+      <div class="compare-col theirs">
+        <div class="compare-head" style="display:flex;align-items:center;gap:7px">
+          Acme Capital <span class="badge green" style="font-size:10px">your voice</span>
+        </div>
+        <div class="compare-body">
+          Acme is providing a $7,758,697 construction facility to fund two dwellings, against sponsor equity of $7,192,568 — a near 50/50 split of total project cost. The facility binds against both leverage covenants at funding with negligible headroom: the LVR sits at 44.93% against a 45% ceiling, $12,803 of room. Both are analysed in full below; the point for this summary is that the deal carries no cushion on either constraint at day one.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:9px">Learned from your three papers</div>
+        <div class="row wrap" style="gap:6px">
+          <span class="vocab-badge">leads with the structure</span>
+          <span class="vocab-badge">quantifies headroom</span>
+          <span class="vocab-badge">flags tension early</span>
+          <span class="vocab-badge">no promotional language</span>
+          <span class="vocab-badge">your section order</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:20px;gap:10px">
+      <button class="btn btn-primary" style="height:38px">Continue</button>
+      <span style="font-size:11px;color:var(--text-3)">Written on a sample deal — none of your data needed yet.</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

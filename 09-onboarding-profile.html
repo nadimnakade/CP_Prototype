@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirm House Style — CreditPaper</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .onb-page { min-height:100vh; background:var(--page); padding:40px 20px 60px; }
+  .onb-wrap { max-width:520px; margin:0 auto; }
+  .onb-steps { display:flex; align-items:center; gap:0; margin-bottom:32px; }
+  .onb-step { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-4); white-space:nowrap; }
+  .onb-step .n { width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:700; background:var(--surface-3); color:var(--text-4); flex:none; }
+  .onb-step.done { color:var(--text-2); }
+  .onb-step.done .n { background:var(--accent-soft); color:var(--accent-hover); }
+  .onb-step.active { color:var(--text); font-weight:600; }
+  .onb-step.active .n { background:var(--accent); color:#fff; box-shadow:var(--sh-teal); }
+  .onb-line { flex:1; height:1px; background:var(--border); margin:0 10px; min-width:16px; }
+  .onb-title { font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 4px; }
+  .onb-sub { font-size:12.5px; color:var(--text-3); margin:0 0 22px; }
+  .section-item {
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 12px; border:1px solid var(--border); border-radius:var(--r-sm);
+    margin-bottom:5px; background:var(--surface);
+  }
+  .section-item .num { font-size:11px; font-weight:700; color:var(--text-4); font-variant-numeric:tabular-nums; width:20px; }
+  .section-item .nm { font-size:12px; font-weight:500; }
+  .section-item .drag { font-size:10px; color:var(--text-4); }
+</style>
+</head>
+<body>
+<div class="onb-page">
+  <div class="onb-wrap">
+    <div class="onb-steps">
+      <div class="onb-step done"><span class="n">✓</span> Brand</div>
+      <div class="onb-line"></div>
+      <div class="onb-step done"><span class="n">✓</span> Papers</div>
+      <div class="onb-line"></div>
+      <div class="onb-step done"><span class="n">✓</span> Preview</div>
+      <div class="onb-line"></div>
+      <div class="onb-step active"><span class="n">4</span> Style</div>
+      <div class="onb-line"></div>
+      <div class="onb-step"><span class="n">5</span> Plan</div>
+    </div>
+
+    <h1 class="onb-title">Confirm your house style</h1>
+    <p class="onb-sub">Everything here is editable. Nothing is your house style until you say so.</p>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="field" style="margin-bottom:14px">
+          <label class="label">Register</label>
+          <input class="input" value="Institutional credit-committee; third person">
+        </div>
+        <div class="field" style="margin-bottom:16px">
+          <label class="label">Paper title</label>
+          <input class="input" value="Internal Credit Memorandum">
+        </div>
+        <div style="height:1px;background:var(--border);margin:16px 0"></div>
+        <label class="label" style="margin-bottom:8px">Section order</label>
+        <div class="section-item"><span class="num">1</span><span class="nm">Deal Summary</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">2</span><span class="nm">Zoning &amp; Location</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">3</span><span class="nm">Borrower Analysis</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">4</span><span class="nm">Valuation Analysis</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">5</span><span class="nm">Risks &amp; Mitigations</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">6</span><span class="nm">Other Considerations</span><span class="drag">drag</span></div>
+        <div class="section-item"><span class="num">7</span><span class="nm">Conclusion</span><span class="drag">drag</span></div>
+      </div>
+      <div style="padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px">
+        <button class="btn btn-primary btn-sm">Confirm</button>
+        <button class="btn btn-sm">Reset to learned</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

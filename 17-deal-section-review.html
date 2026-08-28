@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§5 Borrower Analysis — CreditPaper</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  body{overflow:hidden}
+  .sheet{max-width:660px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-3);padding:28px 32px}
+  .sheet h3{font-size:14px;font-weight:800;margin:0 0 14px}
+  .sheet p{font-size:12px;line-height:1.85;color:var(--text-2);margin:0 0 10px;text-align:justify}
+  .notice-bar{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.25);border-radius:var(--r-sm);padding:12px 14px;margin-bottom:14px}
+  .notice-bar .t{font-weight:700;font-size:12px;margin-bottom:4px}
+  .notice-bar .d{font-size:11px;color:var(--text-2);line-height:1.6}
+  .was{text-decoration:line-through;color:var(--text-3)}.now{color:var(--blue);font-weight:600}
+  .redline{background:var(--green-soft);border-bottom:1.5px solid var(--green);padding:0 1px}
+  .del{background:var(--red-soft);color:var(--red);text-decoration:line-through}
+  .scaffold-box{border-left:2px solid var(--amber);background:rgba(254,243,199,.3);padding:12px 14px;border-radius:0 var(--r-sm) var(--r-sm) 0;margin:12px 0}
+  .scaffold-box .sh{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .blank{display:inline-block;min-width:70px;border-bottom:1.5px dashed var(--amber);color:var(--amber);font-size:11px}
+  .figslot{border:1px dashed var(--border-strong);border-radius:var(--r-sm);padding:12px;display:flex;gap:12px;align-items:center;margin:14px 0;background:var(--surface)}
+  .figthumb{width:70px;height:50px;border-radius:6px;background:var(--surface-3);display:grid;place-items:center;color:var(--text-3);flex:none;font-size:16px}
+  .cite{background:rgba(37,99,235,.08);color:var(--blue);border-radius:3px;padding:0 3px;cursor:pointer;border-bottom:1px dotted rgba(37,99,235,.4);font-size:11px}
+  .fmt-bar{display:flex;align-items:center;gap:5px;padding:7px 18px;background:var(--surface);border-bottom:1px solid var(--border);flex:none;flex-wrap:wrap}
+  .fmt{height:27px;min-width:27px;padding:0 6px;border-radius:var(--r-sm);display:inline-grid;place-items:center;color:var(--text-2);font-size:11.5px;font-weight:600;cursor:pointer;border:none;background:none}
+  .fmt:hover{background:var(--surface-3);color:var(--text)}
+  .fmt.on{background:var(--accent-soft);color:var(--primary-ink)}
+  .fmt-sel{height:27px;padding:0 9px;border:1px solid var(--border-2);border-radius:var(--r-sm);display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:var(--text-2);font-weight:500;cursor:pointer;background:none}
+  .fmt-div{width:1px;height:18px;background:var(--border-2);margin:0 5px}
+  .sec-bar{display:flex;align-items:center;gap:14px;padding:7px 18px;background:var(--surface);border-bottom:1px solid var(--border);flex:none}
+  .sec-bar .lbl{font-size:11px;font-weight:600;color:var(--text-3)}
+  .sec-bar select{height:27px;border:1px solid var(--border-2);border-radius:var(--r-sm);background:var(--surface);padding:0 8px;font:inherit;font-size:11.5px;color:var(--text);cursor:pointer}
+</style>
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-chevron-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13"/></symbol>
+  <symbol id="i-bold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></symbol>
+  <symbol id="i-italic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></symbol>
+  <symbol id="i-underline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></symbol>
+  <symbol id="i-strikethrough" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4H9a3 3 0 0 0-3 3v0a3 3 0 0 0 3 3h6"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M15 12a3 3 0 0 1 0 6H8"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+  <symbol id="i-align-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+  <symbol id="i-comments" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+</svg>
+<div style="display:flex;height:100vh;overflow:hidden">
+  <aside class="deal-sidebar">
+    <div class="brand"><div class="brand-mark">C</div><div class="brand-name">CREDITPAPER</div></div>
+    <div class="nav">
+      <a class="nav-item" href="13-deal-overview.html"><svg class="ico"><use href="#i-home"/></svg> Overview</a>
+      <a class="nav-item" href="14-deal-documents.html"><svg class="ico"><use href="#i-file"/></svg> Documents</a>
+      <a class="nav-item" href="15-deal-facts.html"><svg class="ico"><use href="#i-db"/></svg> Facts</a>
+      <a class="nav-item active" href="16-deal-paper.html"><svg class="ico"><use href="#i-layers"/></svg> Credit Paper</a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§1</span> Facility Summary <span class="sec-status" style="background:var(--green)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§2</span> Deal Summary <span class="sec-status" style="background:var(--green)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§4</span> Zoning &amp; Location <span class="sec-status" style="background:var(--blue)"></span></a>
+      <a class="sub-item active" href="17-deal-section-review.html"><span class="sec-num">§5</span> Borrower Analysis <span class="sec-status" style="background:var(--amber)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§6</span> Valuation Analysis <span class="sec-status" style="background:var(--blue)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§7</span> Risks &amp; Mitigations <span class="sec-status" style="background:var(--blue)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§8</span> Other Considerations <span class="sec-status" style="background:var(--text-4)"></span></a>
+      <a class="sub-item" href="16-deal-paper.html"><span class="sec-num">§9</span> Conclusion <span class="sec-status" style="background:var(--red)"></span></a>
+      <div style="height:1px;background:var(--border);margin:8px 10px"></div>
+      <a class="nav-item" href="18-deal-activity.html"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
+    </div>
+    <div class="sidebar-user"><div class="av sm">JS</div><div class="who" style="min-width:0"><div class="nm" style="font-size:12px;font-weight:600">Jordan Smith</div><div class="em" style="font-size:10px;color:var(--text-3)">Maker</div></div></div>
+  </aside>
+  <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+    <div class="header-bar">
+      <div class="crumb"><a href="11-deals.html" style="color:var(--text-3);text-decoration:none">Deals</a><svg class="ico-sm"><use href="#i-chevron-r"/></svg><a href="13-deal-overview.html" style="color:var(--text-3);text-decoration:none">Parkview Construction Facility</a><svg class="ico-sm"><use href="#i-chevron-r"/></svg><b>Credit Paper</b></div>
+      <div style="margin-left:8px;font-size:11px;color:var(--text-3);font-weight:500">Last saved 2m ago · <span style="color:var(--green)">Auto-saved</span></div>
+      <div class="spacer"></div>
+      <div style="text-align:right;margin-right:8px"><div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Current Stage</div><div style="font-size:13px;font-weight:600;color:var(--text)">In Review</div></div>
+      <div style="text-align:right;margin-right:8px"><div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Progress</div><div style="font-size:13px;font-weight:600;color:var(--text)">6 / 9 sections</div><div class="bar" style="margin-top:4px;width:100px"><i style="width:67%"></i></div></div>
+      <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-share"/></svg> Share</button>
+      <button class="btn btn-sm btn-icon">⋯</button>
+      <div style="display:flex"><div class="av sm" style="border:2px solid var(--surface);margin-left:-6px">JM</div><div class="av sm c2" style="border:2px solid var(--surface);margin-left:-6px">SW</div><div class="av sm c3" style="border:2px solid var(--surface);margin-left:-6px">TR</div><div class="av sm c4" style="border:2px solid var(--surface);margin-left:-6px;font-size:9px">+2</div></div>
+    </div>
+    <!-- Formatting Toolbar -->
+    <div class="fmt-bar">
+      <button class="fmt"><svg class="ico-sm"><use href="#i-undo"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-redo"/></svg></button>
+      <div class="fmt-div"></div>
+      <button class="fmt-sel">Heading 2 <svg style="width:10px;height:10px;color:var(--text-3)"><use href="#i-chevron-r"/></svg></button>
+      <button class="fmt-sel">Playfair Display <svg style="width:10px;height:10px;color:var(--text-3)"><use href="#i-chevron-r"/></svg></button>
+      <button class="fmt-sel">20 <svg style="width:10px;height:10px;color:var(--text-3)"><use href="#i-chevron-r"/></svg></button>
+      <div class="fmt-div"></div>
+      <button class="fmt on"><svg class="ico-sm"><use href="#i-bold"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-italic"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-underline"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-strikethrough"/></svg></button>
+      <button class="fmt"><svg class="ico-sm" style="color:var(--accent)"><use href="#i-bold"/></svg> <span style="width:8px;height:2px;background:var(--accent);display:block;border-radius:1px"></span></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-link"/></svg></button>
+      <div class="fmt-div"></div>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-list"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-list"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-align-left"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-align-left"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-align-left"/></svg></button>
+      <div class="fmt-div"></div>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-link"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-table"/></svg></button>
+      <button class="fmt"><svg class="ico-sm"><use href="#i-image"/></svg></button>
+      <div style="flex:1"></div>
+      <button class="fmt" style="gap:4px"><svg class="ico-sm" style="color:var(--accent)"><use href="#i-sparkles"/></svg> AI Assistant</button>
+      <button class="fmt" style="gap:4px"><svg class="ico-sm" style="color:var(--amber)"><use href="#i-sparkles"/></svg> Suggest <span class="badge amber" style="font-size:9px;height:16px;padding:0 5px">3</span></button>
+      <button class="fmt" style="gap:4px"><svg class="ico-sm"><use href="#i-comments"/></svg> Comments <span class="badge" style="font-size:9px;height:16px;padding:0 5px">2</span></button>
+      <button class="fmt">⋯</button>
+    </div>
+    <!-- Section Bar -->
+    <div class="sec-bar">
+      <span class="lbl">Section</span>
+      <div style="display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--amber);display:block"></span><select style="font-weight:600;color:var(--text)"><option>3. Collateral</option><option>4. Cash Flow Analysis</option><option selected>5. Borrower Analysis</option><option>6. Valuation Analysis</option></select></div>
+      <span class="lbl" style="margin-left:8px">Style</span>
+      <select><option selected>Standard</option></select>
+      <span class="lbl" style="margin-left:8px">Spacing</span>
+      <select><option selected>1.15</option></select>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--amber);display:block"></span><select style="font-weight:600;color:var(--amber)"><option selected>In Progress</option><option>Ready for Review</option><option>Approved</option></select></div>
+      <button class="btn btn-sm">Save Draft</button>
+      <button class="btn btn-primary btn-sm">Mark Ready for Review</button>
+    </div>
+    <!-- Main Content: Editor + Panel -->
+    <div style="flex:1;display:flex;min-height:0">
+      <div class="sec-rail"><b>1</b><b>2</b><b>4</b><b class="on flag">5</b><b>6</b><b>7</b><b>8</b><b class="flag">9</b></div>
+      <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 18px;background:var(--surface);border-bottom:1px solid var(--border);flex:none"><a href="16-deal-paper.html" style="font-size:11px;color:var(--text-3);text-decoration:none">← Back to Paper</a><span style="font-size:11px;font-weight:700;color:var(--text-4)">§5</span><span style="font-size:13px;font-weight:700">Borrower Analysis</span><span class="badge amber"><span class="dot"></span> evidence incomplete</span><div style="flex:1"></div><span class="badge blue"><span class="dot"></span> Sarah is in §6</span><button class="btn btn-sm">Suggesting</button><button class="btn btn-primary btn-sm">Approve</button></div>
+        <div class="editor-scroll"><div class="sheet">
+          <div class="notice-bar"><div class="t">Facts updated since you opened this section</div><div class="d">Construction cost <span class="was num">$4,703,611</span> → <span class="now num">$4,850,000</span>, from a revised QS report.</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-primary btn-sm">Review the change</button><button class="btn btn-sm">Keep reading</button></div></div>
+          <h3>Borrower and sponsor</h3>
+          <p>The borrower is a special-purpose vehicle established for this project, with the sponsor providing <span class="cite">$7,192,568</span> of equity — <span class="redline">a near 50/50 split of total project cost</span><span class="del"> which is a significant contribution</span>.</p>
+          <div class="scaffold-box"><div class="sh"><span style="font-size:11px;font-weight:600;color:var(--amber)">Suggested structure</span><span class="badge amber" style="font-size:9.5px">no track record provided</span></div><p style="font-size:11.5px;margin:0 0 6px">The sponsor has delivered the following comparable projects:</p><p style="font-size:11px;margin:0 0 3px">— <span class="blank">project</span> · <span class="blank">value</span> · <span class="blank">completed</span></p><p style="font-size:11px;margin:0 0 8px">— <span class="blank">project</span> · <span class="blank">value</span> · <span class="blank">completed</span></p><div style="display:flex;gap:6px"><button class="btn btn-primary btn-sm">Accept structure</button><button class="btn btn-sm">Reject</button><button style="border:none;background:transparent;color:var(--accent-hover);font-size:11px;font-weight:600;cursor:pointer">Request the document →</button></div></div>
+          <p>Financial capacity is supported by statements to <span class="cite">30 June</span>, showing net assets of <span class="cite">$14.2m</span> against contingent liabilities of <span class="cite">$2.1m</span>.</p>
+          <div class="figslot"><div class="figthumb">□</div><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:12px">Figure 2 — Stamped site plan</div><div style="font-size:10.5px;color:var(--text-3);margin-top:3px">Proposed from <b>DA pack, page 3</b>.</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-primary btn-sm">Use it</button><button class="btn btn-sm">Choose another page</button></div></div></div>
+        </div></div>
+      </div>
+      <!-- Right Panel -->
+      <div class="panel">
+        <div style="display:flex;border-bottom:1px solid var(--border)"><div style="flex:1;text-align:center;padding:10px;font-size:11px;font-weight:600;color:var(--text);border-bottom:2px solid var(--accent);margin-bottom:-1px">Context</div><div style="flex:1;text-align:center;padding:10px;font-size:11px;font-weight:600;color:var(--text-3);cursor:pointer">Evidence <span class="badge" style="font-size:9px;height:16px;padding:0 5px;margin-left:4px">5</span></div><div style="flex:1;text-align:center;padding:10px;font-size:11px;font-weight:600;color:var(--text-3);cursor:pointer">AI Suggestions <span class="badge" style="font-size:9px;height:16px;padding:0 5px;margin-left:4px">3</span></div></div>
+        <div class="panel-sec"><div class="panel-sec-title">Section Guidance</div><p style="font-size:11px;margin:0;line-height:1.5;color:var(--text-2)">Describe the security package and key collateral elements supporting the facility.</p><div style="margin-top:8px"><span class="badge amber">Required</span></div></div>
+        <div class="panel-sec"><div class="panel-sec-title">Linked Facts (8)</div>
+          <div style="padding:8px 0;border-bottom:1px dashed var(--border)"><div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:10.5px;color:var(--text-3)">Property Address</div><span class="badge green" style="font-size:9px;height:16px;padding:0 5px"><span class="dot"></span> Confirmed</span></div><div style="font-size:11.5px;font-weight:600;margin-top:2px">111 Main Street, Anytown, USA</div><div style="font-size:10px;color:var(--text-4);margin-top:1px">Source: Appraisal Report (p. 12)</div></div>
+          <div style="padding:8px 0;border-bottom:1px dashed var(--border)"><div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:10.5px;color:var(--text-3)">Appraised Value</div><span class="badge green" style="font-size:9px;height:16px;padding:0 5px"><span class="dot"></span> Confirmed</span></div><div style="font-size:11.5px;font-weight:600;margin-top:2px">$75,000,000</div><div style="font-size:10px;color:var(--text-4);margin-top:1px">Source: Appraisal Report (p. 15)</div></div>
+          <div style="padding:8px 0;border-bottom:1px dashed var(--border)"><div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:10.5px;color:var(--text-3)">Loan Amount</div><span class="badge green" style="font-size:9px;height:16px;padding:0 5px"><span class="dot"></span> Confirmed</span></div><div style="font-size:11.5px;font-weight:600;margin-top:2px">$45,000,000</div><div style="font-size:10px;color:var(--text-4);margin-top:1px">Source: Term Sheet (p. 3)</div></div>
+          <div style="padding:8px 0"><div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:10.5px;color:var(--text-3)">LTV</div><span class="badge green" style="font-size:9px;height:16px;padding:0 5px"><span class="dot"></span> Confirmed</span></div><div style="font-size:11.5px;font-weight:600;margin-top:2px">60%</div><div style="font-size:10px;color:var(--text-4);margin-top:1px">Source: Term Sheet (p. 3)</div></div>
+          <div style="text-align:center;padding:8px 0"><button style="border:none;background:transparent;color:var(--accent-hover);font-size:11px;font-weight:600;cursor:pointer">View all linked facts</button></div>
+        </div>
+        <div class="panel-sec" style="flex:1"><div class="panel-sec-title">Documents Cited in this Section</div>
+          <div style="padding:8px 0;border-bottom:1px dashed var(--border);display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:11px;font-weight:600">Facility Agreement</div><div style="font-size:10px;color:var(--text-3)">Pages 18–24</div></div><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:10px">✓</span></div>
+          <div style="padding:8px 0;border-bottom:1px dashed var(--border);display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:11px;font-weight:600">Appraisal Report</div><div style="font-size:10px;color:var(--text-3)">Pages 10–20</div></div><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:10px">✓</span></div>
+          <div style="padding:8px 0;display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:11px;font-weight:600">Draw Schedule</div><div style="font-size:10px;color:var(--text-3)">Pages 4–6</div></div><span style="width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border-strong);display:grid;place-items:center"></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Status Bar -->
+    <div class="editor-foot"><span>Section 3 of 9</span><span style="margin-left:12px">Last edit by <b style="color:var(--text)">Jordan Smith</b></span><span>Today, 10:32 AM</span><span class="sp"></span><span style="color:var(--green)">✓ All changes saved</span><span style="margin-left:16px;cursor:pointer;color:var(--accent-hover);font-weight:600">Compare with last version</span><span style="margin-left:16px">Word Count: 842 <svg style="width:10px;height:10px;color:var(--text-4);vertical-align:middle"><use href="#i-chevron-r"/></svg></span></div>
+  </div>
+</div>
+</body>
+</html>

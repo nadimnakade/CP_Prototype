@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · AI Jobs — CreditPaper</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-dots-v" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.4A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.6-2.6L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="16.6" r=".7" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-dashboard.html"><svg class="ico"><use href="#i-grid" /></svg> Dashboard</a>
+      <div class="nav-label">User &amp; Tenant</div>
+      <a class="nav-item" href="02-all-users.html"><svg class="ico"><use href="#i-users" /></svg> All Users</a>
+      <a class="nav-item" href="03-domain-customers.html"><svg class="ico"><use href="#i-globe" /></svg> Domain / Customers</a>
+      <a class="nav-item" href="04-subscribers.html"><svg class="ico"><use href="#i-layers" /></svg> Subscribers</a>
+      <div class="nav-label">Credit Paper</div>
+      <a class="nav-item" href="05-pending-credit-papers.html"><svg class="ico"><use href="#i-file" /></svg> Pending Credit Papers</a>
+      <a class="nav-item active" href="#"><svg class="ico"><use href="#i-cpu" /></svg> AI Jobs</a>
+      <div class="nav-label">System</div>
+      <a class="nav-item" href="07-system-usage.html"><svg class="ico"><use href="#i-activity" /></svg> System Usage</a>
+      <a class="nav-item" href="08-audit-logs.html"><svg class="ico"><use href="#i-clipboard" /></svg> Audit Logs</a>
+      <a class="nav-item" href="10-settings.html"><svg class="ico"><use href="#i-cog" /></svg> Settings</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">SA</div>
+      <div class="who">
+        <div class="nm">Super Admin</div>
+        <div class="em">superadmin@creditpaper.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 06 · AI Jobs</div>
+          <h1 class="page-title">AI Jobs</h1>
+          <p class="crumb" style="margin-top:4px">Super Admin <b>/</b> Credit Paper <b>/</b> AI Jobs</p>
+        </div>
+        <div class="head-actions">
+          <div class="select select-auto">
+            <svg class="ico-sm"><use href="#i-calendar" /></svg>
+            Last 30 days
+            <svg class="ico-sm"><use href="#i-chev-d" /></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="grid g-6" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico"><svg class="ico-sm"><use href="#i-cpu" /></svg></div>
+            <div class="stat-label">Total Jobs</div>
+          </div>
+          <div class="stat-value">1,847</div>
+          <div class="stat-delta"><svg class="ico-sm"><use href="#i-arrow-up" /></svg> 234 this month</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico green"><svg class="ico-sm"><use href="#i-check-c" /></svg></div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat-value">1,612</div>
+          <div class="stat-delta">87.3% success rate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico" style="background:var(--red-soft);color:var(--red)"><svg class="ico-sm"><use href="#i-alert" /></svg></div>
+            <div class="stat-label">Failed</div>
+          </div>
+          <div class="stat-value">89</div>
+          <div class="stat-delta down">4.8% failure rate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico amber"><svg class="ico-sm"><use href="#i-activity" /></svg></div>
+            <div class="stat-label">Avg Duration</div>
+          </div>
+          <div class="stat-value sm">4.2 min</div>
+          <div class="stat-delta"><svg class="ico-sm"><use href="#i-arrow-up" /></svg> 15% faster</div>
+        </div>
+      </div>
+
+      <!-- Jobs table -->
+      <div class="card">
+        <div class="card-head" style="gap:10px">
+          <div class="search" style="max-width:420px">
+            <svg class="ico-sm"><use href="#i-search" /></svg>
+            <input class="input" placeholder="Search by job ID, type, deal name…">
+          </div>
+          <div class="row">
+            <div class="select select-auto">All Types <svg class="ico-sm"><use href="#i-chev-d" /></svg></div>
+            <div class="select select-auto">All Status <svg class="ico-sm"><use href="#i-chev-d" /></svg></div>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Job ID</th><th>Type</th><th>Deal / Document</th><th>Tenant</th><th>Triggered By</th><th>Status</th><th>Duration</th><th>Tokens Used</th><th class="right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="strong">#AI-4821</td>
+              <td><span class="badge blue badge-sq">Generate Paper</span></td>
+              <td>Harbor Hotel Project</td>
+              <td>Harbor Ventures</td>
+              <td><span class="row"><span class="av sm c3">MB</span> Michael Brown</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Running</span></td>
+              <td class="num">2m 14s</td>
+              <td class="num">12.4k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4820</td>
+              <td><span class="badge violet badge-sq">Risk Analysis</span></td>
+              <td>Metro Apartments Bridge</td>
+              <td>Metro Developers</td>
+              <td><span class="row"><span class="av sm c4">DL</span> David Lee</span></td>
+              <td><span class="badge green">Completed</span></td>
+              <td class="num">5m 03s</td>
+              <td class="num">28.7k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4819</td>
+              <td><span class="badge blue badge-sq">Generate Paper</span></td>
+              <td>Riverisle Retail Center</td>
+              <td>Riverisle Group</td>
+              <td><span class="row"><span class="av sm c2">SC</span> Sarah Chen</span></td>
+              <td><span class="badge green">Completed</span></td>
+              <td class="num">3m 47s</td>
+              <td class="num">18.2k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4818</td>
+              <td><span class="badge slate badge-sq">Document Parse</span></td>
+              <td>Market Study Q1 2025.pdf</td>
+              <td>Acme Capital Partners</td>
+              <td><span class="row"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td><span class="badge green">Completed</span></td>
+              <td class="num">1m 22s</td>
+              <td class="num">8.1k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4817</td>
+              <td><span class="badge violet badge-sq">Risk Analysis</span></td>
+              <td>Summit Office Building</td>
+              <td>Summit Partners</td>
+              <td><span class="row"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td><span class="badge red"><span class="dot"></span> Failed</span></td>
+              <td class="num">0m 34s</td>
+              <td class="num">3.2k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4816</td>
+              <td><span class="badge blue badge-sq">Generate Paper</span></td>
+              <td>Acme Tower Renovation</td>
+              <td>Acme Capital Partners</td>
+              <td><span class="row"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Queued</span></td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4815</td>
+              <td><span class="badge slate badge-sq">Document Parse</span></td>
+              <td>Financial Model v3.xlsx</td>
+              <td>Sunrise Funds</td>
+              <td><span class="row"><span class="av sm c4">DL</span> David Lee</span></td>
+              <td><span class="badge green">Completed</span></td>
+              <td class="num">2m 55s</td>
+              <td class="num">15.6k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+            <tr>
+              <td class="strong">#AI-4814</td>
+              <td><span class="badge violet badge-sq">Risk Analysis</span></td>
+              <td>Peak Lending Warehouse</td>
+              <td>Peak Lending</td>
+              <td><span class="row"><span class="av sm c5">EW</span> Emily Watson</span></td>
+              <td><span class="badge green">Completed</span></td>
+              <td class="num">6m 12s</td>
+              <td class="num">31.4k</td>
+              <td class="act"><span class="dots"><svg class="ico-sm"><use href="#i-dots-v" /></svg></span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="table-foot">
+          <span class="table-note">Showing 1 to 8 of 1,847 AI jobs</span>
+          <div class="pager">
+            <button class="pg nav"><svg class="ico-sm"><use href="#i-chev-l" /></svg></button>
+            <button class="pg active">1</button><button class="pg">2</button><button class="pg">3</button>
+            <span class="pg gap">…</span><button class="pg">231</button>
+            <button class="pg nav"><svg class="ico-sm"><use href="#i-chev-r" /></svg></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
