@@ -6,7 +6,6 @@
 <title>CreditPaper — Prototype Hub</title>
 <link rel="stylesheet" href="theme.css">
 <style>
-  * { box-sizing: border-box; }
   body {
     margin: 0;
     min-height: 100vh;
@@ -14,104 +13,106 @@
     align-items: center;
     justify-content: center;
     background: var(--page);
-    font-family: var(--sans);
-    color: var(--text);
-    padding: 40px 20px;
+    padding: 48px 20px;
   }
-  .hub {
-    width: 100%;
-    max-width: 720px;
-  }
-  .hub-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+  .hub { width: 100%; max-width: 760px; }
+  .hub-header { text-align: center; margin-bottom: 44px; }
   .hub-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    gap: 11px;
+    margin-bottom: 20px;
+    animation: fadeIn 400ms var(--ease-out) both;
   }
-  .hub-logo .brand-mark { width: 36px; height: 36px; font-size: 16px; }
-  .hub-logo .brand-name { font-size: 20px; letter-spacing: -.3px; }
+  .hub-logo .brand-mark { width: 38px; height: 38px; font-size: 16px; border-radius: 10px; }
+  .hub-logo .brand-name { font-size: 20px; letter-spacing: -0.4px; }
   .hub-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0 0 6px;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    margin: 0 0 7px;
+    animation: fadeIn 400ms var(--ease-out) 80ms both;
   }
   .hub-sub {
     font-size: 14px;
     color: var(--text-3);
     margin: 0;
+    animation: fadeIn 400ms var(--ease-out) 140ms both;
   }
-  .hub-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  .hub-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
   .hub-card {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
+    gap: 18px;
+    padding: 22px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--r-md);
+    border-radius: var(--r-lg);
     text-decoration: none;
     color: inherit;
-    transition: border-color .15s ease, box-shadow .15s ease;
+    transition: all var(--dur) var(--ease-out);
     cursor: pointer;
+    animation: slideUp 400ms var(--ease-out) both;
   }
+  .hub-card:nth-child(1) { animation-delay: 100ms; }
+  .hub-card:nth-child(2) { animation-delay: 150ms; }
+  .hub-card:nth-child(3) { animation-delay: 200ms; }
+  .hub-card:nth-child(4) { animation-delay: 250ms; }
+  .hub-card:nth-child(5) { animation-delay: 300ms; }
   .hub-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 12px rgba(0,179,153,.08);
+    border-color: var(--accent-line);
+    box-shadow: var(--sh-3);
+    transform: translateY(-2px);
   }
+  .hub-card:active { transform: translateY(0); }
   .hub-icon {
-    width: 44px; height: 44px;
-    border-radius: var(--r-sm);
+    width: 46px; height: 46px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: var(--sh-2);
   }
   .hub-icon.teal { background: var(--accent); color: #fff; }
-  .hub-icon.navy { background: var(--navy); color: #fff; }
-  .hub-icon.purple { background: var(--purple); color: #fff; }
+  .hub-icon.dark { background: var(--primary-ink); color: #fff; }
+  .hub-icon.navy { background: #1E3A5F; color: #fff; }
+  .hub-icon.purple { background: var(--violet); color: #fff; }
   .hub-icon svg { width: 20px; height: 20px; }
-  .hub-info { flex: 1; }
+  .hub-info { flex: 1; min-width: 0; }
   .hub-card-title {
     font-size: 15px;
     font-weight: 700;
-    margin: 0 0 3px;
+    margin: 0 0 4px;
+    color: var(--text);
+    letter-spacing: -0.2px;
   }
   .hub-card-desc {
     font-size: 12.5px;
     color: var(--text-3);
-    margin: 0 0 8px;
-    line-height: 1.5;
+    margin: 0 0 10px;
+    line-height: 1.6;
   }
-  .hub-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .hub-links { display: flex; flex-wrap: wrap; gap: 6px; }
   .hub-link {
     font-size: 11px;
     font-weight: 600;
-    color: var(--accent);
-    background: var(--tint);
-    padding: 3px 8px;
-    border-radius: 99px;
+    color: var(--accent-hover);
+    background: var(--accent-softer);
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
     text-decoration: none;
     white-space: nowrap;
+    transition: all var(--dur-fast);
   }
   .hub-link:hover { background: var(--accent); color: #fff; }
   .hub-footer {
     text-align: center;
-    margin-top: 32px;
-    font-size: 11px;
+    margin-top: 36px;
+    font-size: 11.5px;
     color: var(--text-4);
+    font-weight: 500;
   }
 </style>
 </head>
@@ -124,15 +125,14 @@
       <div class="brand-name">CREDITPAPER</div>
     </div>
     <h1 class="hub-title">Prototype Hub</h1>
-    <p class="hub-sub">Click any section to explore the working prototype</p>
+    <p class="hub-sub">44 screens across 3 roles — click any section to explore</p>
   </div>
 
   <div class="hub-grid">
 
-    <!-- Public + Onboarding -->
     <div class="hub-card" onclick="location.href='01-signup.html'">
       <div class="hub-icon teal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
       </div>
       <div class="hub-info">
         <p class="hub-card-title">Public + Onboarding</p>
@@ -147,10 +147,9 @@
       </div>
     </div>
 
-    <!-- Main App: Workspace -->
     <div class="hub-card" onclick="location.href='11-deals.html'">
       <div class="hub-icon navy">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       </div>
       <div class="hub-info">
         <p class="hub-card-title">Main App — Workspace</p>
@@ -168,10 +167,9 @@
       </div>
     </div>
 
-    <!-- Main App: Settings -->
     <div class="hub-card" onclick="location.href='19-settings-profile.html'">
-      <div class="hub-icon purple">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+      <div class="hub-icon dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
       </div>
       <div class="hub-info">
         <p class="hub-card-title">Main App — Settings</p>
@@ -186,10 +184,9 @@
       </div>
     </div>
 
-    <!-- Super Admin -->
     <div class="hub-card" onclick="location.href='superadmin/01-dashboard.html'">
       <div class="hub-icon teal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
       <div class="hub-info">
         <p class="hub-card-title">Super Admin</p>
@@ -205,10 +202,9 @@
       </div>
     </div>
 
-    <!-- Tenant Admin -->
     <div class="hub-card" onclick="location.href='tenant-admin/01-tenant-dashboard.html'">
       <div class="hub-icon purple">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
       <div class="hub-info">
         <p class="hub-card-title">Tenant Admin</p>
@@ -226,7 +222,7 @@
 
   </div>
 
-  <p class="hub-footer">CreditPaper Prototype · 44 screens · Light &amp; Bright Teal Theme</p>
+  <p class="hub-footer">CreditPaper Prototype · 44 screens · Outfit + JetBrains Mono</p>
 </div>
 
 </body>

@@ -6,27 +6,31 @@
 <title>Your Brand — CreditPaper</title>
 <link rel="stylesheet" href="theme.css">
 <style>
-  .onb-page { min-height:100vh; background:var(--page); padding:40px 20px 60px; }
-  .onb-wrap { max-width:520px; margin:0 auto; }
-  .onb-steps { display:flex; align-items:center; gap:0; margin-bottom:32px; }
-  .onb-step { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-4); white-space:nowrap; }
+  .onb-page { min-height: 100vh; background: var(--page); padding: 48px 20px 60px; }
+  .onb-wrap { max-width: 540px; margin: 0 auto; }
+  .onb-steps { display: flex; align-items: center; gap: 0; margin-bottom: 36px; }
+  .onb-step { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--text-4); white-space: nowrap; transition: color var(--dur); }
   .onb-step .n {
-    width:24px; height:24px; border-radius:50%; display:grid; place-items:center;
-    font-size:11px; font-weight:700; background:var(--surface-3); color:var(--text-4); flex:none;
+    width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+    font-size: 11px; font-weight: 700; background: var(--surface-3); color: var(--text-4); flex: none;
+    transition: all var(--dur) var(--ease-out);
   }
-  .onb-step.done { color:var(--text-2); }
-  .onb-step.done .n { background:var(--accent-soft); color:var(--accent-hover); }
-  .onb-step.active { color:var(--text); font-weight:600; }
-  .onb-step.active .n { background:var(--accent); color:#fff; box-shadow:var(--sh-teal); }
-  .onb-line { flex:1; height:1px; background:var(--border); margin:0 10px; min-width:16px; }
-  .onb-title { font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 4px; }
-  .onb-sub { font-size:12.5px; color:var(--text-3); margin:0 0 22px; }
-  .color-swatch { width:28px; height:28px; border-radius:7px; border:1px solid var(--border); display:inline-block; }
+  .onb-step.done { color: var(--text-2); }
+  .onb-step.done .n { background: var(--accent-soft); color: var(--accent-hover); }
+  .onb-step.active { color: var(--text); font-weight: 600; }
+  .onb-step.active .n { background: var(--accent); color: #fff; box-shadow: var(--sh-teal); }
+  .onb-line { flex: 1; height: 1px; background: var(--border); margin: 0 12px; min-width: 16px; }
+  .onb-title { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 5px; }
+  .onb-sub { font-size: 13px; color: var(--text-3); margin: 0 0 26px; line-height: 1.6; }
+  .color-swatch { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); display: inline-block; transition: transform var(--dur-fast); }
+  .color-swatch:hover { transform: scale(1.1); }
   .vocab-badge {
-    display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 9px;
-    border-radius:var(--r-pill); font-size:11px; font-weight:600;
-    background:var(--surface-2); border:1px solid var(--border); color:var(--text-2);
+    display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 10px;
+    border-radius: var(--r-pill); font-size: 11px; font-weight: 600;
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--text-2);
+    transition: all var(--dur-fast);
   }
+  .vocab-badge:hover { border-color: var(--accent-line); background: var(--accent-softer); }
 </style>
 </head>
 <body>
@@ -48,24 +52,24 @@
     <h1 class="onb-title">Your brand</h1>
     <p class="onb-sub">Taken from your website, so the papers look like yours from the start.</p>
 
-    <div class="field" style="margin-bottom:18px">
+    <div class="field" style="margin-bottom:20px">
       <label class="label">Website</label>
-      <input class="input" value="acmecapital.com.au">
+      <input class="input" value="acmecapital.com.au" style="height: 40px">
     </div>
 
     <div class="card">
       <div class="card-head">
         <div>
           <div class="card-title">Found</div>
-          <div style="font-size:11px;color:var(--text-3);margin-top:2px">Read in 9 seconds</div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:3px">Read in 9 seconds</div>
         </div>
         <span class="badge green"><span class="dot"></span> complete</span>
       </div>
       <div class="card-body">
-        <div class="grid g-3" style="margin-bottom:16px">
+        <div class="grid g-3" style="margin-bottom:18px">
           <div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:7px">Palette</div>
-            <div style="display:flex;gap:6px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:8px">Palette</div>
+            <div style="display:flex;gap:7px">
               <span class="color-swatch" style="background:#123B57"></span>
               <span class="color-swatch" style="background:#2E7D74"></span>
               <span class="color-swatch" style="background:#C8A45C"></span>
@@ -73,22 +77,22 @@
             </div>
           </div>
           <div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:7px">Typeface</div>
-            <div style="font-size:16px;font-weight:700">Söhne</div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:8px">Typeface</div>
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.3px">Sohne</div>
           </div>
           <div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:7px">Logo</div>
-            <div class="row" style="gap:7px">
-              <div class="brand-mark" style="background:#123B57;color:#fff;width:24px;height:24px;font-size:11px">A</div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:8px">Logo</div>
+            <div class="row" style="gap:8px">
+              <div class="brand-mark" style="background:#123B57;color:#fff;width:26px;height:26px;font-size:11px;border-radius:7px">A</div>
               <span style="font-size:11px;color:var(--text-3)">acme-mark.svg</span>
             </div>
           </div>
         </div>
 
-        <div style="height:1px;background:var(--border);margin:16px 0"></div>
+        <div style="height:1px;background:var(--border);margin:18px 0"></div>
 
-        <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:8px">Words you use</div>
-        <div class="row wrap" style="gap:6px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-4);margin-bottom:9px">Words you use</div>
+        <div class="row wrap" style="gap:7px">
           <span class="vocab-badge">facility</span>
           <span class="vocab-badge">sponsor</span>
           <span class="vocab-badge">security</span>
@@ -96,11 +100,11 @@
           <span class="vocab-badge">residual stock</span>
         </div>
 
-        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;margin-top:16px;font-size:11.5px;color:var(--text-2)">
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-top:18px;font-size:12px;color:var(--text-2);line-height:1.6">
           <b>Look and vocabulary only.</b> Nothing from your website affects how a paper is written — marketing language has no place in a credit document.
         </div>
       </div>
-      <div style="padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px">
+      <div style="padding:14px 18px;border-top:1px solid var(--border);display:flex;gap:9px">
         <button class="btn btn-primary btn-sm" onclick="location.href='07-onboarding-papers.html'">Looks right, continue</button>
         <button class="btn btn-sm">Adjust</button>
       </div>
