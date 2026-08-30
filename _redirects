@@ -1,0 +1,56 @@
+# CreditPaper Prototype Redirects
+# Netlify processes these top-to-bottom; first match wins.
+
+# Default: redirect root to hub
+/           /index.html       200
+
+# Public pages
+/signup     /01-signup.html        200
+/login      /02-login.html         200
+/forgot     /03-forgot.html        200
+/reset      /04-reset.html         200
+/verify     /05-verify.html        200
+
+# Onboarding
+/onboarding/brand     /06-onboarding-brand.html      200
+/onboarding/papers    /07-onboarding-papers.html      200
+/onboarding/preview   /08-onboarding-preview.html     200
+/onboarding/profile   /09-onboarding-profile.html     200
+/onboarding/plan      /010-onboarding-plan.html       200
+
+# Workspace
+/deals                /11-deals.html                  200
+/deals/new            /12-deal-new.html               200
+/deals/overview       /13-deal-overview.html          200
+/deals/documents      /14-deal-documents.html         200
+/deals/facts          /15-deal-facts.html             200
+/deals/paper          /16-deal-paper.html             200
+/deals/section-review /17-deal-section-review.html    200
+/deals/activity       /18-deal-activity.html          200
+
+# Settings
+/settings/profile     /19-settings-profile.html       200
+/settings/guardrails  /20-settings-guardrails.html    200
+/settings/team        /21-settings-team.html          200
+/settings/billing     /22-settings-billing.html       200
+/settings/account     /23-settings-account.html       200
+
+# Super Admin
+/admin                /superadmin/01-dashboard.html   200
+/admin/users          /superadmin/02-all-users.html   200
+/admin/domains        /superadmin/03-domain-customers.html 200
+/admin/subscribers    /superadmin/04-subscribers.html 200
+/admin/papers         /superadmin/05-pending-credit-papers.html 200
+/admin/ai-jobs        /superadmin/06-ai-jobs.html     200
+/admin/system         /superadmin/07-system-usage.html 200
+/admin/audit          /superadmin/08-audit-logs.html  200
+/admin/settings       /superadmin/10-settings.html    200
+
+# Tenant Admin
+/team                 /tenant-admin/01-tenant-dashboard.html 200
+/team/members         /tenant-admin/02-team-members.html  200
+/team/invite          /tenant-admin/03-invite-user.html   200
+/team/pending         /tenant-admin/04-pending-invitations.html 200
+/team/roles           /tenant-admin/06-roles-permissions.html 200
+/team/settings        /tenant-admin/07-tenant-settings.html 200
+/team/activity        /tenant-admin/08-activity-log.html 200

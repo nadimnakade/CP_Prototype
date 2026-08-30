@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CreditPaper — Prototype Hub</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--page);
+    font-family: var(--sans);
+    color: var(--text);
+    padding: 40px 20px;
+  }
+  .hub {
+    width: 100%;
+    max-width: 720px;
+  }
+  .hub-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .hub-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hub-logo .brand-mark { width: 36px; height: 36px; font-size: 16px; }
+  .hub-logo .brand-name { font-size: 20px; letter-spacing: -.3px; }
+  .hub-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .hub-sub {
+    font-size: 14px;
+    color: var(--text-3);
+    margin: 0;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .hub-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    cursor: pointer;
+  }
+  .hub-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(0,179,153,.08);
+  }
+  .hub-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--r-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hub-icon.teal { background: var(--accent); color: #fff; }
+  .hub-icon.navy { background: var(--navy); color: #fff; }
+  .hub-icon.purple { background: var(--purple); color: #fff; }
+  .hub-icon svg { width: 20px; height: 20px; }
+  .hub-info { flex: 1; }
+  .hub-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .hub-card-desc {
+    font-size: 12.5px;
+    color: var(--text-3);
+    margin: 0 0 8px;
+    line-height: 1.5;
+  }
+  .hub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .hub-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--tint);
+    padding: 3px 8px;
+    border-radius: 99px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .hub-link:hover { background: var(--accent); color: #fff; }
+  .hub-footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 11px;
+    color: var(--text-4);
+  }
+</style>
+</head>
+<body>
+
+<div class="hub">
+  <div class="hub-header">
+    <div class="hub-logo">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <h1 class="hub-title">Prototype Hub</h1>
+    <p class="hub-sub">Click any section to explore the working prototype</p>
+  </div>
+
+  <div class="hub-grid">
+
+    <!-- Public + Onboarding -->
+    <div class="hub-card" onclick="location.href='01-signup.html'">
+      <div class="hub-icon teal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      </div>
+      <div class="hub-info">
+        <p class="hub-card-title">Public + Onboarding</p>
+        <p class="hub-card-desc">Signup, login, forgot/reset password, email verification, brand setup, paper upload, voice preview, profile, and plan selection.</p>
+        <div class="hub-links">
+          <a class="hub-link" href="01-signup.html" onclick="event.stopPropagation()">Signup</a>
+          <a class="hub-link" href="02-login.html" onclick="event.stopPropagation()">Login</a>
+          <a class="hub-link" href="03-forgot.html" onclick="event.stopPropagation()">Forgot</a>
+          <a class="hub-link" href="06-onboarding-brand.html" onclick="event.stopPropagation()">Onboarding</a>
+          <a class="hub-link" href="10-onboarding-plan.html" onclick="event.stopPropagation()">Plan</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App: Workspace -->
+    <div class="hub-card" onclick="location.href='11-deals.html'">
+      <div class="hub-icon navy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="hub-info">
+        <p class="hub-card-title">Main App — Workspace</p>
+        <p class="hub-card-desc">Deals grid, new deal, deal overview, documents, facts, credit paper, section review editor, and activity timeline.</p>
+        <div class="hub-links">
+          <a class="hub-link" href="11-deals.html" onclick="event.stopPropagation()">Deals</a>
+          <a class="hub-link" href="12-deal-new.html" onclick="event.stopPropagation()">New Deal</a>
+          <a class="hub-link" href="13-deal-overview.html" onclick="event.stopPropagation()">Overview</a>
+          <a class="hub-link" href="14-deal-documents.html" onclick="event.stopPropagation()">Documents</a>
+          <a class="hub-link" href="15-deal-facts.html" onclick="event.stopPropagation()">Facts</a>
+          <a class="hub-link" href="16-deal-paper.html" onclick="event.stopPropagation()">Credit Paper</a>
+          <a class="hub-link" href="17-deal-section-review.html" onclick="event.stopPropagation()">Section Review</a>
+          <a class="hub-link" href="18-deal-activity.html" onclick="event.stopPropagation()">Activity</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App: Settings -->
+    <div class="hub-card" onclick="location.href='19-settings-profile.html'">
+      <div class="hub-icon purple">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+      </div>
+      <div class="hub-info">
+        <p class="hub-card-title">Main App — Settings</p>
+        <p class="hub-card-desc">House style, guardrails, team management, billing, and account settings.</p>
+        <div class="hub-links">
+          <a class="hub-link" href="19-settings-profile.html" onclick="event.stopPropagation()">House Style</a>
+          <a class="hub-link" href="20-settings-guardrails.html" onclick="event.stopPropagation()">Guardrails</a>
+          <a class="hub-link" href="21-settings-team.html" onclick="event.stopPropagation()">Team</a>
+          <a class="hub-link" href="22-settings-billing.html" onclick="event.stopPropagation()">Billing</a>
+          <a class="hub-link" href="23-settings-account.html" onclick="event.stopPropagation()">Account</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Super Admin -->
+    <div class="hub-card" onclick="location.href='superadmin/01-dashboard.html'">
+      <div class="hub-icon teal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="hub-info">
+        <p class="hub-card-title">Super Admin</p>
+        <p class="hub-card-desc">Platform dashboard, user management, domains, subscribers, pending papers, AI jobs, system usage, audit logs, and settings.</p>
+        <div class="hub-links">
+          <a class="hub-link" href="superadmin/01-dashboard.html" onclick="event.stopPropagation()">Dashboard</a>
+          <a class="hub-link" href="superadmin/02-all-users.html" onclick="event.stopPropagation()">All Users</a>
+          <a class="hub-link" href="superadmin/03-domain-customers.html" onclick="event.stopPropagation()">Domains</a>
+          <a class="hub-link" href="superadmin/05-pending-credit-papers.html" onclick="event.stopPropagation()">Pending Papers</a>
+          <a class="hub-link" href="superadmin/06-ai-jobs.html" onclick="event.stopPropagation()">AI Jobs</a>
+          <a class="hub-link" href="superadmin/10-settings.html" onclick="event.stopPropagation()">Settings</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tenant Admin -->
+    <div class="hub-card" onclick="location.href='tenant-admin/01-tenant-dashboard.html'">
+      <div class="hub-icon purple">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="hub-info">
+        <p class="hub-card-title">Tenant Admin</p>
+        <p class="hub-card-desc">Team dashboard, member management, invite users, pending invitations, user detail, roles & permissions, tenant settings, and activity log.</p>
+        <div class="hub-links">
+          <a class="hub-link" href="tenant-admin/01-tenant-dashboard.html" onclick="event.stopPropagation()">Dashboard</a>
+          <a class="hub-link" href="tenant-admin/02-team-members.html" onclick="event.stopPropagation()">Team Members</a>
+          <a class="hub-link" href="tenant-admin/03-invite-user.html" onclick="event.stopPropagation()">Invite User</a>
+          <a class="hub-link" href="tenant-admin/06-roles-permissions.html" onclick="event.stopPropagation()">Roles</a>
+          <a class="hub-link" href="tenant-admin/07-tenant-settings.html" onclick="event.stopPropagation()">Settings</a>
+          <a class="hub-link" href="tenant-admin/08-activity-log.html" onclick="event.stopPropagation()">Activity</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="hub-footer">CreditPaper Prototype · 44 screens · Light &amp; Bright Teal Theme</p>
+</div>
+
+</body>
+</html>
