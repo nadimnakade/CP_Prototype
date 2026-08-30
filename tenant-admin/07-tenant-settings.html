@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenant Settings — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.4A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.6-2.6L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="16.6" r=".7" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item active" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 07 · Tenant Settings</div>
+          <h1 class="page-title">Tenant Settings</h1>
+          <p class="page-sub">Manage your organization's settings at Acme Capital Partners.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-primary">
+            <svg class="ico-sm"><use href="#i-check-c"/></svg> Save Changes
+          </button>
+        </div>
+      </div>
+
+      <div class="grid g-settings">
+
+        <!-- Left nav -->
+        <div class="settings-nav">
+          <a class="settings-nav-item active" href="#company">
+            <svg class="ico-sm"><use href="#i-building"/></svg> Company
+          </a>
+          <a class="settings-nav-item" href="#security">
+            <svg class="ico-sm"><use href="#i-shield"/></svg> Security &amp; SSO
+          </a>
+          <a class="settings-nav-item" href="#domain">
+            <svg class="ico-sm"><use href="#i-globe"/></svg> Domain
+          </a>
+          <a class="settings-nav-item" href="#api">
+            <svg class="ico-sm"><use href="#i-key"/></svg> API Keys
+          </a>
+        </div>
+
+        <!-- Content -->
+        <div style="display:flex;flex-direction:column;gap:14px">
+
+          <!-- Company Info -->
+          <div class="card" id="company">
+            <div class="card-head">
+              <div class="card-title">Company Information</div>
+            </div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:14px">
+              <div class="form-row">
+                <div class="field" style="flex:1">
+                  <label class="label">Company Name</label>
+                  <input class="input" type="text" value="Acme Capital Partners">
+                </div>
+                <div class="field" style="flex:1">
+                  <label class="label">Legal Entity Name</label>
+                  <input class="input" type="text" value="Acme Capital Partners LLC">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field" style="flex:1">
+                  <label class="label">Industry</label>
+                  <div class="select">Real Estate Finance<svg class="ico-sm"><use href="#i-chev-d"/></svg></div>
+                </div>
+                <div class="field" style="flex:1">
+                  <label class="label">Company Size</label>
+                  <div class="select">26–50 employees<svg class="ico-sm"><use href="#i-chev-d"/></svg></div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Company Website</label>
+                <input class="input" type="url" value="https://acmecapital.com">
+              </div>
+              <div class="form-row">
+                <div class="field" style="flex:1">
+                  <label class="label">Primary Contact Name</label>
+                  <input class="input" type="text" value="Jordan Smith">
+                </div>
+                <div class="field" style="flex:1">
+                  <label class="label">Primary Contact Email</label>
+                  <input class="input" type="email" value="jordan@acmecapital.com">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security & SSO -->
+          <div class="card" id="security">
+            <div class="card-head">
+              <div class="card-title">Security &amp; SSO</div>
+            </div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:16px">
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-name">Require Two-Factor Authentication</div>
+                  <div class="setting-desc">Enforce 2FA for all team members. Users must set up 2FA on their next login.</div>
+                </div>
+                <div class="toggle"></div>
+              </div>
+
+              <hr class="divider">
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-name">Microsoft SSO (Azure AD)</div>
+                  <div class="setting-desc">Allow team members to sign in with their Microsoft account.</div>
+                </div>
+                <div class="toggle"></div>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-name">Google Workspace SSO</div>
+                  <div class="setting-desc">Allow team members to sign in with their Google Workspace account.</div>
+                </div>
+                <div class="toggle off"></div>
+              </div>
+
+              <hr class="divider">
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-name">Session Timeout</div>
+                  <div class="setting-desc">Automatically sign out inactive users after a period of time.</div>
+                </div>
+                <div class="select select-auto" style="width:140px">30 minutes<svg class="ico-sm"><use href="#i-chev-d"/></svg></div>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-name">Password Policy</div>
+                  <div class="setting-desc">Minimum password requirements for all users.</div>
+                </div>
+                <div class="select select-auto" style="width:200px">8+ chars, mixed case + numbers<svg class="ico-sm"><use href="#i-chev-d"/></svg></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Domain -->
+          <div class="card" id="domain">
+            <div class="card-head">
+              <div class="card-title">Domain Verification</div>
+            </div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:12px">
+              <div class="domain-row">
+                <div class="domain-info">
+                  <span class="domain-name">acmecapital.com</span>
+                  <span class="badge green"><svg class="ico-sm"><use href="#i-check-c"/></svg> Verified</span>
+                </div>
+                <span class="domain-detail">Verified on Jan 15, 2024 · MX + TXT records confirmed</span>
+              </div>
+              <div class="domain-row">
+                <div class="domain-info">
+                  <span class="domain-name">acmecap.com</span>
+                  <span class="badge amber"><span class="dot"></span> Pending</span>
+                </div>
+                <span class="domain-detail">Added Dec 28, 2025 · Waiting for DNS verification</span>
+              </div>
+              <hr class="divider">
+              <button class="btn btn-soft btn-sm">
+                <svg class="ico-sm"><use href="#i-plus"/></svg> Add Another Domain
+              </button>
+            </div>
+          </div>
+
+          <!-- API Keys -->
+          <div class="card" id="api">
+            <div class="card-head">
+              <div class="card-title">API Keys</div>
+              <button class="btn btn-sm btn-primary">
+                <svg class="ico-sm"><use href="#i-plus"/></svg> Generate Key
+              </button>
+            </div>
+            <table class="table">
+              <thead><tr><th>Name</th><th>Key</th><th>Created</th><th>Last Used</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="strong">Production API</td>
+                  <td style="font-family:monospace;font-size:11px;color:var(--text-3)">cp_live_•••••••••k4f2</td>
+                  <td>Jan 12, 2024</td>
+                  <td>2 min ago</td>
+                  <td><button class="dots"><svg class="ico-sm"><use href="#i-trash"/></svg></button></td>
+                </tr>
+                <tr>
+                  <td class="strong">Staging API</td>
+                  <td style="font-family:monospace;font-size:11px;color:var(--text-3)">cp_test_•••••••••m8j1</td>
+                  <td>Mar 5, 2024</td>
+                  <td>Yesterday</td>
+                  <td><button class="dots"><svg class="ico-sm"><use href="#i-trash"/></svg></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.grid.g-settings { grid-template-columns: 180px 1fr; }
+.settings-nav {
+  display: flex; flex-direction: column; gap: 2px; padding-top: 2px;
+}
+.settings-nav-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: var(--r-sm);
+  font-size: 12px; font-weight: 500; color: var(--text-2);
+}
+.settings-nav-item:hover { background: var(--surface-2); color: var(--text); }
+.settings-nav-item.active {
+  background: var(--accent-soft); color: var(--primary-ink); font-weight: 600;
+}
+.settings-nav-item.active svg { color: var(--accent-hover); }
+.form-row { display: flex; gap: 14px; }
+.setting-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.setting-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.setting-desc { font-size: 11px; color: var(--text-3); margin-top: 2px; line-height: 1.5; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+.domain-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.domain-row:last-of-type { border-bottom: 0; }
+.domain-info { display: flex; align-items: center; gap: 10px; }
+.domain-name { font-size: 12.5px; font-weight: 600; }
+.domain-detail { font-size: 11px; color: var(--text-3); }
+</style>
+
+</body>
+</html>

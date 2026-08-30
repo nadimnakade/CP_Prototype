@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activity Log — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.4A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.6-2.6L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="16.6" r=".7" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+  <symbol id="i-log-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item active" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 08 · Activity Log</div>
+          <h1 class="page-title">Activity Log</h1>
+          <p class="page-sub">Track all user actions and system events across your organization.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn">
+            <svg class="ico-sm"><use href="#i-download"/></svg> Export Log
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search">
+          <svg class="ico-sm"><use href="#i-search"/></svg>
+          <input class="input" type="text" placeholder="Search by user, action, or IP…">
+        </div>
+        <div class="select select-auto">
+          <svg class="ico-sm"><use href="#i-filter"/></svg>
+          All Events
+          <svg class="ico-sm"><use href="#i-chevron-d"/></svg>
+        </div>
+        <div class="select select-auto">
+          All Users
+          <svg class="ico-sm"><use href="#i-chevron-d"/></svg>
+        </div>
+        <div class="select select-auto">
+          Last 7 days
+          <svg class="ico-sm"><use href="#i-chevron-d"/></svg>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="grid g-4">
+        <div class="stat mini">
+          <div class="stat-label">Total Events</div>
+          <div class="stat-value" style="font-size:18px;margin:4px 0 0">1,247</div>
+        </div>
+        <div class="stat mini">
+          <div class="stat-label">Auth Events</div>
+          <div class="stat-value" style="font-size:18px;margin:4px 0 0">312</div>
+        </div>
+        <div class="stat mini">
+          <div class="stat-label">User Actions</div>
+          <div class="stat-value" style="font-size:18px;margin:4px 0 0">891</div>
+        </div>
+        <div class="stat mini">
+          <div class="stat-label">System Events</div>
+          <div class="stat-value" style="font-size:18px;margin:4px 0 0">44</div>
+        </div>
+      </div>
+
+      <!-- Activity table -->
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>User</th>
+              <th>Details</th>
+              <th>IP Address</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="event-icon green"><svg class="ico-sm"><use href="#i-check-c"/></svg></span> Invitation accepted</td>
+              <td><span class="who-cell"><span class="av sm c2">SC</span> Sarah Chen</span></td>
+              <td>Joined as Maker</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.42</td>
+              <td>12 min ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon"><svg class="ico-sm"><use href="#i-mail"/></svg></span> Invitation sent</td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>alex.chen@acmecapital.com — Role: Maker</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.1</td>
+              <td>2 hours ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon blue"><svg class="ico-sm"><use href="#i-shield"/></svg></span> Role changed</td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>michael.brown: Maker → Checker</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.1</td>
+              <td>5 hours ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon red"><svg class="ico-sm"><use href="#i-block"/></svg></span> User deactivated</td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>emily.watson — Deactivated</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.1</td>
+              <td>Yesterday at 4:23 PM</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon amber"><svg class="ico-sm"><use href="#i-key"/></svg></span> Password reset requested</td>
+              <td><span class="who-cell"><span class="av sm c4">DL</span> David Lee</span></td>
+              <td>Password reset link sent to email</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.28</td>
+              <td>Yesterday at 2:15 PM</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon green"><svg class="ico-sm"><use href="#i-log-in"/></svg></span> User logged in</td>
+              <td><span class="who-cell"><span class="av sm c3">MB</span> Michael Brown</span></td>
+              <td>Signed in via Microsoft SSO</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.15</td>
+              <td>Yesterday at 9:02 AM</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon"><svg class="ico-sm"><use href="#i-edit"/></svg></span> Settings updated</td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>Updated company name to Acme Capital Partners</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.1</td>
+              <td>2 days ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon"><svg class="ico-sm"><use href="#i-mail"/></svg></span> Invitation sent</td>
+              <td><span class="who-cell"><span class="av sm c2">SC</span> Sarah Chen</span></td>
+              <td>jake.morrison@acmecapital.com — Role: Checker</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.42</td>
+              <td>2 days ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon green"><svg class="ico-sm"><use href="#i-check-c"/></svg></span> User logged in</td>
+              <td><span class="who-cell"><span class="av sm c5">RN</span> Rachel Nguyen</span></td>
+              <td>Signed in via email/password</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.33</td>
+              <td>3 days ago</td>
+            </tr>
+            <tr>
+              <td><span class="event-icon blue"><svg class="ico-sm"><use href="#i-shield"/></svg></span> 2FA enabled</td>
+              <td><span class="who-cell"><span class="av sm c2">SC</span> Sarah Chen</span></td>
+              <td>Two-factor authentication enabled via authenticator app</td>
+              <td style="font-family:monospace;font-size:11px">10.0.0.42</td>
+              <td>3 days ago</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-foot">
+          <span class="table-note">Showing 1 to 10 of 1,247 events</span>
+          <div class="pager">
+            <button class="pg nav">‹</button>
+            <button class="pg active">1</button><button class="pg">2</button><button class="pg">3</button>
+            <span class="pg gap">…</span><button class="pg">125</button>
+            <button class="pg nav">›</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.grid.g-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.stat.mini { padding: 10px 14px; }
+.filters-bar { display: flex; align-items: center; gap: 10px; }
+.filters-bar .search { max-width: 320px; }
+.event-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 8px;
+  background: var(--accent-softer); color: var(--accent-hover);
+  vertical-align: middle; margin-right: 4px;
+}
+.event-icon.green { background: var(--green-soft); color: var(--green); }
+.event-icon.blue { background: var(--blue-soft); color: var(--blue); }
+.event-icon.amber { background: var(--amber-soft); color: var(--amber); }
+.event-icon.red { background: var(--red-soft); color: var(--red); }
+.who-cell { display: flex; align-items: center; gap: 6px; font-size: 11.5px; }
+</style>
+
+</body>
+</html>

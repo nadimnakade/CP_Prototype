@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Members — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-dots-v" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item active" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 02 · Team Members</div>
+          <h1 class="page-title">Team Members</h1>
+          <p class="page-sub">38 members · 32 active · 5 pending invitations</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn">
+            <svg class="ico-sm"><use href="#i-download"/></svg> Export CSV
+          </button>
+          <button class="btn btn-primary" onclick="location.href='03-invite-user.html'">
+            <svg class="ico-sm"><use href="#i-user-plus"/></svg> Invite User
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search">
+          <svg class="ico-sm"><use href="#i-search"/></svg>
+          <input class="input" type="text" placeholder="Search by name, email, or role…">
+        </div>
+        <div class="select select-auto">
+          All Roles
+          <svg class="ico-sm"><use href="#i-chev-d"/></svg>
+        </div>
+        <div class="select select-auto">
+          All Status
+          <svg class="ico-sm"><use href="#i-chev-d"/></svg>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>2FA</th>
+              <th>Last Login</th>
+              <th>Joined</th>
+              <th style="width:40px"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm">JS</span><span><span class="nm">Jordan Smith</span><br><span class="em">jordan@acmecapital.com</span></span></span></td>
+              <td><span class="badge">Admin</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>2 min ago</td>
+              <td>Jan 12, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c2">SC</span><span><span class="nm">Sarah Chen</span><br><span class="em">sarah.chen@acmecapital.com</span></span></span></td>
+              <td><span class="badge blue">Checker</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>18 min ago</td>
+              <td>Mar 5, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c3">MB</span><span><span class="nm">Michael Brown</span><br><span class="em">michael.brown@acmecapital.com</span></span></span></td>
+              <td><span class="badge blue">Checker</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>1 hour ago</td>
+              <td>Feb 18, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm">DL</span><span><span class="nm">David Lee</span><br><span class="em">david.lee@acmecapital.com</span></span></span></td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td style="color:var(--amber);font-weight:600;font-size:11px">Not set</td>
+              <td>3 hours ago</td>
+              <td>Apr 2, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c5">RN</span><span><span class="nm">Rachel Nguyen</span><br><span class="em">rachel.nguyen@acmecapital.com</span></span></span></td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>4 hours ago</td>
+              <td>May 1, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c4">TL</span><span><span class="nm">Tom Lee</span><br><span class="em">tom.lee@acmecapital.com</span></span></span></td>
+              <td><span class="badge slate">Viewer</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td style="color:var(--amber);font-weight:600;font-size:11px">Not set</td>
+              <td>Yesterday</td>
+              <td>Jun 10, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c6">KP</span><span><span class="nm">Karen Park</span><br><span class="em">karen.park@acmecapital.com</span></span></span></td>
+              <td><span class="badge">Admin</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>Yesterday</td>
+              <td>Jan 12, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c2">JM</span><span><span class="nm">James Miller</span><br><span class="em">james.miller@acmecapital.com</span></span></span></td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>2 days ago</td>
+              <td>Jul 8, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c4">EW</span><span><span class="nm">Emily Watson</span><br><span class="em">emily.watson@acmecapital.com</span></span></span></td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="badge red"><span class="dot"></span> Deactivated</span></td>
+              <td><svg class="ico-sm" style="color:var(--green)"><use href="#i-check-c"/></svg> Enabled</td>
+              <td>5 days ago</td>
+              <td>Mar 22, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+            <tr>
+              <td class="strong"><span class="who-cell"><span class="av sm c3">AH</span><span><span class="nm">Alex Henderson</span><br><span class="em">alex.henderson@acmecapital.com</span></span></span></td>
+              <td><span class="badge slate">Viewer</span></td>
+              <td><span class="badge green"><span class="dot"></span> Active</span></td>
+              <td style="color:var(--amber);font-weight:600;font-size:11px">Not set</td>
+              <td>3 days ago</td>
+              <td>Aug 14, 2024</td>
+              <td><button class="dots"><svg class="ico-sm"><use href="#i-dots-v"/></svg></button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-foot">
+          <span class="table-note">Showing 1 to 10 of 38 members</span>
+          <div class="pager">
+            <button class="pg nav"><svg class="ico-sm"><use href="#i-chev-l"/></svg></button>
+            <button class="pg active">1</button><button class="pg">2</button><button class="pg">3</button><button class="pg">4</button>
+            <button class="pg nav"><svg class="ico-sm"><use href="#i-chev-r"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.filters-bar { display: flex; align-items: center; gap: 10px; }
+.filters-bar .search { max-width: 320px; }
+.who-cell { display: flex; align-items: center; gap: 9px; }
+.who-cell .nm { font-size: 12px; font-weight: 600; line-height: 1.3; }
+.who-cell .em { font-size: 10.5px; color: var(--text-3); line-height: 1.3; }
+</style>
+
+</body>
+</html>

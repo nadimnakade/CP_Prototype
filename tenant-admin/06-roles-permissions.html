@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roles &amp; Permissions — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item active" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 06 · Roles &amp; Permissions</div>
+          <h1 class="page-title">Roles &amp; Permissions</h1>
+          <p class="page-sub">Define what each role can access and do within your organization.</p>
+        </div>
+      </div>
+
+      <!-- Info banner -->
+      <div class="info-banner" style="background:var(--accent-softer);color:var(--primary-ink)">
+        <svg class="ico-sm"><use href="#i-info"/></svg>
+        <div>
+          <strong>Built-in roles:</strong> Admin, Maker, Checker, and Viewer are system-defined roles and cannot be deleted. You can create custom roles with specific permission sets.
+        </div>
+      </div>
+
+      <!-- Role cards -->
+      <div class="grid g-4">
+        <div class="role-card-full">
+          <div class="role-card-top">
+            <div class="role-icon" style="background:var(--accent-soft);color:var(--accent-hover)"><svg class="ico"><use href="#i-shield"/></svg></div>
+            <div>
+              <div class="role-name">Admin</div>
+              <div class="role-desc">Full system access</div>
+            </div>
+            <span class="badge">4 members</span>
+          </div>
+          <div class="role-perms">
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Manage users</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Create papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Review papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Tenant settings</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> View all deals</span>
+          </div>
+          <div class="role-actions">
+            <button class="btn btn-sm">View Members</button>
+          </div>
+        </div>
+
+        <div class="role-card-full">
+          <div class="role-card-top">
+            <div class="role-icon" style="background:var(--violet-soft);color:var(--violet)"><svg class="ico"><use href="#i-edit"/></svg></div>
+            <div>
+              <div class="role-name">Maker</div>
+              <div class="role-desc">Create &amp; edit papers</div>
+            </div>
+            <span class="badge violet">16 members</span>
+          </div>
+          <div class="role-perms">
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Create papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Edit own papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Upload documents</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Review papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Manage users</span>
+          </div>
+          <div class="role-actions">
+            <button class="btn btn-sm">View Members</button>
+          </div>
+        </div>
+
+        <div class="role-card-full">
+          <div class="role-card-top">
+            <div class="role-icon" style="background:var(--blue-soft);color:var(--blue)"><svg class="ico"><use href="#i-check"/></svg></div>
+            <div>
+              <div class="role-name">Checker</div>
+              <div class="role-desc">Review &amp; approve</div>
+            </div>
+            <span class="badge blue">12 members</span>
+          </div>
+          <div class="role-perms">
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Review papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Approve papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> Add comments</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Create papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Manage users</span>
+          </div>
+          <div class="role-actions">
+            <button class="btn btn-sm">View Members</button>
+          </div>
+        </div>
+
+        <div class="role-card-full">
+          <div class="role-card-top">
+            <div class="role-icon" style="background:var(--slate-soft);color:var(--slate)"><svg class="ico"><use href="#i-info"/></svg></div>
+            <div>
+              <div class="role-name">Viewer</div>
+              <div class="role-desc">Read-only access</div>
+            </div>
+            <span class="badge slate">6 members</span>
+          </div>
+          <div class="role-perms">
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> View papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-check"/></svg> View documents</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Create papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Review papers</span>
+            <span class="perm"><svg class="ico-sm"><use href="#i-x"/></svg> Manage users</span>
+          </div>
+          <div class="role-actions">
+            <button class="btn btn-sm">View Members</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full permissions matrix -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Full Permissions Matrix</div>
+          <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-edit"/></svg> Edit Permissions</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th style="text-align:center;width:100px">Admin</th>
+              <th style="text-align:center;width:100px">Maker</th>
+              <th style="text-align:center;width:100px">Checker</th>
+              <th style="text-align:center;width:100px">Viewer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="strong" colspan="5" style="background:var(--surface-2);font-size:11px;letter-spacing:.04em">USER MANAGEMENT</td></tr>
+            <tr><td>Invite new users</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Remove users</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Change user roles</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Reset user passwords</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Deactivate users</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+
+            <tr><td class="strong" colspan="5" style="background:var(--surface-2);font-size:11px;letter-spacing:.04em">CREDIT PAPERS</td></tr>
+            <tr><td>Create new credit papers</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Edit credit paper content</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Review &amp; approve papers</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-yes">✓</td><td class="perm-no">—</td></tr>
+            <tr><td>Add comments to papers</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-yes">✓</td><td class="perm-no">—</td></tr>
+            <tr><td>Delete credit papers</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+
+            <tr><td class="strong" colspan="5" style="background:var(--surface-2);font-size:11px;letter-spacing:.04em">DOCUMENTS</td></tr>
+            <tr><td>Upload documents</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-no">—</td></tr>
+            <tr><td>Download documents</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td></tr>
+            <tr><td>Delete documents</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+
+            <tr><td class="strong" colspan="5" style="background:var(--surface-2);font-size:11px;letter-spacing:.04em">TENANT</td></tr>
+            <tr><td>View tenant settings</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td><td class="perm-yes">✓</td></tr>
+            <tr><td>Edit tenant settings</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>Manage billing</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+            <tr><td>View audit logs</td><td class="perm-yes">✓</td><td class="perm-no">—</td><td class="perm-no">—</td><td class="perm-no">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.info-banner {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; border-radius: var(--r);
+  font-size: 11.5px; line-height: 1.5;
+}
+.info-banner svg { flex: none; margin-top: 1px; }
+.role-card-full {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-2);
+  display: flex; flex-direction: column;
+}
+.role-card-top {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.role-icon {
+  width: 36px; height: 36px; border-radius: var(--r);
+  display: grid; place-items: center; flex: none;
+}
+.role-name { font-size: 13px; font-weight: 700; }
+.role-desc { font-size: 11px; color: var(--text-3); }
+.role-card-top .badge { margin-left: auto; }
+.role-perms {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 12px 16px; flex: 1;
+}
+.perm {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--text-2);
+}
+.perm .ico-sm { color: var(--green); }
+.perm .ico-sm:last-child { color: var(--text-4); }
+.role-actions { padding: 10px 16px; border-top: 1px solid var(--border); }
+.perm-yes { text-align: center; color: var(--green); font-weight: 700; }
+.perm-no { text-align: center; color: var(--text-4); }
+</style>
+
+</body>
+</html>

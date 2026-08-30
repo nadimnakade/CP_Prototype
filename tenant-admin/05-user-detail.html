@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Detail — David Lee — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.4A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.6-2.6L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="16.6" r=".7" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item active" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <!-- Breadcrumb -->
+      <div class="crumb">
+        <a href="02-team-members.html">Team Members</a>
+        <svg class="ico-sm"><use href="#i-chevron-right"/></svg>
+        <b>David Lee</b>
+      </div>
+
+      <div class="page-head">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div class="av lg c4" style="width:48px;height:48px;font-size:16px;border:3px solid var(--surface);box-shadow:var(--sh-2)">DL</div>
+          <div>
+            <h1 class="page-title" style="margin:0">David Lee</h1>
+            <p class="page-sub">david.lee@acmecapital.com · Maker · Joined Apr 2, 2024</p>
+          </div>
+          <span class="badge green" style="margin-left:8px"><span class="dot"></span> Active</span>
+        </div>
+        <div class="head-actions">
+          <button class="btn">
+            <svg class="ico-sm"><use href="#i-mail"/></svg> Send Email
+          </button>
+          <button class="btn btn-soft" style="color:var(--amber)">
+            <svg class="ico-sm"><use href="#i-key"/></svg> Reset Password
+          </button>
+          <button class="btn" style="color:var(--red)">
+            <svg class="ico-sm"><use href="#i-block"/></svg> Deactivate
+          </button>
+        </div>
+      </div>
+
+      <div class="grid g-detail">
+
+        <!-- Left column — profile + settings -->
+        <div style="display:flex;flex-direction:column;gap:14px">
+
+          <!-- Profile info -->
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Profile Information</div>
+              <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-edit"/></svg> Edit</button>
+            </div>
+            <div class="card-body">
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <div class="detail-label">Full Name</div>
+                  <div class="detail-value">David Lee</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Email</div>
+                  <div class="detail-value">david.lee@acmecapital.com</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Phone</div>
+                  <div class="detail-value">+1 (555) 234-5678</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Department</div>
+                  <div class="detail-value">Credit Analysis</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Job Title</div>
+                  <div class="detail-value">Senior Analyst</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Location</div>
+                  <div class="detail-value">New York, NY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role & Access -->
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Role &amp; Access</div>
+              <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-edit"/></svg> Change Role</button>
+            </div>
+            <div class="card-body">
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <div class="detail-label">Current Role</div>
+                  <div class="detail-value"><span class="badge violet">Maker</span></div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">2FA Status</div>
+                  <div class="detail-value" style="color:var(--amber);font-weight:600">Not configured</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Last Login</div>
+                  <div class="detail-value">3 hours ago (10.0.0.1)</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Invited By</div>
+                  <div class="detail-value">Jordan Smith</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Danger zone -->
+          <div class="card" style="border-color:var(--red-soft)">
+            <div class="card-head" style="background:var(--red-soft)">
+              <div class="card-title" style="color:var(--red)">Danger Zone</div>
+            </div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--text)">Deactivate User</div>
+                  <div style="font-size:11px;color:var(--text-3);margin-top:2px">User will lose all access immediately. Their data will be preserved.</div>
+                </div>
+                <button class="btn btn-sm" style="border-color:var(--red);color:var(--red)">
+                  <svg class="ico-sm"><use href="#i-block"/></svg> Deactivate
+                </button>
+              </div>
+              <hr style="border:none;border-top:1px solid var(--border);margin:12px 0">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--red)">Delete User Permanently</div>
+                  <div style="font-size:11px;color:var(--text-3);margin-top:2px">This action cannot be undone. All user data will be permanently deleted.</div>
+                </div>
+                <button class="btn btn-sm" style="background:var(--red);border-color:var(--red);color:#fff">
+                  <svg class="ico-sm"><use href="#i-trash"/></svg> Delete
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right column — activity + stats -->
+        <div style="display:flex;flex-direction:column;gap:14px">
+
+          <!-- Stats row -->
+          <div class="grid g-3" style="margin:0">
+            <div class="stat" style="padding:12px 14px">
+              <div class="stat-label">Credit Papers Created</div>
+              <div class="stat-value" style="margin:4px 0 0;font-size:18px">12</div>
+            </div>
+            <div class="stat" style="padding:12px 14px">
+              <div class="stat-label">Documents Uploaded</div>
+              <div class="stat-value" style="margin:4px 0 0;font-size:18px">47</div>
+            </div>
+            <div class="stat" style="padding:12px 14px">
+              <div class="stat-label">Login Count</div>
+              <div class="stat-value" style="margin:4px 0 0;font-size:18px">284</div>
+            </div>
+          </div>
+
+          <!-- Recent activity -->
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Recent Activity</div>
+              <a class="link" href="08-activity-log.html">View All</a>
+            </div>
+            <div class="card-body" style="padding:6px 16px 10px">
+              <div class="feed">
+                <div class="feed-item">
+                  <div class="feed-ico green"><svg class="ico-sm"><use href="#i-check-c"/></svg></div>
+                  <div class="feed-body">
+                    <div class="feed-title">Approved credit paper</div>
+                    <div class="feed-meta">Riverside Mall Project — §7 Risk &amp; Mitigants</div>
+                  </div>
+                  <div class="feed-time">2 hours ago</div>
+                </div>
+                <div class="feed-item">
+                  <div class="feed-ico"><svg class="ico-sm"><use href="#i-edit"/></svg></div>
+                  <div class="feed-body">
+                    <div class="feed-title">Edited section</div>
+                    <div class="feed-meta">Riverside Mall Project — §5 Borrower Analysis</div>
+                  </div>
+                  <div class="feed-time">5 hours ago</div>
+                </div>
+                <div class="feed-item">
+                  <div class="feed-ico blue"><svg class="ico-sm"><use href="#i-file"/></svg></div>
+                  <div class="feed-body">
+                    <div class="feed-title">Uploaded document</div>
+                    <div class="feed-meta">Pro Forma Q4 2025.xlsx</div>
+                  </div>
+                  <div class="feed-time">Yesterday</div>
+                </div>
+                <div class="feed-item">
+                  <div class="feed-ico"><svg class="ico-sm"><use href="#i-edit"/></svg></div>
+                  <div class="feed-body">
+                    <div class="feed-title">Created credit paper</div>
+                    <div class="feed-meta">Downtown Office Tower — New construction loan</div>
+                  </div>
+                  <div class="feed-time">2 days ago</div>
+                </div>
+                <div class="feed-item">
+                  <div class="feed-ico blue"><svg class="ico-sm"><use href="#i-file"/></svg></div>
+                  <div class="feed-body">
+                    <div class="feed-title">Uploaded document</div>
+                    <div class="feed-meta">Site Photos — Phase 2.zip</div>
+                  </div>
+                  <div class="feed-time">3 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assigned deals -->
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Assigned Deals</div>
+              <span class="badge">4 active</span>
+            </div>
+            <table class="table compact">
+              <thead><tr><th>Deal</th><th>Status</th><th>Last Active</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Riverside Mall Project</td><td><span class="badge amber">In Review</span></td><td>2 hours ago</td></tr>
+                <tr><td class="strong">Downtown Office Tower</td><td><span class="badge violet">Draft</span></td><td>2 days ago</td></tr>
+                <tr><td class="strong">Metro Apartments</td><td><span class="badge">Active</span></td><td>4 days ago</td></tr>
+                <tr><td class="strong">Summit Office Building</td><td><span class="badge green">Approved</span></td><td>1 week ago</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.grid.g-detail { grid-template-columns: 1.1fr 1fr; }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.detail-item { display: flex; flex-direction: column; gap: 3px; }
+.detail-label { font-size: 10.5px; font-weight: 600; color: var(--text-4); text-transform: uppercase; letter-spacing: .05em; }
+.detail-value { font-size: 12.5px; color: var(--text); font-weight: 500; }
+</style>
+
+</body>
+</html>

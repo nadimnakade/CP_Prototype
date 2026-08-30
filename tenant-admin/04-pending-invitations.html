@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pending Invitations — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-dots-v" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.4A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.6-2.6L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="16.6" r=".7" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============ App Sidebar ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">CREDITPAPER</div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="01-tenant-dashboard.html"><svg class="ico"><use href="#i-grid"/></svg> Dashboard</a>
+      <div class="nav-label">User Management</div>
+      <a class="nav-item" href="02-team-members.html"><svg class="ico"><use href="#i-users"/></svg> Team Members</a>
+      <a class="nav-item" href="03-invite-user.html"><svg class="ico"><use href="#i-user-plus"/></svg> Invite User</a>
+      <a class="nav-item active" href="04-pending-invitations.html"><svg class="ico"><use href="#i-mail"/></svg> Pending Invitations</a>
+      <div class="nav-label">Access Control</div>
+      <a class="nav-item" href="06-roles-permissions.html"><svg class="ico"><use href="#i-shield"/></svg> Roles &amp; Permissions</a>
+      <a class="nav-item" href="07-tenant-settings.html"><svg class="ico"><use href="#i-cog"/></svg> Tenant Settings</a>
+      <div class="nav-label">Activity</div>
+      <a class="nav-item" href="08-activity-log.html"><svg class="ico"><use href="#i-clipboard"/></svg> Activity Log</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="av lg">JS</div>
+      <div class="who">
+        <div class="nm">Jordan Smith</div>
+        <div class="em">jordan@acmecapital.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <div class="canvas">
+
+      <div class="page-head">
+        <div>
+          <div class="screen-tag"><i></i> 04 · Pending Invitations</div>
+          <h1 class="page-title">Pending Invitations</h1>
+          <p class="page-sub">5 invitations pending · 2 expiring within 48 hours</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-primary" onclick="location.href='03-invite-user.html'">
+            <svg class="ico-sm"><use href="#i-user-plus"/></svg> New Invitation
+          </button>
+        </div>
+      </div>
+
+      <!-- Warning banner for expiring -->
+      <div class="warn-banner">
+        <svg class="ico-sm"><use href="#i-alert"/></svg>
+        <div>
+          <strong>2 invitations expiring soon.</strong> Tom Wright and Sarah Park's invitations expire within 48 hours. Consider resending before they expire.
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">All Pending Invitations</div>
+          <div class="search" style="max-width:240px">
+            <svg class="ico-sm"><use href="#i-search"/></svg>
+            <input class="input" type="text" placeholder="Search invitations…">
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Sent By</th>
+              <th>Sent</th>
+              <th>Expires</th>
+              <th>Status</th>
+              <th style="width:100px">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="strong">alex.chen@acmecapital.com</td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>Dec 28, 2025</td>
+              <td><span class="expiry-ok">Jan 4, 2026</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Pending</span></td>
+              <td>
+                <div class="action-group">
+                  <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-refresh"/></svg> Resend</button>
+                  <button class="btn btn-sm" style="color:var(--red)"><svg class="ico-sm"><use href="#i-x"/></svg> Cancel</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="strong">nina.patel@acmecapital.com</td>
+              <td><span class="badge blue">Checker</span></td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>Dec 27, 2025</td>
+              <td><span class="expiry-ok">Jan 3, 2026</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Pending</span></td>
+              <td>
+                <div class="action-group">
+                  <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-refresh"/></svg> Resend</button>
+                  <button class="btn btn-sm" style="color:var(--red)"><svg class="ico-sm"><use href="#i-x"/></svg> Cancel</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="strong">tom.wright@acmecapital.com</td>
+              <td><span class="badge slate">Viewer</span></td>
+              <td><span class="who-cell"><span class="av sm">KP</span> Karen Park</span></td>
+              <td>Dec 25, 2025</td>
+              <td><span class="expiry-warn">Jan 1, 2026 ⚠</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Pending</span></td>
+              <td>
+                <div class="action-group">
+                  <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-refresh"/></svg> Resend</button>
+                  <button class="btn btn-sm" style="color:var(--red)"><svg class="ico-sm"><use href="#i-x"/></svg> Cancel</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="strong">sarah.park@acmecapital.com</td>
+              <td><span class="badge violet">Maker</span></td>
+              <td><span class="who-cell"><span class="av sm">JS</span> Jordan Smith</span></td>
+              <td>Dec 24, 2025</td>
+              <td><span class="expiry-warn">Dec 31, 2025 ⚠</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Pending</span></td>
+              <td>
+                <div class="action-group">
+                  <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-refresh"/></svg> Resend</button>
+                  <button class="btn btn-sm" style="color:var(--red)"><svg class="ico-sm"><use href="#i-x"/></svg> Cancel</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="strong">jake.morrison@acmecapital.com</td>
+              <td><span class="badge blue">Checker</span></td>
+              <td><span class="who-cell"><span class="av sm c2">SC</span> Sarah Chen</span></td>
+              <td>Dec 22, 2025</td>
+              <td><span class="expiry-ok">Jan 7, 2026</span></td>
+              <td><span class="badge amber"><span class="dot"></span> Pending</span></td>
+              <td>
+                <div class="action-group">
+                  <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-refresh"/></svg> Resend</button>
+                  <button class="btn btn-sm" style="color:var(--red)"><svg class="ico-sm"><use href="#i-x"/></svg> Cancel</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-foot">
+          <span class="table-note">Showing 1 to 5 of 5 pending invitations</span>
+          <div class="pager"><button class="pg active">1</button></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<style>
+.warn-banner {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; border-radius: var(--r);
+  background: var(--amber-soft); color: var(--amber);
+  font-size: 11.5px; line-height: 1.5;
+}
+.warn-banner svg { flex: none; margin-top: 1px; }
+.expiry-ok { font-size: 11.5px; color: var(--text-2); }
+.expiry-warn { font-size: 11.5px; color: var(--red); font-weight: 600; }
+.action-group { display: flex; gap: 4px; }
+.who-cell { display: flex; align-items: center; gap: 6px; font-size: 11.5px; }
+</style>
+
+</body>
+</html>
