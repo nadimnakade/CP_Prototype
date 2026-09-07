@@ -1822,6 +1822,103 @@ textarea.input {
 .stagger-5 { animation-delay: 250ms; }
 .stagger-6 { animation-delay: 300ms; }
 
+/* ============================= Dark Sidebar =============================
+   The left app navigation rail is dark for contrast against the light canvas.
+   ========================================================================== */
+
+.sidebar, .text-sidebar, .app-sidebar, .app-text-sidebar, .icon-sidebar,
+.deal-sidebar, .settings-sidebar {
+  background: #0E1526;
+  border-right-color: #1E293B;
+}
+
+/* Brand */
+.sidebar .brand, .text-sidebar .brand, .app-sidebar .brand,
+.app-text-sidebar .brand, .deal-sidebar .brand, .settings-sidebar .brand {
+  border-bottom-color: #1E293B;
+}
+.sidebar .brand-name, .text-sidebar .brand-name, .app-sidebar .brand-name,
+.app-text-sidebar .brand-name, .deal-sidebar .brand-name, .settings-sidebar .brand-name {
+  color: #F1F5F9;
+}
+
+/* Group labels */
+.sidebar .nav-label, .text-sidebar .nav-label, .app-text-sidebar .nav-label,
+.deal-sidebar .nav-label, .settings-sidebar .nav-label {
+  color: #5B6B84;
+}
+
+/* Nav items */
+.sidebar .nav-item, .text-sidebar .nav-item, .app-sidebar .nav-item,
+.app-text-sidebar .nav-item, .deal-sidebar .nav-item, .settings-sidebar .nav-item,
+.icon-sidebar .nav-item {
+  color: #A6B4C9;
+}
+.sidebar .nav-item svg, .text-sidebar .nav-item svg, .app-sidebar .nav-item svg,
+.app-text-sidebar .nav-item svg, .deal-sidebar .nav-item svg, .settings-sidebar .nav-item svg,
+.icon-sidebar .nav-item svg {
+  color: #6E7F99;
+}
+
+.sidebar .nav-item:hover, .text-sidebar .nav-item:hover, .app-sidebar .nav-item:hover,
+.app-text-sidebar .nav-item:hover, .deal-sidebar .nav-item:hover, .settings-sidebar .nav-item:hover,
+.icon-sidebar .nav-item:hover {
+  background: rgba(255,255,255,0.07);
+  color: #E8EEF7;
+}
+.sidebar .nav-item:hover svg, .text-sidebar .nav-item:hover svg, .app-sidebar .nav-item:hover svg,
+.app-text-sidebar .nav-item:hover svg, .deal-sidebar .nav-item:hover svg, .settings-sidebar .nav-item:hover svg,
+.icon-sidebar .nav-item:hover svg {
+  color: #CBD5E1;
+}
+
+/* Active nav item — teal tint on dark */
+.sidebar .nav-item.active, .text-sidebar .nav-item.active, .app-sidebar .nav-item.active,
+.app-text-sidebar .nav-item.active, .deal-sidebar .nav-item.active, .settings-sidebar .nav-item.active,
+.icon-sidebar .nav-item.active {
+  background: rgba(20,184,166,0.16);
+  color: #5EEAD4;
+}
+.sidebar .nav-item.active svg, .text-sidebar .nav-item.active svg, .app-sidebar .nav-item.active svg,
+.app-text-sidebar .nav-item.active svg, .deal-sidebar .nav-item.active svg, .settings-sidebar .nav-item.active svg,
+.icon-sidebar .nav-item.active svg {
+  color: #2DD4BF;
+}
+.sidebar .nav-item.active::before, .text-sidebar .nav-item.active::before,
+.app-sidebar .nav-item.active::before, .app-text-sidebar .nav-item.active::before,
+.deal-sidebar .nav-item.active::before, .settings-sidebar .nav-item.active::before,
+.icon-sidebar .nav-item.active::before {
+  background: #2DD4BF;
+  box-shadow: 0 0 8px rgba(45,212,191,.5);
+}
+
+/* Deal sidebar sub-items */
+.deal-sidebar .sub-item { color: #8FA0B8; }
+.deal-sidebar .sub-item .sec-num { color: #5B6B84; }
+.deal-sidebar .sub-item:hover { background: rgba(255,255,255,0.07); color: #E8EEF7; }
+.deal-sidebar .sub-item.active {
+  background: rgba(20,184,166,0.14);
+  color: #5EEAD4;
+}
+.deal-sidebar .sub-item.active .sec-num { color: #2DD4BF; }
+
+/* User card at the bottom */
+.sidebar .sidebar-user, .text-sidebar .sidebar-user, .app-text-sidebar .sidebar-user,
+.deal-sidebar .sidebar-user, .settings-sidebar .sidebar-user {
+  background: rgba(255,255,255,0.05);
+  border-color: #1E293B;
+}
+.sidebar .sidebar-user .nm, .text-sidebar .sidebar-user .nm,
+.app-text-sidebar .sidebar-user .nm, .deal-sidebar .sidebar-user .nm,
+.settings-sidebar .sidebar-user .nm {
+  color: #E8EEF7;
+}
+.sidebar .sidebar-user .em, .text-sidebar .sidebar-user .em,
+.app-text-sidebar .sidebar-user .em, .deal-sidebar .sidebar-user .em,
+.settings-sidebar .sidebar-user .em {
+  color: #8FA0B8;
+}
+
 /* ============================= Responsive ============================= */
 
 @media (max-width: 1024px) {

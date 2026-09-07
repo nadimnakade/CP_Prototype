@@ -1,28 +1,65 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 203, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "C:\Python314\Lib\http\server.py", line 1432, in <module>
-    test(
-    ~~~~^
-        HandlerClass=handler_class,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<6 lines>...
-        tls_password=tls_key_password,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Python314\Lib\http\server.py", line 1348, in test
-    server = ServerClass(addr, HandlerClass)
-  File "C:\Python314\Lib\socketserver.py", line 457, in __init__
-    self.server_bind()
-    ~~~~~~~~~~~~~~~~^^
-  File "C:\Python314\Lib\http\server.py", line 1419, in server_bind
-    return super().server_bind()
-           ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Python314\Lib\http\server.py", line 148, in server_bind
-    socketserver.TCPServer.server_bind(self)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "C:\Python314\Lib\socketserver.py", line 478, in server_bind
-    self.socket.bind(self.server_address)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+127.0.0.1 - - [04/Sep/2026 18:09:46] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:09:49] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:09:51] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:09:51] "GET /theme.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Sep/2026 18:09:59] "GET /tenant-admin/01-tenant-dashboard.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:09:59] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:10:10] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 18:10:12] "GET /tenant-admin/01-tenant-dashboard.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:10:13] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 18:10:16] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 18:10:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 19:54:19] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 19:54:19] "GET /theme.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Sep/2026 19:54:28] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 19:54:36] "GET /tenant-admin/02-team-members.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 19:55:48] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 19:55:48] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /superadmin/01-dashboard.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:39:14] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /superadmin/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:39:17] "GET /superadmin/10-settings.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:39:17] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:17] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:31] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:31] "GET /tenantadmin/ HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:31] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:31] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:39:35] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:40] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:46] "GET /tenant-admin/07-tenant-settings.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:39:46] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:46] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:58] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:58] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:59] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:39:59] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:39:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:02] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:05] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:16] "GET /superadmin/02-all-users.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:40:16] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:18] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:18] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:35] "GET /11-deals.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:40:35] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:37] "GET /19-settings-profile.html HTTP/1.1" 304 -
+127.0.0.1 - - [04/Sep/2026 20:40:37] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [04/Sep/2026 20:40:40] "GET /24-settings-templates.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:40:40] code 404, message File not found
+127.0.0.1 - - [04/Sep/2026 20:40:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
