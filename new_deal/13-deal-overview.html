@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riverbend Rise — Overview — Acme Capital</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="theme-dark.css">
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1-2-2h2"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-chevron-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 12l10 9 10-9Z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-contrast" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3c.75 2.5 2.25 4.5 4.21 5.29"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+  <symbol id="i-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-time" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/></symbol>
+</svg>
+
+<div class="app">
+  <!-- Left Sidebar (dark on dark theme, white on light) -->
+  <aside class="app-text-sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">Acme Capital</span>
+    </div>
+    <div class="nav">
+      <a class="nav-item" href="11-deals.html"><svg class="ico"><use href="#i-arrow-left"/></svg> All deals</a>
+      <a class="nav-item active" href="13-deal-overview.html"><svg class="ico"><use href="#i-home"/></svg> Overview</a>
+      <a class="nav-item" href="14-deal-documents.html"><svg class="ico"><use href="#i-file"/></svg> Documents</a>
+      <a class="nav-item" href="15-deal-facts.html"><svg class="ico"><use href="#i-db"/></svg> Facts</a>
+      <a class="nav-item" href="16-deal-paper.html"><svg class="ico"><use href="#i-layers"/></svg> Paper</a>
+      <a class="nav-item" href="18-deal-activity.html"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid var(--border);padding-top:14px">
+      <a class="nav-item" href="19-settings-profile.html"><svg class="ico"><use href="#i-cog"/></svg> Settings</a>
+      <div class="sidebar-user" style="margin-top:10px">
+        <div class="av sm">JM</div>
+        <div class="who" style="min-width:0">
+          <div class="nm" style="font-size:12px;font-weight:600">John Mitchell</div>
+          <div class="em" style="font-size:10px;color:var(--text-3)">Credit Analyst</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Deal Sidebar (vertical submenus) -->
+  <aside class="deal-sidebar">
+    <div class="nav">
+      <div class="nav-label">This deal</div>
+      <a class="nav-item active" href="13-deal-overview.html"><svg class="ico"><use href="#i-home"/></svg> Overview</a>
+      <a class="nav-item" href="14-deal-documents.html"><svg class="ico"><use href="#i-file"/></svg> Documents</a>
+      <a class="nav-item" href="15-deal-facts.html"><svg class="ico"><use href="#i-db"/></svg> Facts</a>
+
+      <!-- Credit Paper — vertical submenu -->
+      <a class="nav-item" href="16-deal-paper.html">
+        <svg class="ico"><use href="#i-layers"/></svg> Credit Paper
+        <svg class="ico-sm" style="margin-left:auto;color:var(--text-4)"><use href="#i-chevron-down"/></svg>
+      </a>
+      <div style="padding:0 10px;display:flex;flex-direction:column;gap:1px">
+        <a class="sub-item" href="16-deal-paper.html#s1">§1 Facility Summary</a>
+        <a class="sub-item" href="16-deal-paper.html#s2">§2 Deal Summary</a>
+        <a class="sub-item" href="16-deal-paper.html#s3">§3 Borrower Analysis</a>
+        <a class="sub-item" href="16-deal-paper.html#s4">§4 Property & Location</a>
+        <a class="sub-item" href="16-deal-paper.html#s5">§5 Funding Request</a>
+        <a class="sub-item" href="16-deal-paper.html#s6">§6 Valuation Analysis</a>
+        <a class="sub-item" href="16-deal-paper.html#s7">§7 Risks & Mitigants</a>
+        <a class="sub-item" href="16-deal-paper.html#s8">§8 Financial Analysis</a>
+        <a class="sub-item" href="16-deal-paper.html#s9">§9 Conclusion</a>
+        <a class="sub-item" href="17-deal-section-review.html">§10 Review & Sign-off</a>
+      </div>
+
+      <a class="nav-item" href="18-deal-activity.html"><svg class="ico"><use href="#i-activity"/></svg> Activity</a>
+    </div>
+
+    <div class="nav-label" style="margin-top:auto;padding-top:18px">Switch context</div>
+    <div class="nav" style="padding-bottom:10px">
+      <a class="nav-item" href="11-deals.html"><svg class="ico"><use href="#i-grid"/></svg> All Deals</a>
+      <a class="nav-item" href="../superadmin/01-dashboard.html"><svg class="ico"><use href="#i-shield"/></svg> Super Admin</a>
+      <a class="nav-item" href="../tenant-admin/01-tenant-dashboard.html"><svg class="ico"><use href="#i-users"/></svg> Tenant Admin</a>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="av sm">JM</div>
+      <div class="who" style="min-width:0">
+        <div class="nm" style="font-size:12px;font-weight:600">John Mitchell</div>
+        <div class="em" style="font-size:10px;color:var(--text-3)">Credit Analyst</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <div class="main">
+    <!-- Header Bar -->
+    <div class="header-bar">
+      <div class="crumb">
+        <a href="11-deals.html" style="color:var(--text-3)">Deals</a>
+        <svg class="ico-sm"><use href="#i-chevron-r"/></svg>
+        <b>Riverbend Rise</b>
+        <span class="badge blue" style="margin-left:4px"><span class="dot"></span> In review</span>
+      </div>
+      <div style="margin-left:8px;font-size:11px;color:var(--text-3);font-weight:500">
+        Last saved 2m ago · <span style="color:var(--green)">Auto-saved</span>
+      </div>
+      <div class="spacer"></div>
+      <div style="text-align:right;margin-right:8px">
+        <div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Current stage</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">In review</div>
+      </div>
+      <div style="text-align:right;margin-right:8px">
+        <div style="font-size:10px;color:var(--text-4);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Progress</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">5 / 9 sections</div>
+        <div class="bar" style="margin-top:4px;width:100px"><i style="width:56%"></i></div>
+      </div>
+      <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-share"/></svg> Share</button>
+      <button class="btn btn-sm btn-icon">⋯</button>
+      <div style="display:flex">
+        <div class="av sm" style="border:2px solid var(--surface);margin-left:-6px">JM</div>
+        <div class="av sm c2" style="border:2px solid var(--surface);margin-left:-6px">SC</div>
+        <div class="av sm c3" style="border:2px solid var(--surface);margin-left:-6px">MP</div>
+        <div class="av sm c4" style="border:2px solid var(--surface);margin-left:-6px;font-size:9px">+2</div>
+      </div>
+    </div>
+
+    <!-- Content Canvas -->
+    <div class="canvas">
+      <!-- Breadcrumb + title -->
+      <div class="page-head">
+        <div>
+          <div class="crumb"><b>Deals</b> &nbsp;·&nbsp; <b>Riverbend Rise</b></div>
+          <h1 class="page-title" style="margin-top:6px">Riverbend Rise</h1>
+          <div class="page-sub">Construction &nbsp;·&nbsp; $7.76m facility &nbsp;·&nbsp; 14 months</div>
+        </div>
+        <div class="head-actions">
+          <!-- Theme Toggle -->
+          <button class="btn btn-sm btn-icon" id="theme-toggle" title="Toggle dark mode">
+            <svg class="ico" id="theme-icon"><use href="#i-moon"/></svg>
+          </button>
+          <button class="btn btn-primary btn-sm"><svg class="ico-sm"><use href="#i-plus"/></svg> Add fact</button>
+          <button class="btn btn-sm"><svg class="ico-sm"><use href="#i-cog"/></svg> Deal actions <svg class="ico-sm"><use href="#i-chevron-down"/></svg></button>
+        </div>
+      </div>
+
+      <!-- Hero Banner (photo card) -->
+      <div class="card" style="overflow:hidden;position:relative">
+        <div style="background:linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);position:relative;height:200px;display:flex;align-items:flex-end;padding:32px;color:#fff">
+          <div style="position:absolute;inset:0;opacity:.18;background-image:linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000),linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000);background-size:40px 40px;background-position:0 0,20px 20px"></div>
+          <div style="position:relative;z-index:1;width:100%;max-width:680px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+              <svg class="ico-lg" style="color:rgba(255,255,255,.9)"><use href="#i-location"/></svg>
+              <span class="badge" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.15)">Construction</span>
+            </div>
+            <h2 style="font-size:22px;font-weight:700;letter-spacing:-0.5px;margin:0 0 8px;color:#fff">Residential development in Brisbane</h2>
+            <p style="font-size:13px;line-height:1.6;margin:0 0 16px;color:rgba(255,255,255,.85)">A 14-month construction facility for a boutique residential development comprising 24 apartments in Brisbane, QLD.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.12);padding:0 8px">
+                <svg class="ico-sm" style="color:#fff"><use href="#i-building"/></svg>
+                Residential
+              </span>
+              <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.12);padding:0 8px">
+                <svg class="ico-sm" style="color:#fff"><use href="#i-location"/></svg>
+                Brisbane, QLD
+              </span>
+              <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.12);padding:0 8px">
+                <svg class="ico-sm" style="color:#fff"><use href="#i-home"/></svg>
+                24 apartments
+              </span>
+              <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.12);padding:0 8px">
+                <svg class="ico-sm" style="color:#fff"><use href="#i-dollar"/></svg>
+                $7.76m facility
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Stats (4 cards) -->
+      <div class="grid g-4">
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico green"><svg class="ico"><use href="#i-file"/></svg></div>
+            <div class="stat-label">Documents</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 4px;font-family:'JetBrains Mono',monospace">12 / 18</div>
+          <div class="bar"><i style="width:67%"></i></div>
+          <div class="stat-delta" style="color:var(--amber);margin-top:4px">
+            <svg class="ico-sm"><use href="#i-alert"/></svg> 6 outstanding
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico"><svg class="ico"><use href="#i-db"/></svg></div>
+            <div class="stat-label">Facts</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 4px;font-family:'JetBrains Mono',monospace">38 / 52</div>
+          <div class="bar"><i style="width:73%"></i></div>
+          <div class="stat-delta" style="color:var(--amber);margin-top:4px">
+            <svg class="ico-sm"><use href="#i-alert"/></svg> 2 contradictions
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico red"><svg class="ico"><use href="#i-contrast"/></svg></div>
+            <div class="stat-label">Open contradictions</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 0;font-family:'JetBrains Mono',monospace">2</div>
+          <div class="stat-delta mute" style="margin-top:4px">Both values retained</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <div class="stat-ico blue"><svg class="ico"><use href="#i-shield"/></svg></div>
+            <div class="stat-label">Approval status</div>
+          </div>
+          <div class="stat-value sm" style="margin:8px 0 0;font-family:'JetBrains Mono',monospace">In review</div>
+          <div class="stat-delta mute" style="margin-top:4px">Not yet approved</div>
+        </div>
+      </div>
+
+      <!-- Middle Three-Column Section -->
+      <div class="grid g-3">
+        <!-- Deal Details Card -->
+        <div class="card">
+          <div class="card-head plain">
+            <div class="card-title">Deal details</div>
+            <button class="btn btn-sm btn-soft"><svg class="ico-sm"><use href="#i-edit"/></svg> Edit</button>
+          </div>
+          <div class="card-body" style="padding:14px 18px">
+            <div style="display:grid;gap:4px;padding:2px 0">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Deal name</span>
+                <span style="font-size:12.5px;font-weight:600;color:var(--text)">Riverbend Rise</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Deal type</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2)">Construction</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Facility amount</span>
+                <span style="font-size:12.5px;font-weight:600;color:var(--text);font-family:'JetBrains Mono',monospace">$7,758,697</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Term</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2)">14 months</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Interest rate</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2);font-family:'JetBrains Mono',monospace">9.50%</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Owner</span>
+                <span style="display:flex;align-items:center;gap:6px"><div class="av sm">JM</div><span style="font-size:12.5px;font-weight:500;color:var(--text-2)">John Mitchell</span></span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Created</span>
+                <span style="font-size:12.5px;color:var(--text-2)">4 Sep 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Last updated</span>
+                <span style="font-size:12.5px;color:var(--text-2)">6 Sep 2026, 10:24 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Dates Card -->
+        <div class="card">
+          <div class="card-head plain">
+            <div class="card-title">Key dates</div>
+          </div>
+          <div class="card-body" style="padding:14px 18px">
+            <div style="display:grid;gap:4px;padding:2px 0">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Application date</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2);font-family:'JetBrains Mono',monospace">12 Aug 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Valuation date</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2);font-family:'JetBrains Mono',monospace">28 Aug 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Expected drawdown</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2);font-family:'JetBrains Mono',monospace">15 Oct 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--border)">
+                <span style="font-size:10.5px;font-weight:600;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase">Expected completion</span>
+                <span style="font-size:12.5px;font-weight:500;color:var(--text-2);font-family:'JetBrains Mono',monospace">15 Dec 2027</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Needs Your Attention Card -->
+        <div class="card" style="border-color:rgba(251,191,36,.3);background:var(--amber-bg)">
+          <div class="card-head plain" style="border-bottom-color:rgba(251,191,36,.3)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <svg class="ico" style="color:var(--amber)"><use href="#i-alert"/></svg>
+              <div class="card-title" style="color:var(--amber)">Needs your attention</div>
+              <span class="badge amber" style="margin-left:6px"><span class="dot"></span> 4 items</span>
+            </div>
+          </div>
+          <div class="card-body" style="padding:8px 4px 14px">
+            <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px">
+              <svg class="ico" style="color:var(--amber);margin-top:2px"><use href="#i-contrast"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:12.5px;font-weight:600;color:var(--text)">2 contradictions to resolve</div>
+                <div style="font-size:10.5px;color:var(--text-3);margin-top:2px">QS report vs funding table · Valuation vs term sheet</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-top:1px solid rgba(251,191,36,.2)">
+              <svg class="ico" style="color:var(--amber);margin-top:2px"><use href="#i-alert"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:12.5px;font-weight:600;color:var(--text)">Construction cost flagged</div>
+                <div style="font-size:10.5px;color:var(--text-3);margin-top:2px">QS report · p.12</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-top:1px solid rgba(251,191,36,.2)">
+              <svg class="ico" style="color:var(--amber);margin-top:2px"><use href="#i-file"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:12.5px;font-weight:600;color:var(--text)">Title reference missing</div>
+                <div style="font-size:10.5px;color:var(--text-3);margin-top:2px">Security · Not provided</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-top:1px solid rgba(251,191,36,.2)">
+              <svg class="ico" style="color:var(--amber);margin-top:2px"><use href="#i-dollar"/></svg>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:12.5px;font-weight:600;color:var(--text)">Update contingency assumption</div>
+                <div style="font-size:10.5px;color:var(--text-3);margin-top:2px">Funding table · 3.8% vs QS-recommended 10%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity Card -->
+      <div class="card">
+        <div class="card-head plain">
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg class="ico"><use href="#i-activity"/></svg>
+            <div class="card-title">Recent activity</div>
+          </div>
+          <a href="18-deal-activity.html" class="link">View all →</a>
+        </div>
+        <div class="card-body" style="padding:4px 4px 8px">
+          <div class="feed">
+            <div class="feed-item" style="padding-left:14px">
+              <svg class="ico" style="margin-top:3px;color:var(--blue)"><use href="#i-file"/></svg>
+              <div class="feed-body">
+                <div class="feed-title">Facts extracted from Term sheet</div>
+                <div class="feed-meta">38 facts extracted</div>
+                <div class="feed-time" style="margin-top:3px">Today, 10:24 AM</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+                <div class="av sm" style="width:22px;height:22px;font-size:8px">📄</div>
+                <span style="font-size:10px;color:var(--text-3);font-weight:500">System</span>
+              </div>
+              <span class="badge blue" style="margin-left:10px"><span class="dot"></span> Facts</span>
+            </div>
+            <div class="feed-item" style="padding-left:14px">
+              <svg class="ico" style="margin-top:3px;color:var(--blue)"><use href="#i-file"/></svg>
+              <div class="feed-body">
+                <div class="feed-title">Document uploaded: QS report.pdf</div>
+                <div class="feed-meta">Quantity surveyor report</div>
+                <div class="feed-time" style="margin-top:3px">Today, 9:18 AM</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+                <div class="av sm">ZS</div>
+                <span style="font-size:10px;color:var(--text-3);font-weight:500">Zakwan</span>
+              </div>
+              <span class="badge blue" style="margin-left:10px"><span class="dot"></span> Document</span>
+            </div>
+            <div class="feed-item" style="padding-left:14px">
+              <svg class="ico" style="margin-top:3px;color:var(--amber)"><use href="#i-contrast"/></svg>
+              <div class="feed-body">
+                <div class="feed-title">Contradiction detected: Construction cost</div>
+                <div class="feed-meta">QS report · Funding table</div>
+                <div class="feed-time" style="margin-top:3px">Yesterday, 4:12 PM</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+                <div class="av sm" style="width:22px;height:22px;font-size:8px">📄</div>
+                <span style="font-size:10px;color:var(--text-3);font-weight:500">System</span>
+              </div>
+              <span class="badge amber" style="margin-left:10px"><span class="dot"></span> Contradiction</span>
+            </div>
+            <div class="feed-item" style="padding-left:14px">
+              <svg class="ico" style="margin-top:3px;color:var(--violet)"><use href="#i-layers"/></svg>
+              <div class="feed-body">
+                <div class="feed-title">Valuation Report classified as Valuation</div>
+                <div class="feed-meta">Type assigned</div>
+                <div class="feed-time" style="margin-top:3px">5 Sep 2026, 11:21 AM</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+                <div class="av sm" style="width:22px;height:22px;font-size:8px">📄</div>
+                <span style="font-size:10px;color:var(--text-3);font-weight:500">System</span>
+              </div>
+              <span class="badge violet" style="margin-left:10px"><span class="dot"></span> System</span>
+            </div>
+            <div class="feed-item" style="padding-left:14px">
+              <svg class="ico" style="margin-top:3px;color:var(--green)"><use href="#i-check"/></svg>
+              <div class="feed-body">
+                <div class="feed-title">Deal updated</div>
+                <div class="feed-meta">Status, values, lender notes</div>
+                <div class="feed-time" style="margin-top:3px">5 Sep 2026, 9:14 AM</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+                <div class="av sm">JM</div>
+                <span style="font-size:10px;color:var(--text-3);font-weight:500">John Mitchell</span>
+              </div>
+              <span class="badge green" style="margin-left:10px"><span class="dot"></span> Update</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var stored = localStorage.getItem('acme-theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    updateIcon(theme);
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('acme-theme', next);
+      updateIcon(next);
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('acme-theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        updateIcon(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    function updateIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      icon.innerHTML = theme === 'dark'
+        ? '<use href="#i-sun"/>'
+        : '<use href="#i-moon"/>';
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,65 +1,24 @@
-127.0.0.1 - - [04/Sep/2026 18:09:46] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:09:49] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:09:51] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:09:51] "GET /theme.css HTTP/1.1" 304 -
-127.0.0.1 - - [04/Sep/2026 18:09:59] "GET /tenant-admin/01-tenant-dashboard.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:09:59] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /theme.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:10:10] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 18:10:10] "GET /favicon.ico HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 18:10:12] "GET /tenant-admin/01-tenant-dashboard.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:10:13] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:10:16] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 18:10:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 19:54:19] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 19:54:19] "GET /theme.css HTTP/1.1" 304 -
-127.0.0.1 - - [04/Sep/2026 19:54:28] "GET /tenant-admin/theme.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 19:54:36] "GET /tenant-admin/02-team-members.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 19:55:48] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 19:55:48] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /superadmin/01-dashboard.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:39:14] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:14] "GET /superadmin/theme.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:39:17] "GET /superadmin/10-settings.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:39:17] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:17] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:31] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:31] "GET /tenantadmin/ HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:31] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:31] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:35] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:39:35] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:40] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:46] "GET /tenant-admin/07-tenant-settings.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:39:46] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:46] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:58] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:58] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:59] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:39:59] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:39:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:02] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:05] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:16] "GET /superadmin/02-all-users.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:40:16] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:18] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:18] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:35] "GET /11-deals.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:40:35] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:37] "GET /19-settings-profile.html HTTP/1.1" 304 -
-127.0.0.1 - - [04/Sep/2026 20:40:37] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
-127.0.0.1 - - [04/Sep/2026 20:40:40] "GET /24-settings-templates.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 20:40:40] code 404, message File not found
-127.0.0.1 - - [04/Sep/2026 20:40:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [08/Sep/2026 09:24:38] "GET /new_deal/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:24:56] "GET /new_deal/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:24:59] "GET /new_deal/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:25:00] "GET /new_deal/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:25:00] "GET /new_deal/theme-dark.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:25:17] "GET /new_deal/13-deal-overview.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:26:18] "GET /new_deal/index.html HTTP/1.1" 304 -
+127.0.0.1 - - [08/Sep/2026 09:27:20] "GET /new_deal/16-deal-paper.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:27:32] "GET /new_deal/15-deal-facts.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:27:53] "GET /new_deal/18-deal-activity.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:28:13] "GET /new_deal/index.html HTTP/1.1" 304 -
+127.0.0.1 - - [08/Sep/2026 09:38:29] "GET /new_deal/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:29] "GET /new_deal/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:29] "GET /new_deal/theme-dark.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:30] code 404, message File not found
+127.0.0.1 - - [08/Sep/2026 09:38:30] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/Sep/2026 09:38:36] "GET /new_deal/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:36] "GET /new_deal/theme.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:36] "GET /new_deal/theme-dark.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:37] code 404, message File not found
+127.0.0.1 - - [08/Sep/2026 09:38:37] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/Sep/2026 09:38:48] "GET /new_deal/13-deal-overview.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:49] "GET /new_deal/14-deal-documents.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 09:38:51] "GET /new_deal/15-deal-facts.html HTTP/1.1" 200 -
