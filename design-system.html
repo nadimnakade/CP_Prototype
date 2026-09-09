@@ -1,0 +1,1883 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{color-scheme:light dark}
+  html,body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>shadcn Theme Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* ==========================================================================
+   TOKENS
+   The page is built from the system it documents. Light is the base; dark is
+   redefined for both the OS preference and the explicit stamp, so all three
+   viewer states resolve.
+   ========================================================================== */
+:root {
+  --bg:#ffffff;
+  --fg:#262626;
+  --card:#ffffff;
+  --card-fg:#262626;
+  --popover:#ffffff;
+  --popover-fg:#262626;
+  --primary:#007a55;
+  --primary-hover:#006747;
+  --primary-fg:#ffffff;
+  --secondary:#f4f4f5;
+  --secondary-fg:#18181b;
+  --muted:#f9fafb;
+  --muted-fg:#737373;
+  --accent:#f5f5f5;
+  --accent-fg:#171717;
+  --destructive:#e7000b;
+  --destructive-fg:#ffffff;
+  --border:#e8e8e3;
+  --input:#e8e8e3;
+  --ring:#a1a1a1;
+
+  --sidebar:#ffffff;
+  --sidebar-fg:#262626;
+  --sidebar-accent:#f5f5f5;
+  --sidebar-accent-fg:#171717;
+  --sidebar-border:#e8e8e3;
+  --sidebar-primary:#007a55;
+  --nav-tint:color-mix(in srgb, var(--primary) 9%, transparent);
+
+  --hairline:#e8e8e3;
+  --chip-edge:rgba(0,0,0,.14);
+  --overlay:rgba(23,23,23,.05);
+  --skeleton:rgba(23,23,23,.07);
+  --checker:rgba(23,23,23,.09);
+  --scrim:rgba(23,23,23,.45);
+
+  --radius:0.625rem;
+  --r-sm:calc(var(--radius) - 4px);
+  --r-md:calc(var(--radius) - 2px);
+  --r-lg:var(--radius);
+  --r-xl:calc(var(--radius) + 4px);
+
+  --sans:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --shadow-xs:0 1px 2px 0 rgb(0 0 0 / .05);
+  --shadow-sm:0 1px 3px 0 rgb(0 0 0 / .10), 0 1px 2px -1px rgb(0 0 0 / .10);
+  --shadow-lg:0 10px 15px -3px rgb(0 0 0 / .10), 0 4px 6px -4px rgb(0 0 0 / .10);
+
+  --rail:236px;
+  --measure:62rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#0d1b2a;
+    --fg:#fafafa;
+    --card:#162234;
+    --card-fg:#fafafa;
+    --popover:#162234;
+    --popover-fg:#fafafa;
+    --primary:#007a55;
+    --primary-hover:#019263;
+    --primary-fg:#ffffff;
+    --secondary:#172128;
+    --secondary-fg:#f5f5f5;
+    --muted:#172128;
+    --muted-fg:#a3a3a3;
+    --accent:#404040;
+    --accent-fg:#4dbc89;
+    --destructive:#ff6467;
+    --destructive-fg:#ffffff;
+    --border:#1d2b38;
+    --input:#1d2b38;
+    --ring:#737373;
+    --sidebar:#0d1b2a;
+    --sidebar-fg:#fafafa;
+    --sidebar-accent:#404040;
+    --sidebar-accent-fg:#4dbc89;
+    --sidebar-border:#1d2b38;
+    --sidebar-primary:#007a55;
+    --nav-tint:color-mix(in srgb, var(--primary) 22%, transparent);
+    --hairline:#1d2b38;
+    --chip-edge:rgba(255,255,255,.18);
+    --overlay:rgba(255,255,255,.06);
+    --skeleton:rgba(255,255,255,.09);
+    --checker:rgba(255,255,255,.10);
+    --scrim:rgba(0,0,0,.6);
+    --shadow-xs:0 1px 2px 0 rgb(0 0 0 / .40);
+    --shadow-sm:0 1px 3px 0 rgb(0 0 0 / .50), 0 1px 2px -1px rgb(0 0 0 / .50);
+    --shadow-lg:0 10px 15px -3px rgb(0 0 0 / .55), 0 4px 6px -4px rgb(0 0 0 / .55);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:#0d1b2a;
+  --fg:#fafafa;
+  --card:#162234;
+  --card-fg:#fafafa;
+  --popover:#162234;
+  --popover-fg:#fafafa;
+  --primary:#007a55;
+  --primary-hover:#019263;
+  --primary-fg:#ffffff;
+  --secondary:#172128;
+  --secondary-fg:#f5f5f5;
+  --muted:#172128;
+  --muted-fg:#a3a3a3;
+  --accent:#404040;
+  --accent-fg:#4dbc89;
+  --destructive:#ff6467;
+  --destructive-fg:#ffffff;
+  --border:#1d2b38;
+  --input:#1d2b38;
+  --ring:#737373;
+  --sidebar:#0d1b2a;
+  --sidebar-fg:#fafafa;
+  --sidebar-accent:#404040;
+  --sidebar-accent-fg:#4dbc89;
+  --sidebar-border:#1d2b38;
+  --sidebar-primary:#007a55;
+  --nav-tint:color-mix(in srgb, var(--primary) 22%, transparent);
+  --hairline:#1d2b38;
+  --chip-edge:rgba(255,255,255,.18);
+  --overlay:rgba(255,255,255,.06);
+  --skeleton:rgba(255,255,255,.09);
+  --checker:rgba(255,255,255,.10);
+  --scrim:rgba(0,0,0,.6);
+  --shadow-xs:0 1px 2px 0 rgb(0 0 0 / .40);
+  --shadow-sm:0 1px 3px 0 rgb(0 0 0 / .50), 0 1px 2px -1px rgb(0 0 0 / .50);
+  --shadow-lg:0 10px 15px -3px rgb(0 0 0 / .55), 0 4px 6px -4px rgb(0 0 0 / .55);
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
+code,kbd{font-family:var(--mono)}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+svg.i{
+  width:16px;height:16px;flex:none;
+  fill:none;stroke:currentColor;stroke-width:1.33;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+svg.i.lg{width:20px;height:20px}
+svg.i.sm{width:14px;height:14px}
+
+/* ==========================================================================
+   SHELL
+   ========================================================================== */
+.shell{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);align-items:start}
+
+.rail{
+  position:sticky;top:0;height:100vh;
+  border-right:1px solid var(--border);
+  padding:32px 20px 32px 28px;
+  display:flex;flex-direction:column;gap:22px;
+  background:var(--bg);overflow-y:auto;
+}
+.mark{display:flex;flex-direction:column;gap:6px}
+.mark-dot{
+  width:26px;height:26px;border-radius:8px;
+  background:linear-gradient(135deg,#007a55 0 50%,#0d1b2a 50% 100%);
+  border:1px solid var(--chip-edge);
+}
+.mark-name{font-size:14px;font-weight:600;letter-spacing:-.01em}
+.mark-sub{font-size:12px;color:var(--muted-fg);font-family:var(--mono)}
+
+nav.toc{display:flex;flex-direction:column;gap:1px}
+nav.toc a{
+  display:flex;justify-content:space-between;align-items:baseline;gap:8px;
+  text-decoration:none;color:var(--muted-fg);
+  font-size:13px;padding:6px 8px;border-radius:6px;
+}
+nav.toc a:hover{background:var(--overlay);color:var(--fg)}
+nav.toc a .n{font-family:var(--mono);font-size:11px;opacity:.55}
+
+.rail-foot{margin-top:auto;font-size:11px;color:var(--muted-fg);line-height:1.6}
+
+main{padding:48px 56px 96px;max-width:calc(var(--measure) + 112px)}
+
+/* ==========================================================================
+   MASTHEAD
+   ========================================================================== */
+.masthead{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-end;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-fg)}
+h1{font-size:36px;line-height:1.11;font-weight:700;letter-spacing:-.025em;margin:10px 0 12px}
+.lede{max-width:54ch;color:var(--muted-fg);font-size:16px}
+
+.toggle{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 4px;border:1px solid var(--border);border-radius:9999px;background:var(--card)}
+.toggle button{height:28px;padding:0 12px;border:0;border-radius:9999px;background:transparent;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--secondary);color:var(--secondary-fg)}
+
+/* ==========================================================================
+   PROVENANCE
+   ========================================================================== */
+.legend{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin:24px 0 0;padding:14px 18px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--muted)}
+.legend .item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted-fg)}
+.legend .key{width:26px;height:18px;border-radius:5px;background:var(--secondary)}
+.legend .key.ext{border:1px solid var(--chip-edge)}
+.legend .key.def{border:1px dashed var(--muted-fg);opacity:.75}
+
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;border:1px dashed var(--muted-fg);color:var(--muted-fg);vertical-align:middle}
+.tag.solid{border-style:solid}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+section{padding-top:64px;scroll-margin-top:24px}
+.sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:6px}
+.sec-head .n{font-family:var(--mono);font-size:12px;color:var(--muted-fg)}
+h2{font-size:24px;line-height:1.33;font-weight:600;letter-spacing:-.02em}
+.sec-note{color:var(--muted-fg);font-size:14px;max-width:64ch;margin-top:8px}
+h3{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg);margin:38px 0 14px}
+h3 .tag{margin-left:6px;letter-spacing:.06em}
+h4{font-size:13px;font-weight:600;margin:0 0 10px}
+
+/* ==========================================================================
+   SWATCHES
+   ========================================================================== */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:14px}
+.sw{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--card)}
+.sw.is-default{border-style:dashed}
+.sw .chip{display:grid;grid-template-columns:1fr 1fr;height:62px}
+.sw.is-alpha .chip{
+  background-color:var(--card);
+  background-image:
+    linear-gradient(45deg,var(--checker) 25%,transparent 25%,transparent 75%,var(--checker) 75%),
+    linear-gradient(45deg,var(--checker) 25%,transparent 25%,transparent 75%,var(--checker) 75%);
+  background-size:12px 12px;
+  background-position:0 0,6px 6px;
+}
+.sw .chip span{display:block;border-bottom:1px solid var(--chip-edge)}
+.sw .chip span:first-child{border-right:1px solid var(--chip-edge)}
+.sw .meta{padding:10px 12px 12px;display:flex;flex-direction:column;gap:7px}
+.sw .tok{font-family:var(--mono);font-size:12px;font-weight:500;word-break:break-all}
+.sw .vals{display:flex;gap:6px;flex-wrap:wrap}
+.hex{font-family:var(--mono);font-size:11px;color:var(--muted-fg);border:1px solid var(--border);border-radius:5px;padding:2px 6px;background:transparent;cursor:pointer;line-height:1.5}
+.hex:hover{color:var(--fg);border-color:var(--muted-fg)}
+.hex b{font-weight:500;opacity:.5;margin-right:4px}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-fg);font-weight:400;padding:11px 16px;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:11px 16px;border-bottom:1px solid var(--hairline);font-variant-numeric:tabular-nums;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.t{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+td.n{text-align:right;font-family:var(--mono);font-size:12.5px;color:var(--muted-fg)}
+
+/* ==========================================================================
+   TYPE SPECIMENS
+   ========================================================================== */
+.specimens{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card)}
+.spec{display:grid;grid-template-columns:112px 1fr;gap:20px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--hairline)}
+.spec:last-child{border-bottom:0}
+.spec .label{font-family:var(--mono);font-size:11px;color:var(--muted-fg);line-height:1.6}
+.spec .label em{display:block;font-style:normal;color:var(--fg);font-size:12px;font-weight:500}
+.spec .sample{min-width:0;overflow-x:auto}
+.spec.flagged{background:var(--muted)}
+.spec .flag{display:block;margin-top:6px}
+
+.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.face{border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;background:var(--card)}
+.face .glyphs{font-size:30px;letter-spacing:-.02em;line-height:1.2}
+.face .nm{margin-top:14px;font-size:14px;font-weight:600}
+.face .rl{font-size:13px;color:var(--muted-fg);margin-top:2px}
+.face .wts{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted-fg)}
+
+/* ==========================================================================
+   SCALES
+   ========================================================================== */
+.scale{display:flex;flex-direction:column;gap:7px}
+.step{display:grid;grid-template-columns:52px 62px 1fr;gap:14px;align-items:center}
+.step .k{font-family:var(--mono);font-size:12px}
+.step .v{font-family:var(--mono);font-size:11px;color:var(--muted-fg);text-align:right;font-variant-numeric:tabular-nums}
+.step .bar{height:12px;border-radius:3px;background:var(--primary);opacity:.85;max-width:100%}
+
+.radii{display:flex;flex-wrap:wrap;gap:14px}
+.rad{display:flex;flex-direction:column;align-items:center;gap:9px}
+.rad .box{width:84px;height:64px;background:var(--secondary);border:1px solid var(--border)}
+.rad .cap{font-family:var(--mono);font-size:11px;color:var(--muted-fg);text-align:center;line-height:1.5}
+.rad .cap b{display:block;color:var(--fg);font-weight:500;font-size:12px}
+
+.shadows{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.shd{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px}
+.shd .nm{font-family:var(--mono);font-size:12px;font-weight:500}
+.shd .desc{font-family:var(--mono);font-size:10.5px;color:var(--muted-fg);margin-top:8px;line-height:1.6;word-break:break-word}
+
+/* ==========================================================================
+   DEMO FRAMES
+   ========================================================================== */
+.demo{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:24px;display:flex;flex-direction:column;gap:20px}
+.demo.flush{padding:0;overflow:hidden}
+.demo + .demo{margin-top:14px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rowlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-fg);margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:36px;padding:0 16px;border-radius:var(--r-md);border:1px solid transparent;
+  font-family:var(--sans);font-size:14px;font-weight:500;line-height:1;
+  cursor:pointer;white-space:nowrap;
+  transition:background-color .12s ease,color .12s ease,border-color .12s ease;
+}
+.btn-sm{height:32px;padding:0 12px;font-size:13px;border-radius:var(--r-sm)}
+.btn-lg{height:40px;padding:0 20px}
+.btn-icon{width:36px;padding:0}
+.btn-icon.btn-sm{width:32px}
+.btn-primary{background:var(--primary);color:var(--primary-fg);box-shadow:var(--shadow-xs)}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-secondary{background:var(--secondary);color:var(--secondary-fg)}
+.btn-secondary:hover{background:var(--accent);color:var(--accent-fg)}
+.btn-outline{background:transparent;border-color:var(--input);color:var(--fg);box-shadow:var(--shadow-xs)}
+.btn-outline:hover{background:var(--accent);color:var(--accent-fg)}
+.btn-ghost{background:transparent;color:var(--fg)}
+.btn-ghost:hover{background:var(--accent);color:var(--accent-fg)}
+.btn-destructive{background:var(--destructive);color:var(--destructive-fg);box-shadow:var(--shadow-xs)}
+.btn-link{background:transparent;color:var(--primary);padding:0;height:auto;text-decoration:underline;text-underline-offset:3px}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.spin{animation:spin 1s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ==========================================================================
+   FORM CONTROLS
+   ========================================================================== */
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field label{font-size:14px;font-weight:500;line-height:1}
+.input,.textarea,.select{
+  padding:0 12px;border:1px solid var(--input);border-radius:var(--r-md);
+  background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:14px;
+  box-shadow:var(--shadow-xs);width:100%;
+}
+.input,.select{height:36px}
+.textarea{padding:9px 12px;min-height:80px;resize:vertical;line-height:1.5}
+.input::placeholder,.textarea::placeholder{color:var(--muted-fg)}
+.input:focus,.textarea:focus,.select:focus{outline:2px solid var(--ring);outline-offset:1px;border-color:var(--ring)}
+.input[aria-invalid="true"]{border-color:var(--destructive)}
+.hint{font-size:12px;color:var(--muted-fg)}
+.err{font-size:12px;color:var(--destructive)}
+.select{appearance:none;background-image:none;padding-right:32px}
+.selectwrap{position:relative;display:block}
+.selectwrap .chev{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted-fg);pointer-events:none}
+
+.check{display:inline-flex;align-items:flex-start;gap:9px;font-size:14px;cursor:pointer;line-height:1.35}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check .box{
+  width:16px;height:16px;flex:none;margin-top:2px;
+  border:1px solid var(--input);border-radius:4px;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;color:var(--primary-fg);
+  transition:background-color .12s ease,border-color .12s ease;
+}
+.check .box svg{opacity:0;width:11px;height:11px;stroke-width:2.4}
+.check input:checked + .box{background:var(--primary);border-color:var(--primary)}
+.check input:checked + .box svg{opacity:1}
+.check input:focus-visible + .box{outline:2px solid var(--ring);outline-offset:2px}
+.check.radio .box{border-radius:9999px}
+.check.radio .box::after{content:"";width:6px;height:6px;border-radius:9999px;background:var(--primary-fg);opacity:0}
+.check.radio input:checked + .box::after{opacity:1}
+
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:14px;cursor:pointer}
+.switch input{position:absolute;opacity:0;width:0;height:0}
+.switch .track{width:36px;height:20px;flex:none;border-radius:9999px;background:var(--secondary);border:1px solid var(--border);position:relative;transition:background-color .15s ease}
+.switch .track::after{content:"";position:absolute;top:1px;left:1px;width:16px;height:16px;border-radius:9999px;background:var(--bg);box-shadow:var(--shadow-xs);transition:transform .15s ease}
+.switch input:checked + .track{background:var(--primary);border-color:var(--primary)}
+.switch input:checked + .track::after{transform:translateX(16px)}
+.switch input:focus-visible + .track{outline:2px solid var(--ring);outline-offset:2px}
+
+.slider{display:flex;align-items:center;gap:12px}
+.slider .rail2{position:relative;height:6px;flex:1;border-radius:9999px;background:var(--secondary);border:1px solid var(--border)}
+.slider .fill{position:absolute;inset:0 auto 0 0;border-radius:9999px;background:var(--primary)}
+.slider .knob{position:absolute;top:50%;width:16px;height:16px;border-radius:9999px;background:var(--bg);border:1px solid var(--primary);box-shadow:var(--shadow-xs);transform:translate(-50%,-50%)}
+.slider .val{font-family:var(--mono);font-size:12px;color:var(--muted-fg);width:40px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+/* --- Navigation rail sidebar -------------------------------------------
+   Geometry read from Figma node 11:1926. Rail 72, panel 256, locked 328.
+   Rail item 64x64 with a 48x32 pill. Panel item 208x32.
+   ----------------------------------------------------------------------- */
+.appframe{display:grid;grid-template-columns:328px minmax(0,1fr);min-height:430px;background:var(--bg)}
+
+.nav{display:flex;align-items:stretch;background:var(--sidebar);color:var(--sidebar-fg)}
+
+.rail-col{width:72px;flex:none;display:flex;flex-direction:column;align-items:center;padding:12px 4px;gap:4px;border-right:1px solid var(--sidebar-border)}
+.rail-toggle{width:48px;height:32px;display:flex;align-items:center;justify-content:center;border:0;border-radius:9999px;background:transparent;color:var(--muted-fg);cursor:pointer;margin-bottom:16px}
+.rail-toggle:hover{background:var(--nav-tint);color:var(--primary)}
+
+.rail-item{
+  width:64px;height:64px;flex:none;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding-top:0;border:0;background:transparent;cursor:pointer;
+  font-family:var(--sans);color:var(--sidebar-fg);
+}
+.rail-item .pill{
+  width:48px;height:32px;flex:none;border-radius:9999px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted-fg);transition:background-color .12s ease,color .12s ease;
+}
+.rail-item .cap{font-size:11px;line-height:16px;font-weight:500;color:var(--muted-fg);letter-spacing:-.005em}
+.rail-item:hover .pill{background:var(--nav-tint);color:var(--primary)}
+.rail-item:hover .cap{color:var(--sidebar-fg)}
+.rail-item[aria-current="true"] .pill{background:var(--primary);color:var(--primary-fg)}
+.rail-item[aria-current="true"] .cap{color:var(--sidebar-fg);font-weight:600}
+.rail-item:focus-visible{outline:2px solid var(--ring);outline-offset:-2px;border-radius:var(--r-md)}
+
+.panel-col{width:256px;flex:none;display:flex;flex-direction:column;padding:12px 24px 16px;gap:2px;min-width:0}
+/* The flyout is a floating surface, so it carries its own full border on all
+   four sides. It is a sibling of .nav, not a child, so it must reference the
+   theme tokens directly rather than anything scoped to .nav. */
+.panel-col.floating{
+  border:1px solid var(--sidebar-border);
+  border-radius:var(--r-xl);
+  background:var(--popover);
+  box-shadow:var(--shadow-lg);
+  margin:14px 14px 14px 12px;
+  padding:16px 23px;
+  align-self:flex-start;
+}
+.nav-brand{display:flex;align-items:center;gap:9px;height:44px;padding-left:2px;margin-bottom:10px}
+.brandmark{width:22px;height:22px;flex:none;border-radius:7px;background:var(--primary)}
+.nav-brand .word{font-size:17px;font-weight:600;letter-spacing:-.02em}
+.panel-label{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-fg);padding:6px 8px 8px}
+
+.panel-item{
+  width:208px;height:32px;max-width:100%;
+  display:flex;align-items:center;gap:8px;
+  padding:0 10px;border:0;border-radius:var(--r-lg);background:transparent;
+  font-family:var(--sans);font-size:14px;font-weight:500;color:var(--sidebar-fg);
+  cursor:pointer;text-align:left;
+  transition:background-color .12s ease,color .12s ease;
+}
+.panel-item .lbl{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.panel-item svg{color:var(--muted-fg)}
+.panel-item:hover{background:var(--nav-tint)}
+.panel-item:hover svg{color:var(--primary)}
+.panel-item[aria-current="page"]{background:var(--primary);color:var(--primary-fg)}
+.panel-item[aria-current="page"] svg{color:var(--primary-fg)}
+.panel-item:focus-visible{outline:2px solid var(--ring);outline-offset:1px}
+.panel-count{font-family:var(--mono);font-size:10.5px;background:var(--secondary);color:var(--secondary-fg);border-radius:9999px;padding:1px 7px;line-height:1.5}
+.panel-item[aria-current="page"] .panel-count{background:rgba(255,255,255,.22);color:var(--primary-fg)}
+
+.navstates{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.navstate{display:flex;flex-direction:column;gap:9px}
+.navstate .cap2{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-fg)}
+.navstate .box2{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;height:360px;display:flex;background:var(--sidebar)}
+.navstate .box2 .nav{height:100%}
+.navstate .box2 .panel-col{overflow:hidden}
+
+.topbar{display:flex;align-items:center;gap:12px;height:56px;padding:0 18px;border-bottom:1px solid var(--border);background:var(--bg)}
+.topbar .spacer{flex:1}
+kbd{font-size:10.5px;border:1px solid var(--border);border-radius:4px;padding:1px 5px;color:var(--muted-fg);background:var(--muted);line-height:1.6}
+.iconbtn{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-md);background:transparent;color:var(--fg);cursor:pointer;position:relative}
+.iconbtn:hover{background:var(--accent);color:var(--accent-fg)}
+.dot{position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:9999px;background:var(--primary);border:1.5px solid var(--bg)}
+
+.crumbs{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted-fg);flex-wrap:wrap}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--fg)}
+.crumbs .sep{opacity:.5;display:flex}
+.crumbs .now{color:var(--fg);font-weight:500}
+
+.canvas{padding:22px 18px;display:flex;flex-direction:column;gap:16px;background:var(--bg)}
+
+.tabs{display:inline-flex;gap:3px;padding:3px;background:var(--muted);border:1px solid var(--border);border-radius:var(--r-lg)}
+.tabs button{height:30px;padding:0 14px;border:0;border-radius:var(--r-sm);background:transparent;font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--fg);box-shadow:var(--shadow-xs)}
+
+.utabs{display:flex;gap:20px;border-bottom:1px solid var(--border)}
+.utabs button{border:0;background:transparent;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--muted-fg);padding:0 0 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.utabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--primary)}
+
+.pager{display:flex;align-items:center;gap:5px}
+.pg{min-width:32px;height:32px;padding:0 9px;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--r-md);background:transparent;font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--fg);cursor:pointer}
+.pg:hover{background:var(--accent);color:var(--accent-fg)}
+.pg[aria-current="page"]{border-color:var(--input);background:var(--card);box-shadow:var(--shadow-xs)}
+.pg[disabled]{opacity:.45;pointer-events:none}
+.pg.gap{pointer-events:none;color:var(--muted-fg)}
+
+.menu{
+  width:238px;background:var(--popover);color:var(--popover-fg);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-lg);padding:5px;
+}
+.menu .mlabel{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg);padding:7px 9px 5px}
+.mitem{display:flex;align-items:center;gap:9px;height:32px;padding:0 9px;border-radius:var(--r-sm);font-size:13.5px;cursor:pointer}
+.mitem .lbl{flex:1}
+.mitem:hover{background:var(--accent);color:var(--accent-fg)}
+.mitem svg{color:var(--muted-fg)}
+.mitem:hover svg{color:inherit}
+.mitem kbd{margin-left:auto}
+.mitem.danger{color:var(--destructive)}
+.mitem.danger svg{color:var(--destructive)}
+.msep{height:1px;background:var(--border);margin:5px 0}
+
+.cmd{width:100%;max-width:420px;background:var(--popover);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);overflow:hidden}
+.cmd-input{display:flex;align-items:center;gap:9px;padding:0 14px;height:46px;border-bottom:1px solid var(--border);color:var(--muted-fg)}
+.cmd-input span{font-size:14px;color:var(--muted-fg)}
+.cmd-body{padding:5px;display:flex;flex-direction:column}
+.cmd .mitem[data-active="true"]{background:var(--accent);color:var(--accent-fg)}
+
+/* ==========================================================================
+   DISPLAY
+   ========================================================================== */
+.badge{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:9999px;border:1px solid transparent;font-size:12px;font-weight:500;line-height:1;white-space:nowrap}
+.badge-primary{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--secondary);color:var(--secondary-fg)}
+.badge-outline{border-color:var(--border);color:var(--fg)}
+.badge-destructive{background:var(--destructive);color:var(--destructive-fg)}
+.badge .led{width:6px;height:6px;border-radius:9999px;background:currentColor}
+
+.avatar{width:32px;height:32px;border-radius:9999px;background:var(--secondary);color:var(--secondary-fg);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex:none;border:1px solid var(--border)}
+.avatar.sm{width:24px;height:24px;font-size:10px}
+.avatar.lg{width:40px;height:40px;font-size:14px}
+.avatar.brand{background:var(--primary);color:var(--primary-fg);border-color:transparent}
+.avstack{display:flex}
+.avstack .avatar + .avatar{margin-left:-9px}
+
+.uicard{border:1px solid var(--border);border-radius:var(--r-xl);background:var(--card);color:var(--card-fg);padding:22px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:5px}
+.uicard .t{font-size:16px;font-weight:600;line-height:1.5}
+.uicard .d{font-size:14px;color:var(--muted-fg)}
+.uicard .figure{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-top:10px;font-variant-numeric:tabular-nums}
+.uicard .delta{font-size:12px;color:var(--primary);font-weight:500}
+
+.sep{height:1px;background:var(--border);border:0;margin:0}
+
+.progress{height:8px;border-radius:9999px;background:var(--secondary);overflow:hidden;border:1px solid var(--border)}
+.progress i{display:block;height:100%;background:var(--primary);border-radius:9999px}
+
+.skel{background:var(--skeleton);border-radius:var(--r-sm);height:12px}
+.skel.circle{border-radius:9999px;height:32px;width:32px}
+
+.alert{display:flex;gap:11px;border:1px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;background:var(--card);font-size:14px}
+.alert .body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.alert b{font-weight:600;font-size:14px}
+.alert p{color:var(--muted-fg);font-size:13.5px}
+.alert.danger{border-color:var(--destructive);color:var(--destructive)}
+.alert.danger p{color:var(--destructive);opacity:.85}
+
+.tip{position:relative;display:inline-flex}
+.tipbox{
+  position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--fg);color:var(--bg);font-size:12px;font-weight:500;
+  padding:5px 9px;border-radius:var(--r-sm);white-space:nowrap;box-shadow:var(--shadow-lg);
+}
+.tipbox::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--fg)}
+
+.empty{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;padding:34px 20px;border:1px dashed var(--border);border-radius:var(--r-lg)}
+.empty .ic{width:40px;height:40px;border-radius:9999px;background:var(--muted);display:flex;align-items:center;justify-content:center;color:var(--muted-fg);border:1px solid var(--border)}
+.empty b{font-size:14px;font-weight:600}
+.empty p{font-size:13.5px;color:var(--muted-fg);max-width:38ch}
+
+/* ==========================================================================
+   OVERLAYS
+   ========================================================================== */
+.dialogstage{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--scrim);padding:34px 20px;display:flex;justify-content:center}
+.dialog{width:100%;max-width:400px;background:var(--popover);color:var(--popover-fg);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:22px;display:flex;flex-direction:column;gap:16px}
+.dialog .dh{display:flex;flex-direction:column;gap:5px}
+.dialog .dh b{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.dialog .dh p{font-size:13.5px;color:var(--muted-fg)}
+.dialog .df{display:flex;justify-content:flex-end;gap:9px}
+
+.toastbox{display:flex;align-items:flex-start;gap:11px;background:var(--popover);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);padding:13px 15px;max-width:360px}
+.toastbox .body{flex:1;min-width:0}
+.toastbox b{display:block;font-size:13.5px;font-weight:600}
+.toastbox p{font-size:13px;color:var(--muted-fg);margin-top:2px}
+
+/* ==========================================================================
+   MISC
+   ========================================================================== */
+.callout{border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:var(--r-md);background:var(--muted);padding:16px 18px;font-size:14px;color:var(--fg);max-width:72ch}
+.callout strong{font-weight:600}
+pre{margin:0;background:var(--muted);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 18px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--fg)}
+.precap{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-fg);margin-bottom:8px}
+
+ol.steps{display:flex;flex-direction:column;gap:14px;max-width:72ch;padding:0;margin:20px 0 0;list-style:none;counter-reset:s}
+ol.steps li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:14.5px}
+ol.steps li::before{counter-increment:s;content:counter(s);font-family:var(--mono);font-size:11px;color:var(--muted-fg);border:1px solid var(--border);border-radius:6px;height:22px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+ol.steps li b{font-weight:600}
+ol.steps li span{display:block;color:var(--muted-fg);font-size:13.5px;margin-top:3px}
+
+footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted-fg);line-height:1.8}
+footer code{font-size:12px}
+
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--fg);color:var(--bg);font-size:13px;font-weight:500;padding:9px 16px;border-radius:9999px;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:opacity .16s ease,transform .16s ease;z-index:50}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:1000px){
+  .appframe{grid-template-columns:1fr}
+  .nav{border-bottom:1px solid var(--sidebar-border)}
+}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--border);padding:24px}
+  .rail-foot{display:none}
+  nav.toc{flex-direction:row;flex-wrap:wrap}
+  main{padding:32px 24px 72px}
+  h1{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M4 5h5l2 2.5h9A1.5 1.5 0 0 1 21 9v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18V6.5A1.5 1.5 0 0 1 4.5 5Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8 3.4-3.6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v6"/><path d="M15 3v6"/><path d="M6 9h12v3a6 6 0 0 1-12 0V9Z"/><path d="M12 18v3"/></symbol>
+    <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 4h11a1 1 0 0 1 1 1v13a2 2 0 0 0 2 2H8a2 2 0 0 1-2-2V4Z"/><path d="M9 8h6"/><path d="M9 12h6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6Z"/><path d="M13.7 20a2 2 0 0 1-3.4 0"/></symbol>
+    <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-updown" viewBox="0 0 24 24"><path d="m8 9 4-4 4 4"/><path d="m16 15-4 4-4-4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 5 5L19 7"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 3 14a2 2 0 1 1 0-4 1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 10 3a2 2 0 1 1 4 0 1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.6 1.6 0 0 0 21 10a2 2 0 1 1 0 4 1.6 1.6 0 0 0-1.6 1Z"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M20 14v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V5h6v2"/><path d="M6 7v13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19L12 4Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-spin" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M4.5 5h15L21 13v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5L4.5 5Z"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8 3.4-3.6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2.5-7 5 14L17 12h4"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M20 16v2a2 2 0 0 1-2 2h-2"/><path d="M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="11.5" cy="11.5" r="2.5"/><path d="m14 14 2 2"/></symbol>
+  </defs>
+</svg>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div class="mark">
+      <div class="mark-dot" aria-hidden="true"></div>
+      <div class="mark-name">shadcn Theme Reference</div>
+      <div class="mark-sub">Mm1YGIibfJR0Yf9E38L4pJ</div>
+    </div>
+
+    <nav class="toc" aria-label="Sections">
+      <a href="#colour"><span>Colour</span><span class="n">01</span></a>
+      <a href="#type"><span>Typography</span><span class="n">02</span></a>
+      <a href="#space"><span>Space &amp; radius</span><span class="n">03</span></a>
+      <a href="#elevation"><span>Elevation</span><span class="n">04</span></a>
+      <a href="#sizing"><span>Sizing</span><span class="n">05</span></a>
+      <a href="#nav"><span>Navigation</span><span class="n">06</span></a>
+      <a href="#controls"><span>Controls</span><span class="n">07</span></a>
+      <a href="#display"><span>Display</span><span class="n">08</span></a>
+      <a href="#overlays"><span>Overlays</span><span class="n">09</span></a>
+      <a href="#gaps"><span>Gaps</span><span class="n">10</span></a>
+      <a href="#adopt"><span>Adopting it</span><span class="n">11</span></a>
+    </nav>
+
+    <div class="rail-foot">
+      Extracted 9 Sep 2026<br>
+      shadcn/ui 3.6+ &middot; Tailwind v4<br>
+      Figma kit build Dec 2025
+    </div>
+  </aside>
+
+  <main>
+
+    <header class="masthead">
+      <div>
+        <div class="eyebrow">Design system / extracted from Figma</div>
+        <h1>shadcn Theme Reference</h1>
+        <p class="lede">Every token recovered from the shadcn/ui Figma kit, marked by where the value came from. The page is built out of the system it documents, so switching the theme shows you the real light and dark modes rather than a picture of them.</p>
+      </div>
+      <div class="toggle" role="group" aria-label="Theme">
+        <button type="button" data-set="light" aria-pressed="false">Light</button>
+        <button type="button" data-set="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-set="system" aria-pressed="true">System</button>
+      </div>
+    </header>
+
+    <div class="legend">
+      <div class="item"><span class="key ext"></span> Solid edge: read from a resolved Figma variable</div>
+      <div class="item"><span class="key def"></span> Dashed edge: stock shadcn default, not in the source file</div>
+    </div>
+
+    <!-- 01 COLOUR ======================================================== -->
+    <section id="colour">
+      <div class="sec-head"><span class="n">01</span><h2>Colour</h2></div>
+      <p class="sec-note">Each chip is split down the middle: light value on the left, dark on the right. That pairing is exactly what the Mode collection stores in Figma, so the two belong together. Click any hex to copy it.</p>
+
+      <h3>Semantic tokens</h3>
+      <div class="swatches" id="sw-core"></div>
+
+      <h3>Read from the navigation design <span class="tag solid">node 11:1926</span></h3>
+      <p class="sec-note" style="margin:-6px 0 14px">These did not resolve as Figma variables, but the Navigation Rail Sidebar frame shows what they are meant to be. Colours are read off the render rather than a variable, so treat them as accurate to within a shade. Geometry from the same frame is exact and sits in section 06.</p>
+      <div class="swatches" id="sw-nav"></div>
+
+      <h3>Filled from defaults <span class="tag">10 tokens</span></h3>
+      <p class="sec-note" style="margin:-6px 0 14px">Nothing on the documentation page uses these, so Figma had no value to resolve. They are stock shadcn, nudged to sit with the extracted neutrals. Section 10 lists which ones actually matter.</p>
+      <div class="swatches" id="sw-default"></div>
+
+      <h3>Composite overlays</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">Figma variables cannot express Tailwind's <code>/30</code> opacity modifiers, so the kit bakes the transparency into flat fills instead. In code you can usually delete these and use the modifier directly. Checkerboard shows through where the fill is partly transparent.</p>
+      <div class="swatches" id="sw-alpha"></div>
+    </section>
+
+    <!-- 02 TYPOGRAPHY ==================================================== -->
+    <section id="type">
+      <div class="sec-head"><span class="n">02</span><h2>Typography</h2></div>
+      <p class="sec-note">Plus Jakarta Sans throughout, IBM Plex Mono for data and code. Two steps of the scale were retuned away from Tailwind's defaults, and that is the one thing most likely to catch you out when you port the system.</p>
+
+      <h3>Faces</h3>
+      <div class="faces">
+        <div class="face">
+          <div class="glyphs" style="font-family:var(--sans)">Aa Gg Rq 0123</div>
+          <div class="nm">Plus Jakarta Sans</div>
+          <div class="rl">Interface, headings, body</div>
+          <div class="wts">
+            <span style="font-weight:300">300 Light</span>
+            <span style="font-weight:400">400 Regular</span>
+            <span style="font-weight:500">500 Medium</span>
+            <span style="font-weight:600">600 SemiBold</span>
+            <span style="font-weight:700">700 Bold</span>
+          </div>
+        </div>
+        <div class="face">
+          <div class="glyphs" style="font-family:var(--mono)">Aa Gg Rq 0123</div>
+          <div class="nm">IBM Plex Mono</div>
+          <div class="rl">Token names, code, figures</div>
+          <div class="wts">
+            <span style="font-family:var(--mono);font-weight:400">400 Regular</span>
+            <span style="font-family:var(--mono);font-weight:500">500 Medium</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Scale, at true size</h3>
+      <div class="specimens" id="specimens"></div>
+
+      <h3>Weight pairings in the kit</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Figma style</th><th>Face</th><th>Weight</th><th class="n">Size / line</th></tr></thead>
+          <tbody>
+            <tr><td class="t">text-4xl/leading-normal/bold</td><td>Sans</td><td>700</td><td class="n">36 / 40</td></tr>
+            <tr><td class="t">text-3xl/leading-normal/semibold</td><td>Sans</td><td>600</td><td class="n">30 / 36</td></tr>
+            <tr><td class="t">text-2xl/leading-normal/semibold</td><td>Sans</td><td>600</td><td class="n">24 / 32</td></tr>
+            <tr><td class="t">text-xl/leading-normal/semibold</td><td>Sans</td><td>600</td><td class="n">20 / 28</td></tr>
+            <tr><td class="t">text-base/leading-none/semibold</td><td>Sans</td><td>600</td><td class="n">16 / 16</td></tr>
+            <tr><td class="t">text-sm/leading-normal/medium</td><td>Sans</td><td>500</td><td class="n">14 / 20</td></tr>
+            <tr><td class="t">text-sm/leading-normal/normal</td><td>Sans</td><td>400</td><td class="n">14 / 20</td></tr>
+            <tr><td class="t">text-xs/leading-normal/normal</td><td>Sans</td><td>400</td><td class="n">14 / 16</td></tr>
+            <tr><td class="t">text-2xs/leading-normal/medium</td><td>Sans</td><td>500</td><td class="n">12 / 16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 03 SPACE ========================================================= -->
+    <section id="space">
+      <div class="sec-head"><span class="n">03</span><h2>Space &amp; radius</h2></div>
+      <p class="sec-note">Figma cannot do arithmetic on variables, so the kit hard-codes each spacing step rather than deriving it from a base unit. In code it is Tailwind's 4px scale, unchanged.</p>
+
+      <h3>Spacing steps present in the file</h3>
+      <div class="scale" id="spacing"></div>
+
+      <h3>Radius</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">The measured radii reproduce shadcn's <code>--radius: 0.625rem</code> formula exactly. That is the single best check that this extraction is faithful.</p>
+      <div class="radii" id="radii"></div>
+
+      <h3>Border width</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Token</th><th>Tailwind</th><th class="n">Value</th></tr></thead>
+          <tbody>
+            <tr><td class="t">border-width/border</td><td class="t">border</td><td class="n">1px</td></tr>
+            <tr><td class="t">border-width/border-2</td><td class="t">border-2</td><td class="n">2px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 04 ELEVATION ===================================================== -->
+    <section id="elevation">
+      <div class="sec-head"><span class="n">04</span><h2>Elevation</h2></div>
+      <p class="sec-note">Three shadows carry the whole kit. Figma stores them as multi-layer effect variables with every offset, blur and spread broken out as its own token, which is why the source names read so strangely.</p>
+      <div class="shadows" style="margin-top:20px">
+        <div class="shd" style="box-shadow:var(--shadow-xs)">
+          <div class="nm">shadow-xs</div>
+          <div class="desc">0 1px 2px 0 &middot; black 5%</div>
+        </div>
+        <div class="shd" style="box-shadow:var(--shadow-sm)">
+          <div class="nm">shadow-sm</div>
+          <div class="desc">0 1px 3px 0 &middot; black 10%<br>0 1px 2px -1px &middot; black 10%</div>
+        </div>
+        <div class="shd" style="box-shadow:var(--shadow-lg)">
+          <div class="nm">shadow-lg</div>
+          <div class="desc">0 10px 15px -3px &middot; black 10%<br>0 4px 6px -4px &middot; black 10%</div>
+        </div>
+      </div>
+      <p class="sec-note" style="margin-top:16px">Those values are tuned for a white ground. Dark mode on this page deepens them, because a 10% black shadow does nothing on <code>#0d1b2a</code>. The deepening is a judgement call, not an extracted value.</p>
+    </section>
+
+    <!-- 05 SIZING ======================================================== -->
+    <section id="sizing">
+      <div class="sec-head"><span class="n">05</span><h2>Sizing</h2></div>
+      <p class="sec-note">The kit pins controls to fixed heights instead of letting padding set them. 36px is the default, which is where a shadcn button and input both land.</p>
+      <div class="tablewrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Token</th><th>Used for</th><th class="n">px</th></tr></thead>
+          <tbody>
+            <tr><td class="t">h-8 / w-8</td><td>Small control, compact avatar</td><td class="n">32</td></tr>
+            <tr><td class="t">h-9 / w-9</td><td>Default control height</td><td class="n">36</td></tr>
+            <tr><td class="t">h-10</td><td>Large control</td><td class="n">40</td></tr>
+            <tr><td class="t">h-16</td><td>Header band, list row</td><td class="n">64</td></tr>
+            <tr><td class="t">h-4 / w-4</td><td>Default icon</td><td class="n">16</td></tr>
+            <tr><td class="t">h-5</td><td>Inline icon, badge glyph</td><td class="n">20</td></tr>
+            <tr><td class="t">h-6 / w-6</td><td>Large icon</td><td class="n">24</td></tr>
+            <tr><td class="t">w-3.5</td><td>Small icon</td><td class="n">14</td></tr>
+            <tr><td class="t">w-2</td><td>Status dot</td><td class="n">8</td></tr>
+            <tr><td class="t">max-w-xl</td><td>Narrow prose column</td><td class="n">576</td></tr>
+            <tr><td class="t">max-w-3xl</td><td>Documentation column</td><td class="n">768</td></tr>
+            <tr><td class="t">stroke-[1.33]</td><td>Icon stroke width</td><td class="n">1.33</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sec-note" style="margin-top:16px">Every icon on this page is drawn at 1.33 stroke on a 16px box, so what you see is the token rather than a description of it.</p>
+    </section>
+
+    <!-- 06 NAVIGATION ==================================================== -->
+    <section id="nav">
+      <div class="sec-head"><span class="n">06</span><h2>Navigation</h2></div>
+      <p class="sec-note">Rebuilt from the Navigation Rail Sidebar frame, node <code>11:1926</code>. A 72px icon rail that is always present, plus a 256px section panel that either floats over the content or locks open beside it. Geometry below is read from Figma's own layout panel, not estimated.</p>
+
+      <h3>Locked shell, live</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">Click a rail item to move the active state and swap the panel. Operations carries the five items specified in the design; the other sections are placeholders so the interaction is legible.</p>
+      <div class="demo flush">
+        <div class="appframe">
+
+          <div class="nav" id="live-nav">
+            <div class="rail-col">
+              <button class="rail-toggle" type="button" aria-label="Collapse panel"><svg class="i lg"><use href="#i-panel"/></svg></button>
+              <button class="rail-item" type="button" data-sec="dashboard"><span class="pill"><svg class="i lg"><use href="#i-dash"/></svg></span><span class="cap">Dashboard</span></button>
+              <button class="rail-item" type="button" data-sec="operations" aria-current="true"><span class="pill"><svg class="i lg"><use href="#i-zap"/></svg></span><span class="cap">Operations</span></button>
+              <button class="rail-item" type="button" data-sec="program"><span class="pill"><svg class="i lg"><use href="#i-shield"/></svg></span><span class="cap">Program</span></button>
+              <button class="rail-item" type="button" data-sec="insights"><span class="pill"><svg class="i lg"><use href="#i-trend"/></svg></span><span class="cap">Insights</span></button>
+              <button class="rail-item" type="button" data-sec="evidence"><span class="pill"><svg class="i lg"><use href="#i-shield-check"/></svg></span><span class="cap">Evidence</span></button>
+              <button class="rail-item" type="button" data-sec="settings"><span class="pill"><svg class="i lg"><use href="#i-gear"/></svg></span><span class="cap">Settings</span></button>
+            </div>
+
+            <div class="panel-col">
+              <div class="nav-brand">
+                <span class="brandmark" aria-hidden="true"></span>
+                <span class="word">Platform</span>
+              </div>
+              <div class="panel-label" id="live-label">Operations</div>
+              <div id="live-items"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="topbar">
+              <nav class="crumbs" aria-label="Breadcrumb">
+                <a href="#nav">Cases</a>
+                <span class="sep"><svg class="i sm"><use href="#i-chev-r"/></svg></span>
+                <a href="#nav">Open</a>
+                <span class="sep"><svg class="i sm"><use href="#i-chev-r"/></svg></span>
+                <span class="now" aria-current="page">CS-2291</span>
+              </nav>
+              <div class="spacer"></div>
+              <kbd>&#8984;K</kbd>
+              <button class="iconbtn" type="button" aria-label="Notifications"><svg class="i"><use href="#i-bell"/></svg><span class="dot"></span></button>
+              <span class="avatar sm">JM</span>
+            </div>
+
+            <div class="canvas">
+              <div class="tabs" role="tablist">
+                <button type="button" role="tab" aria-selected="true">Overview</button>
+                <button type="button" role="tab" aria-selected="false">Documents</button>
+                <button type="button" role="tab" aria-selected="false">Timeline</button>
+              </div>
+              <div class="row" style="gap:8px">
+                <span class="badge badge-primary"><span class="led"></span>Open</span>
+                <span class="badge badge-outline">High risk</span>
+                <span class="badge badge-secondary">Assigned to you</span>
+              </div>
+              <div class="skel" style="width:60%"></div>
+              <div class="skel" style="width:82%"></div>
+              <div class="skel" style="width:40%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <h3>The three states</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">One component, three variants. Rail is the resting width. Floating is what a rail item opens on click, sitting over the content on <code>shadow-lg</code>. Locked pins the panel open and takes the brand block, which is why it is the only state that shows the wordmark.</p>
+      <div class="navstates">
+
+        <div class="navstate">
+          <div class="cap2">Rail &middot; 72px</div>
+          <div class="box2">
+            <div class="nav">
+              <div class="rail-col" style="border-right:0">
+                <button class="rail-toggle" type="button" aria-label="Open panel"><svg class="i lg"><use href="#i-panel"/></svg></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-dash"/></svg></span><span class="cap">Dashboard</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-zap"/></svg></span><span class="cap">Operations</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-shield"/></svg></span><span class="cap">Program</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-trend"/></svg></span><span class="cap">Insights</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navstate">
+          <div class="cap2">Floating &middot; 72 + 256</div>
+          <div class="box2" style="background:var(--muted)">
+            <div class="nav" style="background:var(--sidebar)">
+              <div class="rail-col">
+                <button class="rail-toggle" type="button" aria-label="Close panel"><svg class="i lg"><use href="#i-panel"/></svg></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-dash"/></svg></span><span class="cap">Dashboard</span></button>
+                <button class="rail-item" type="button" aria-current="true"><span class="pill"><svg class="i lg"><use href="#i-zap"/></svg></span><span class="cap">Operations</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-shield"/></svg></span><span class="cap">Program</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-trend"/></svg></span><span class="cap">Insights</span></button>
+              </div>
+            </div>
+            <div class="panel-col floating">
+              <div class="panel-label">Operations</div>
+              <button class="panel-item" type="button" aria-current="page"><svg class="i"><use href="#i-alert"/></svg><span class="lbl">Signals &amp; Tasks</span></button>
+              <button class="panel-item" type="button"><svg class="i"><use href="#i-calendar"/></svg><span class="lbl">Compliance Calendar</span></button>
+              <button class="panel-item" type="button"><svg class="i"><use href="#i-folder"/></svg><span class="lbl">Cases</span></button>
+              <button class="panel-item" type="button"><svg class="i"><use href="#i-activity"/></svg><span class="lbl">Monitoring</span></button>
+              <button class="panel-item" type="button"><svg class="i"><use href="#i-scan"/></svg><span class="lbl">Screening</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="navstate">
+          <div class="cap2">Locked &middot; 328px</div>
+          <div class="box2">
+            <div class="nav">
+              <div class="rail-col">
+                <button class="rail-toggle" type="button" aria-label="Collapse panel"><svg class="i lg"><use href="#i-panel"/></svg></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-dash"/></svg></span><span class="cap">Dashboard</span></button>
+                <button class="rail-item" type="button" aria-current="true"><span class="pill"><svg class="i lg"><use href="#i-zap"/></svg></span><span class="cap">Operations</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-shield"/></svg></span><span class="cap">Program</span></button>
+                <button class="rail-item" type="button"><span class="pill"><svg class="i lg"><use href="#i-trend"/></svg></span><span class="cap">Insights</span></button>
+              </div>
+              <div class="panel-col">
+                <div class="nav-brand">
+                  <span class="brandmark" aria-hidden="true"></span>
+                  <span class="word">Platform</span>
+                </div>
+                <div class="panel-label">Operations</div>
+                <button class="panel-item" type="button" aria-current="page"><svg class="i"><use href="#i-alert"/></svg><span class="lbl">Signals &amp; Tasks</span></button>
+                <button class="panel-item" type="button"><svg class="i"><use href="#i-calendar"/></svg><span class="lbl">Compliance Calendar</span></button>
+                <button class="panel-item" type="button"><svg class="i"><use href="#i-folder"/></svg><span class="lbl">Cases</span></button>
+                <button class="panel-item" type="button"><svg class="i"><use href="#i-activity"/></svg><span class="lbl">Monitoring</span></button>
+                <button class="panel-item" type="button"><svg class="i"><use href="#i-scan"/></svg><span class="lbl">Screening</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3>Geometry</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">Every figure here came off Figma's layout panel for node <code>11:1926</code> and its children, so build to these rather than eyeballing the render.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Element</th><th>Size</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Sidebar, locked</td><td class="t">328 &times; 900</td><td>Rail plus panel, no gap between them</td></tr>
+            <tr><td>Rail column</td><td class="t">72 wide</td><td>4px side padding, so a 64px item sits flush</td></tr>
+            <tr><td>Panel column</td><td class="t">256 wide</td><td>24px side padding, so a 208px item sits flush</td></tr>
+            <tr><td>Rail item</td><td class="t">64 &times; 64</td><td>Vertical flow, icon pill above the caption</td></tr>
+            <tr><td>Rail item pill</td><td class="t">48 &times; 32</td><td>Fully rounded. This is the only thing that fills on active</td></tr>
+            <tr><td>Rail caption</td><td class="t">11 / 16</td><td>Weight 500, goes to 600 when active</td></tr>
+            <tr><td>Panel item</td><td class="t">208 &times; 32</td><td>Horizontal, <code>rounded-lg</code> at 10px, 8px gap</td></tr>
+            <tr><td>Panel item label</td><td class="t">14 / 20</td><td>Weight 500, <code>text-sm</code></td></tr>
+            <tr><td>Section label</td><td class="t">11 / 16</td><td>Weight 600, uppercase, 0.08em tracking</td></tr>
+            <tr><td>Brand block</td><td class="t">44 tall</td><td>Locked state only. Rail and floating omit it. The mark here is a placeholder, swap in your own</td></tr>
+            <tr><td>Flyout border</td><td class="t">1px, radius 14</td><td>The floating panel is a detached surface, so it carries a border on all four sides plus <code>shadow-lg</code></td></tr>
+            <tr><td>Icons</td><td class="t">20 rail, 16 panel</td><td>1.33 stroke, matching <code>stroke-[1.33]</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Item states</h3>
+      <p class="sec-note" style="margin:-6px 0 14px">The table worth pinning to the wall. Every state is a token pair, so nothing in the nav needs bespoke colour and a change to <code>--primary</code> moves all of it at once.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>State</th><th>Rail item</th><th>Panel item</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Rest</td><td class="t">pill transparent</td><td class="t">transparent</td><td>Icon on <code>--muted-foreground</code>, label on <code>--sidebar-foreground</code></td></tr>
+            <tr><td>Hover</td><td class="t">pill on primary 9%</td><td class="t">primary 9%</td><td>Icon lifts to <code>--primary</code>. Dark mode raises the tint to 22% to stay visible on navy</td></tr>
+            <tr><td>Active</td><td class="t">pill on --primary</td><td class="t">--primary</td><td>Foreground <code>--primary-foreground</code>. The rail fills only the pill, never the caption row</td></tr>
+            <tr><td>Focus</td><td class="t">--ring, inset</td><td class="t">--ring, 1px offset</td><td>Rail insets its ring so it is not clipped by the 72px column</td></tr>
+            <tr><td>Count pill</td><td>&mdash;</td><td class="t">--secondary</td><td>Goes to white at 22% when the row is active</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <strong>One thing to decide before build.</strong> Active state lives in two places at once: the rail marks which section you are in, and the panel marks which page. They are independent, so the rail keeps its active pill while you move between pages inside a section. Treat them as separate pieces of routing state rather than one.
+      </div>
+
+      <h3>Tabs</h3>
+      <div class="demo">
+        <div>
+          <div class="rowlabel">Segmented, for switching a panel in place</div>
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" aria-selected="true">All cases</button>
+            <button type="button" role="tab" aria-selected="false">Escalated</button>
+            <button type="button" role="tab" aria-selected="false">Closed</button>
+          </div>
+        </div>
+        <div>
+          <div class="rowlabel">Underline, for switching the whole page</div>
+          <div class="utabs" role="tablist">
+            <button type="button" role="tab" aria-selected="true">Profile</button>
+            <button type="button" role="tab" aria-selected="false">Ownership</button>
+            <button type="button" role="tab" aria-selected="false">Screening</button>
+            <button type="button" role="tab" aria-selected="false">Filings</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Breadcrumb and pagination</h3>
+      <div class="demo">
+        <div>
+          <div class="rowlabel">Breadcrumb</div>
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="#nav">Home</a>
+            <span class="sep"><svg class="i sm"><use href="#i-chev-r"/></svg></span>
+            <a href="#nav">Entities</a>
+            <span class="sep"><svg class="i sm"><use href="#i-chev-r"/></svg></span>
+            <a href="#nav">Hyperion Technologies FZCO</a>
+            <span class="sep"><svg class="i sm"><use href="#i-chev-r"/></svg></span>
+            <span class="now" aria-current="page">Ownership</span>
+          </nav>
+        </div>
+        <div>
+          <div class="rowlabel">Pagination</div>
+          <div class="pager">
+            <button class="pg" type="button" disabled aria-label="Previous"><svg class="i sm"><use href="#i-chev-l"/></svg></button>
+            <button class="pg" type="button" aria-current="page">1</button>
+            <button class="pg" type="button">2</button>
+            <button class="pg" type="button">3</button>
+            <span class="pg gap">&hellip;</span>
+            <button class="pg" type="button">8</button>
+            <button class="pg" type="button" aria-label="Next"><svg class="i sm"><use href="#i-chev-r"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Menus</h3>
+      <div class="grid2">
+        <div class="demo">
+          <div>
+            <div class="rowlabel">Dropdown, shown open</div>
+            <div class="menu">
+              <div class="mlabel">Case CS-2291</div>
+              <div class="mitem"><svg class="i sm"><use href="#i-user"/></svg><span class="lbl">Reassign</span><kbd>R</kbd></div>
+              <div class="mitem"><svg class="i sm"><use href="#i-shield"/></svg><span class="lbl">Re-run screening</span></div>
+              <div class="mitem"><svg class="i sm"><use href="#i-out"/></svg><span class="lbl">Export bundle</span><kbd>&#8984;E</kbd></div>
+              <div class="msep"></div>
+              <div class="mitem"><svg class="i sm"><use href="#i-gear"/></svg><span class="lbl">Case settings</span></div>
+              <div class="mitem danger"><svg class="i sm"><use href="#i-trash"/></svg><span class="lbl">Delete case</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="demo">
+          <div>
+            <div class="rowlabel">Command palette</div>
+            <div class="cmd">
+              <div class="cmd-input">
+                <svg class="i"><use href="#i-search"/></svg>
+                <span>scree</span>
+              </div>
+              <div class="cmd-body">
+                <div class="mlabel">Actions</div>
+                <div class="mitem" data-active="true"><svg class="i sm"><use href="#i-shield"/></svg><span class="lbl">Run screening</span><kbd>&#8629;</kbd></div>
+                <div class="mitem"><svg class="i sm"><use href="#i-plus"/></svg><span class="lbl">New screening rule</span></div>
+                <div class="msep"></div>
+                <div class="mlabel">Go to</div>
+                <div class="mitem"><svg class="i sm"><use href="#i-chart"/></svg><span class="lbl">Screening report</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 CONTROLS ====================================================== -->
+    <section id="controls">
+      <div class="sec-head"><span class="n">07</span><h2>Controls</h2></div>
+      <p class="sec-note">Buttons and form elements. Everything below is plain CSS off the custom properties, no Tailwind and no React, so this stylesheet is already the port if you need the system in a static page.</p>
+
+      <h3>Buttons</h3>
+      <div class="demo">
+        <div>
+          <div class="rowlabel">Variants at the default 36px height</div>
+          <div class="row">
+            <button class="btn btn-primary" type="button">Publish</button>
+            <button class="btn btn-secondary" type="button">Save draft</button>
+            <button class="btn btn-outline" type="button">Preview</button>
+            <button class="btn btn-ghost" type="button">Cancel</button>
+            <button class="btn btn-destructive" type="button">Delete</button>
+            <button class="btn btn-link" type="button">View history</button>
+          </div>
+        </div>
+        <div>
+          <div class="rowlabel">Sizes</div>
+          <div class="row">
+            <button class="btn btn-primary btn-sm" type="button">Small &middot; 32</button>
+            <button class="btn btn-primary" type="button">Default &middot; 36</button>
+            <button class="btn btn-primary btn-lg" type="button">Large &middot; 40</button>
+          </div>
+        </div>
+        <div>
+          <div class="rowlabel">With icons, icon only, and states</div>
+          <div class="row">
+            <button class="btn btn-primary" type="button"><svg class="i"><use href="#i-plus"/></svg>New case</button>
+            <button class="btn btn-outline" type="button">Export<svg class="i"><use href="#i-out"/></svg></button>
+            <button class="btn btn-outline btn-icon" type="button" aria-label="More"><svg class="i"><use href="#i-more"/></svg></button>
+            <button class="btn btn-secondary btn-icon btn-sm" type="button" aria-label="Settings"><svg class="i sm"><use href="#i-gear"/></svg></button>
+            <button class="btn btn-primary" type="button" disabled><svg class="i spin"><use href="#i-spin"/></svg>Screening</button>
+            <button class="btn btn-secondary" type="button" disabled>Disabled</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Text inputs</h3>
+      <div class="demo">
+        <div class="grid2">
+          <div class="field">
+            <label for="c-email">Work email</label>
+            <input class="input" id="c-email" type="email" placeholder="name@company.com">
+            <span class="hint">Used for the workspace invite.</span>
+          </div>
+          <div class="field">
+            <label for="c-abn">Entity number</label>
+            <input class="input" id="c-abn" type="text" value="ABN 51 824 753 556">
+            <span class="hint">Australian or UAE registration.</span>
+          </div>
+          <div class="field">
+            <label for="c-bad">Legal name</label>
+            <input class="input" id="c-bad" type="text" value="" placeholder="Registered name" aria-invalid="true">
+            <span class="err">Legal name is required before the case can be opened.</span>
+          </div>
+          <div class="field">
+            <label for="c-sel">Jurisdiction</label>
+            <span class="selectwrap">
+              <select class="select" id="c-sel">
+                <option>United Arab Emirates</option>
+                <option>Australia</option>
+                <option>Singapore</option>
+              </select>
+              <svg class="i sm chev"><use href="#i-chev-d"/></svg>
+            </span>
+            <span class="hint">Sets which rule pack applies.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-note">Reviewer note</label>
+          <textarea class="textarea" id="c-note" placeholder="What did you check, and what did you conclude?"></textarea>
+        </div>
+      </div>
+
+      <h3>Selection</h3>
+      <div class="demo">
+        <div class="grid2">
+          <div>
+            <div class="rowlabel">Checkbox</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <label class="check"><input type="checkbox" checked><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5L19 7"/></svg></span> Sanctions and PEP lists</label>
+              <label class="check"><input type="checkbox" checked><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5L19 7"/></svg></span> Adverse media</label>
+              <label class="check"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5L19 7"/></svg></span> Ownership unwrap beyond 25%</label>
+            </div>
+          </div>
+          <div>
+            <div class="rowlabel">Radio group</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <label class="check radio"><input type="radio" name="rg" checked><span class="box"></span> Standard due diligence</label>
+              <label class="check radio"><input type="radio" name="rg"><span class="box"></span> Enhanced due diligence</label>
+              <label class="check radio"><input type="radio" name="rg"><span class="box"></span> Simplified due diligence</label>
+            </div>
+          </div>
+          <div>
+            <div class="rowlabel">Switch</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <label class="switch"><input type="checkbox" checked><span class="track"></span> Notify on new match</label>
+              <label class="switch"><input type="checkbox"><span class="track"></span> Weekly digest</label>
+            </div>
+          </div>
+          <div>
+            <div class="rowlabel">Slider</div>
+            <div class="slider">
+              <div class="rail2">
+                <div class="fill" style="width:68%"></div>
+                <div class="knob" style="left:68%"></div>
+              </div>
+              <div class="val">68</div>
+            </div>
+            <div class="hint" style="margin-top:9px">Risk score threshold for auto-escalation.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 DISPLAY ======================================================= -->
+    <section id="display">
+      <div class="sec-head"><span class="n">08</span><h2>Display</h2></div>
+      <p class="sec-note">Everything that presents state rather than collecting it. Semantic colour stays separate from the accent: <code>--primary</code> means active, <code>--destructive</code> means failed, and neither is decorative.</p>
+
+      <h3>Badges and avatars</h3>
+      <div class="demo">
+        <div>
+          <div class="rowlabel">Badges</div>
+          <div class="row">
+            <span class="badge badge-primary"><span class="led"></span>Cleared</span>
+            <span class="badge badge-secondary">In review</span>
+            <span class="badge badge-outline">Draft</span>
+            <span class="badge badge-destructive">Failed</span>
+          </div>
+        </div>
+        <div>
+          <div class="rowlabel">Avatars</div>
+          <div class="row" style="gap:16px">
+            <span class="avatar sm">SM</span>
+            <span class="avatar">JM</span>
+            <span class="avatar lg brand">RG</span>
+            <span class="avstack">
+              <span class="avatar">JM</span>
+              <span class="avatar">RG</span>
+              <span class="avatar">SM</span>
+              <span class="avatar" style="background:var(--muted);color:var(--muted-fg)">+4</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Cards</h3>
+      <div class="demo">
+        <div class="grid2">
+          <div class="uicard">
+            <div class="t">Cases opened</div>
+            <div class="d">Rolling 30 days</div>
+            <div class="figure">1,284</div>
+            <div class="delta">+20.1% on the prior period</div>
+          </div>
+          <div class="uicard">
+            <div class="t">Screening backlog</div>
+            <div class="d">Awaiting reviewer</div>
+            <div class="figure">37</div>
+            <div style="margin-top:12px"><div class="progress"><i style="width:62%"></i></div></div>
+            <div class="hint" style="margin-top:7px">62% cleared within the four-hour target.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Table</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Case</th><th>Entity</th><th>Status</th><th>Owner</th><th class="n">Score</th></tr></thead>
+          <tbody>
+            <tr><td class="t">CS-2291</td><td>Hyperion Technologies FZCO</td><td><span class="badge badge-primary"><span class="led"></span>Open</span></td><td>JM</td><td class="n">82</td></tr>
+            <tr><td class="t">CS-2288</td><td>Meridian Bullion Trading LLC</td><td><span class="badge badge-secondary">In review</span></td><td>RG</td><td class="n">64</td></tr>
+            <tr><td class="t">CS-2274</td><td>Aurum Polished Diamonds</td><td><span class="badge badge-destructive">Failed</span></td><td>SM</td><td class="n">91</td></tr>
+            <tr><td class="t">CS-2251</td><td>Kestrel Property Group</td><td><span class="badge badge-outline">Closed</span></td><td>JM</td><td class="n">18</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Alerts</h3>
+      <div class="demo">
+        <div class="alert">
+          <svg class="i lg"><use href="#i-info"/></svg>
+          <div class="body">
+            <b>Rule pack updated</b>
+            <p>The UAE DPMS pack moved to version 4.2. Existing open cases keep the version they were opened under.</p>
+          </div>
+        </div>
+        <div class="alert danger">
+          <svg class="i lg"><use href="#i-warn"/></svg>
+          <div class="body">
+            <b>Screening provider unreachable</b>
+            <p>Three checks failed to complete. Retry once the connection is restored, or clear them manually.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Separator, progress, skeleton, tooltip, empty state</h3>
+      <div class="demo">
+        <div class="grid2">
+          <div>
+            <div class="rowlabel">Progress</div>
+            <div class="progress"><i style="width:45%"></i></div>
+            <hr class="sep" style="margin:18px 0">
+            <div class="rowlabel">Skeleton</div>
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="skel circle"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                <div class="skel" style="width:70%"></div>
+                <div class="skel" style="width:45%"></div>
+              </div>
+            </div>
+            <hr class="sep" style="margin:18px 0">
+            <div class="rowlabel">Tooltip</div>
+            <span class="tip">
+              <span class="tipbox">Last screened 4 hours ago</span>
+              <button class="btn btn-outline btn-sm" type="button">Screening status</button>
+            </span>
+          </div>
+          <div>
+            <div class="rowlabel">Empty state</div>
+            <div class="empty">
+              <div class="ic"><svg class="i lg"><use href="#i-inbox"/></svg></div>
+              <b>No cases assigned to you</b>
+              <p>New cases appear here as soon as a reviewer picks them up or a rule escalates one.</p>
+              <button class="btn btn-outline btn-sm" type="button">Browse all cases</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 OVERLAYS ====================================================== -->
+    <section id="overlays">
+      <div class="sec-head"><span class="n">09</span><h2>Overlays</h2></div>
+      <p class="sec-note">Anything that floats above the page uses <code>--popover</code> for its ground and <code>shadow-lg</code> for its lift, never a heavier border. Shown open rather than behind a trigger, so the states are visible at rest.</p>
+
+      <h3>Dialog</h3>
+      <div class="dialogstage">
+        <div class="dialog">
+          <div class="dh">
+            <b>Close case CS-2291?</b>
+            <p>Closing locks the file and archives the screening evidence. A closed case can be reopened for 90 days.</p>
+          </div>
+          <div class="field">
+            <label for="ov-reason">Closing reason</label>
+            <span class="selectwrap">
+              <select class="select" id="ov-reason">
+                <option>Cleared, no further action</option>
+                <option>Escalated to compliance officer</option>
+                <option>Duplicate of an existing case</option>
+              </select>
+              <svg class="i sm chev"><use href="#i-chev-d"/></svg>
+            </span>
+          </div>
+          <div class="df">
+            <button class="btn btn-ghost" type="button">Cancel</button>
+            <button class="btn btn-primary" type="button">Close case</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Popover and toast</h3>
+      <div class="grid2">
+        <div class="demo">
+          <div>
+            <div class="rowlabel">Popover</div>
+            <div class="menu" style="width:262px;padding:16px">
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <div>
+                  <b style="font-size:14px;font-weight:600">Risk weighting</b>
+                  <p class="hint" style="margin-top:3px">Applies to new cases only.</p>
+                </div>
+                <div class="field">
+                  <label for="ov-w">Threshold</label>
+                  <input class="input" id="ov-w" type="text" value="68">
+                </div>
+                <button class="btn btn-primary btn-sm" type="button" style="width:100%">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo">
+          <div>
+            <div class="rowlabel">Toast</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div class="toastbox">
+                <svg class="i lg" style="color:var(--primary)"><use href="#i-check"/></svg>
+                <div class="body">
+                  <b>Case closed</b>
+                  <p>CS-2291 archived with its screening evidence.</p>
+                </div>
+                <button class="btn btn-link btn-sm" type="button" style="font-size:13px">Undo</button>
+              </div>
+              <div class="toastbox">
+                <svg class="i lg" style="color:var(--destructive)"><use href="#i-warn"/></svg>
+                <div class="body">
+                  <b>Export failed</b>
+                  <p>The bundle exceeded the 200MB limit. Split it by date range and try again.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 GAPS ========================================================== -->
+    <section id="gaps">
+      <div class="sec-head"><span class="n">10</span><h2>Gaps</h2></div>
+      <p class="sec-note">An honest account of what this page does not yet know. Each row is a stock default standing in for a value that exists in Figma but was never resolved, because nothing on the documentation page consumes it.</p>
+      <div class="tablewrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Token group</th><th>Why it is missing</th><th>Risk if left</th></tr></thead>
+          <tbody>
+            <tr><td class="t">chart-1 &hellip; chart-5</td><td>The Theme Preview draws its charts with primary alone</td><td><b>High.</b> Five hues, all guessed. This is now the only high-risk group.</td></tr>
+            <tr><td class="t">sidebar-*</td><td>Never resolved as variables, but node 11:1926 shows the intent</td><td><b>Closed enough to build on.</b> Colours read off the render, geometry exact. Confirm the hex against the variable when the kit file opens.</td></tr>
+            <tr><td class="t">ring</td><td>No focused control was captured on canvas</td><td><b>Medium.</b> Focus rings are brand-visible and accessibility-relevant.</td></tr>
+            <tr><td class="t">destructive, destructive-foreground</td><td>No error or delete state rendered anywhere</td><td><b>Medium.</b> A customised theme often retunes this.</td></tr>
+            <tr><td class="t">popover, popover-foreground</td><td>No popover or dropdown on the documentation page</td><td><b>Low.</b> Almost certainly equals card.</td></tr>
+            <tr><td class="t">Tailwind palette collection</td><td>Only zinc-900 and lime-300 are referenced</td><td><b>Low.</b> Tailwind's own palette is public.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:20px">
+        <strong>To close every gap:</strong> duplicate the kit from Figma Community into your own drafts. In a duplicate the variables are local rather than linked, so the collections resolve in full and the same extraction can overwrite each default with a real value.
+      </div>
+    </section>
+
+    <!-- 11 ADOPTING ====================================================== -->
+    <section id="adopt">
+      <div class="sec-head"><span class="n">11</span><h2>Adopting it</h2></div>
+      <p class="sec-note">You do not need to extract the components. The Figma kit tracks shadcn/ui 3.6+ closely enough that the components already exist as code you can install. What is bespoke here is the theme, and the theme is one file.</p>
+
+      <ol class="steps">
+        <li>
+          <div><b>Install shadcn/ui in the target project.</b>
+          <span>Nothing about the setup changes. Take the components as they ship.</span></div>
+        </li>
+        <li>
+          <div><b>Swap in the extracted <code>globals.css</code>.</b>
+          <span>It carries 32 colour tokens per mode plus the radius, type and shadow scales. This is the whole handover.</span></div>
+        </li>
+        <li>
+          <div><b>Load the two typefaces.</b>
+          <span>Add Plus Jakarta Sans and IBM Plex Mono through your font loader. The <code>--font-sans</code> and <code>--font-mono</code> variables already point at them by name, so nothing else needs touching.</span></div>
+        </li>
+        <li>
+          <div><b>Decide on the retuned type scale.</b>
+          <span>Keeping it matches Figma exactly. Deleting the <code>--text-*</code> block restores Tailwind's defaults, which is safer if the project shares components with anything else.</span></div>
+        </li>
+        <li>
+          <div><b>Fill the chart colours from section 10 before you ship a chart.</b>
+          <span>That group is still entirely guessed. The navigation is specified, so the shell in section 06 is safe to build against now.</span></div>
+        </li>
+        <li>
+          <div><b>Keep <code>globals.css</code> as the single source of truth.</b>
+          <span>When the Figma theme moves, re-export and replace that one file rather than editing component code. That is what keeps design and build from drifting apart.</span></div>
+        </li>
+      </ol>
+
+      <h3>What the file looks like</h3>
+      <div class="precap">Abridged. The real file carries every token in section 01.</div>
+      <pre>:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #262626;
+  --primary: #007a55;
+  --border: #e8e8e3;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --background: #0d1b2a;
+  --foreground: #fafafa;
+  --primary: #007a55;
+  --border: #1d2b38;
+}</pre>
+
+      <div class="callout" style="margin-top:20px">
+        <strong>On hex rather than OKLCH.</strong> Stock shadcn ships OKLCH. Figma has no OKLCH support, so the kit stores hex and this extraction preserves it. You can convert to OKLCH later without losing anything, since every hex has an exact OKLCH equivalent. Going the other way is where colours shift, so hex is the safer thing to hold as the source of truth.
+      </div>
+    </section>
+
+    <footer>
+      Extracted from Figma file <code>Mm1YGIibfJR0Yf9E38L4pJ</code>, page 1, on 9 September 2026, by unioning resolved variable values across every top-level frame.<br>
+      Source kit: shadcn/ui kit for Figma, December 2025 build, published by shadcndesign.com, based on shadcn/ui 3.6+ and Tailwind v4.<br>
+      Light and dark values were recovered separately from the Light and Dark sub-frames of the Theme Preview, which carry opposing mode overrides. Sample content is illustrative.
+    </footer>
+
+  </main>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CORE = [
+    ["background",           "#ffffff", "#0d1b2a"],
+    ["foreground",           "#262626", "#fafafa"],
+    ["card",                 "#ffffff", "#162234"],
+    ["card-foreground",      "#262626", "#fafafa"],
+    ["primary",              "#007a55", "#007a55"],
+    ["primary-foreground",   "#ffffff", "#ffffff"],
+    ["secondary",            "#f4f4f5", "#172128"],
+    ["secondary-foreground", "#18181b", "#f5f5f5"],
+    ["muted",                "#f9fafb", "#172128"],
+    ["muted-foreground",     "#737373", "#a3a3a3"],
+    ["accent",               "#f5f5f5", "#404040"],
+    ["accent-foreground",    "#171717", "#4dbc89"],
+    ["border",               "#e8e8e3", "#1d2b38"],
+    ["input",                "#e8e8e3", "#1d2b38"]
+  ];
+
+  var DEFAULTS = [
+    ["popover",                    "#ffffff", "#162234"],
+    ["popover-foreground",         "#262626", "#fafafa"],
+    ["destructive",                "#e7000b", "#ff6467"],
+    ["destructive-foreground",     "#ffffff", "#ffffff"],
+    ["ring",                       "#a1a1a1", "#737373"],
+    ["chart-1",                    "#f54900", "#1447e6"],
+    ["chart-2",                    "#009689", "#00bc7d"],
+    ["chart-3",                    "#104e64", "#fe9a00"],
+    ["chart-4",                    "#ffb900", "#ad46ff"],
+    ["chart-5",                    "#fe9a00", "#ff2056"]
+  ];
+
+  var NAVTOKENS = [
+    ["sidebar",              "#ffffff", "#0d1b2a"],
+    ["sidebar-foreground",   "#262626", "#fafafa"],
+    ["sidebar-border",       "#e8e8e3", "#1d2b38"],
+    ["sidebar-primary",      "#007a55", "#007a55"],
+    ["sidebar-accent (hover)", "#eff8f3", "#123227"]
+  ];
+
+  var ALPHA = [
+    ["alpha-30",                  "#ffffffb2", "#ffffffb2"],
+    ["alpha-60",                  "#ffffff66", "#ffffff66"],
+    ["background / input-30",     "#ffffff",   "#ffffff0b"],
+    ["bg-primary-5 / primary-10", "#1717170d", "#ffffff1a"],
+    ["input / input-80",          "#e8e8e3",   "#ffffff1f"]
+  ];
+
+  var TYPE = [
+    ["2xs",  12, 16, false],
+    ["xs",   14, 16, true],
+    ["sm",   14, 20, false],
+    ["base", 16, 24, false],
+    ["lg",   16, 24, true],
+    ["xl",   20, 28, false],
+    ["2xl",  24, 32, false],
+    ["3xl",  30, 36, false],
+    ["4xl",  36, 40, false]
+  ];
+
+  var SPACING = [
+    ["0", 0], ["0.5", 2], ["1", 4], ["1.5", 6], ["2", 8], ["2.5", 10],
+    ["3", 12], ["4", 16], ["6", 24], ["8", 32], ["12", 48], ["16", 64],
+    ["20", 80], ["32", 128]
+  ];
+
+  var RADII = [
+    ["rounded-md", 8], ["rounded-lg", 10], ["rounded-xl", 14],
+    ["rounded-2xl", 16], ["rounded-full", 9999]
+  ];
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) { n.className = cls; }
+    if (text !== undefined) { n.textContent = text; }
+    return n;
+  }
+
+  function swatch(row, kind) {
+    var card = el("div", "sw" + (kind === "default" ? " is-default" : "") + (kind === "alpha" ? " is-alpha" : ""));
+
+    var chip = el("div", "chip");
+    var l = el("span"); l.style.background = row[1];
+    var d = el("span"); d.style.background = row[2];
+    chip.appendChild(l); chip.appendChild(d);
+
+    var meta = el("div", "meta");
+    var tok = el("div", "tok", row[0]);
+    if (kind === "default") {
+      tok.appendChild(document.createTextNode(" "));
+      tok.appendChild(el("span", "tag", "default"));
+    }
+    var vals = el("div", "vals");
+    [["L", row[1]], ["D", row[2]]].forEach(function (pair) {
+      var b = el("button", "hex");
+      b.type = "button";
+      b.appendChild(el("b", null, pair[0]));
+      b.appendChild(document.createTextNode(pair[1]));
+      b.setAttribute("aria-label", "Copy " + pair[1]);
+      b.addEventListener("click", function () { copy(pair[1]); });
+      vals.appendChild(b);
+    });
+
+    meta.appendChild(tok);
+    meta.appendChild(vals);
+    card.appendChild(chip);
+    card.appendChild(meta);
+    return card;
+  }
+
+  var toastEl = document.getElementById("toast");
+  var toastTimer = null;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    if (toastTimer) { clearTimeout(toastTimer); }
+    toastTimer = setTimeout(function () { toastEl.classList.remove("on"); }, 1500);
+  }
+
+  function copy(value) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(
+          function () { toast("Copied " + value); },
+          function () { toast(value); }
+        );
+        return;
+      }
+    } catch (e) { /* fall through to showing the value */ }
+    toast(value);
+  }
+
+  var core = document.getElementById("sw-core");
+  CORE.forEach(function (r) { core.appendChild(swatch(r, "core")); });
+
+  var navsw = document.getElementById("sw-nav");
+  NAVTOKENS.forEach(function (r) { navsw.appendChild(swatch(r, "core")); });
+
+  var def = document.getElementById("sw-default");
+  DEFAULTS.forEach(function (r) { def.appendChild(swatch(r, "default")); });
+
+  var alpha = document.getElementById("sw-alpha");
+  ALPHA.forEach(function (r) { alpha.appendChild(swatch(r, "alpha")); });
+
+  var specs = document.getElementById("specimens");
+  TYPE.forEach(function (t) {
+    var row = el("div", "spec" + (t[3] ? " flagged" : ""));
+
+    var label = el("div", "label");
+    label.appendChild(el("em", null, "text-" + t[0]));
+    label.appendChild(document.createTextNode(t[1] + " / " + t[2]));
+    if (t[3]) { label.appendChild(el("span", "tag flag", "retuned")); }
+
+    var sample = el("div", "sample");
+    var line = el("div", null, "The quick brown fox jumps over the lazy dog");
+    line.style.fontSize = t[1] + "px";
+    line.style.lineHeight = t[2] + "px";
+    line.style.fontWeight = t[1] >= 24 ? "600" : "400";
+    line.style.letterSpacing = t[1] >= 24 ? "-0.02em" : "0";
+    sample.appendChild(line);
+
+    row.appendChild(label);
+    row.appendChild(sample);
+    specs.appendChild(row);
+  });
+
+  var sp = document.getElementById("spacing");
+  SPACING.forEach(function (s) {
+    var row = el("div", "step");
+    row.appendChild(el("div", "k", s[0]));
+    row.appendChild(el("div", "v", s[1] + "px"));
+    var bar = el("div", "bar");
+    bar.style.width = Math.max(s[1], 1) + "px";
+    row.appendChild(bar);
+    sp.appendChild(row);
+  });
+
+  var rd = document.getElementById("radii");
+  RADII.forEach(function (r) {
+    var wrap = el("div", "rad");
+    var box = el("div", "box");
+    box.style.borderRadius = (r[1] > 100 ? 9999 : r[1]) + "px";
+    var cap = el("div", "cap");
+    cap.appendChild(el("b", null, r[0]));
+    cap.appendChild(document.createTextNode(r[1] > 100 ? "full" : r[1] + "px"));
+    wrap.appendChild(box);
+    wrap.appendChild(cap);
+    rd.appendChild(wrap);
+  });
+
+  /* tabs, kept as a demonstration of the selected state */
+  Array.prototype.forEach.call(document.querySelectorAll('[role="tablist"]'), function (list) {
+    list.addEventListener("click", function (e) {
+      var btn = e.target.closest('[role="tab"]');
+      if (!btn || !list.contains(btn)) { return; }
+      Array.prototype.forEach.call(list.querySelectorAll('[role="tab"]'), function (t) {
+        t.setAttribute("aria-selected", String(t === btn));
+      });
+    });
+  });
+
+  /* pagination */
+  Array.prototype.forEach.call(document.querySelectorAll(".pager"), function (pager) {
+    pager.addEventListener("click", function (e) {
+      var btn = e.target.closest(".pg");
+      if (!btn || btn.classList.contains("gap") || !btn.textContent.trim().match(/^\d+$/)) { return; }
+      Array.prototype.forEach.call(pager.querySelectorAll(".pg"), function (p) { p.removeAttribute("aria-current"); });
+      btn.setAttribute("aria-current", "page");
+    });
+  });
+
+  /* --- live navigation shell -------------------------------------------
+     Operations is the section specified in Figma node 11:1926. The rest are
+     placeholders so the rail interaction reads properly.
+     --------------------------------------------------------------------- */
+  var SECTIONS = {
+    dashboard: { label: "Dashboard", items: [
+      ["i-dash",     "Overview"],
+      ["i-activity", "Live activity"],
+      ["i-alert",    "My alerts"]
+    ]},
+    operations: { label: "Operations", items: [
+      ["i-alert",    "Signals & Tasks"],
+      ["i-calendar", "Compliance Calendar"],
+      ["i-folder",   "Cases"],
+      ["i-activity", "Monitoring"],
+      ["i-scan",     "Screening"]
+    ]},
+    program: { label: "Program", items: [
+      ["i-scroll",  "Policies"],
+      ["i-sliders", "Risk assessment"],
+      ["i-shield",  "Controls"]
+    ]},
+    insights: { label: "Insights", items: [
+      ["i-chart", "Reports"],
+      ["i-trend", "Trends"],
+      ["i-out",   "Exports"]
+    ]},
+    evidence: { label: "Evidence", items: [
+      ["i-folder",       "Document store"],
+      ["i-shield-check", "Attestations"],
+      ["i-scroll",       "Audit log"]
+    ]},
+    settings: { label: "Settings", items: [
+      ["i-user", "Members"],
+      ["i-plug", "Integrations"],
+      ["i-gear", "Workspace"]
+    ]}
+  };
+
+  var liveNav = document.getElementById("live-nav");
+  if (liveNav) {
+    var liveLabel = document.getElementById("live-label");
+    var liveItems = document.getElementById("live-items");
+
+    function renderSection(key) {
+      var sec = SECTIONS[key];
+      if (!sec) { return; }
+      liveLabel.textContent = sec.label;
+      while (liveItems.firstChild) { liveItems.removeChild(liveItems.firstChild); }
+      sec.items.forEach(function (item, idx) {
+        var b = el("button", "panel-item");
+        b.type = "button";
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "i");
+        var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        use.setAttribute("href", "#" + item[0]);
+        svg.appendChild(use);
+        b.appendChild(svg);
+        b.appendChild(el("span", "lbl", item[1]));
+        if (key === "operations" && item[1] === "Cases") {
+          b.appendChild(el("span", "panel-count", "12"));
+        }
+        if (idx === 0) { b.setAttribute("aria-current", "page"); }
+        b.addEventListener("click", function () {
+          Array.prototype.forEach.call(liveItems.querySelectorAll(".panel-item"), function (p) {
+            p.removeAttribute("aria-current");
+          });
+          b.setAttribute("aria-current", "page");
+        });
+        liveItems.appendChild(b);
+      });
+    }
+
+    Array.prototype.forEach.call(liveNav.querySelectorAll(".rail-item[data-sec]"), function (r) {
+      r.addEventListener("click", function () {
+        Array.prototype.forEach.call(liveNav.querySelectorAll(".rail-item"), function (x) {
+          x.removeAttribute("aria-current");
+        });
+        r.setAttribute("aria-current", "true");
+        renderSection(r.getAttribute("data-sec"));
+      });
+    });
+
+    renderSection("operations");
+  }
+
+  /* static nav demos, so their active state can be moved too */
+  Array.prototype.forEach.call(document.querySelectorAll(".navstate .box2"), function (nav) {
+    nav.addEventListener("click", function (e) {
+      var rail = e.target.closest(".rail-item");
+      if (rail && nav.contains(rail)) {
+        Array.prototype.forEach.call(nav.querySelectorAll(".rail-item"), function (x) { x.removeAttribute("aria-current"); });
+        rail.setAttribute("aria-current", "true");
+        return;
+      }
+      var pi = e.target.closest(".panel-item");
+      if (pi && nav.contains(pi)) {
+        Array.prototype.forEach.call(nav.querySelectorAll(".panel-item"), function (x) { x.removeAttribute("aria-current"); });
+        pi.setAttribute("aria-current", "page");
+      }
+    });
+  });
+
+  var buttons = Array.prototype.slice.call(document.querySelectorAll(".toggle button"));
+  function apply(mode) {
+    if (mode === "system") {
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      document.documentElement.setAttribute("data-theme", mode);
+    }
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-set") === mode));
+    });
+    try { localStorage.setItem("theme-ref-mode", mode); } catch (e) { /* ignore */ }
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-set")); });
+  });
+  try {
+    var saved = localStorage.getItem("theme-ref-mode");
+    if (saved === "light" || saved === "dark" || saved === "system") { apply(saved); }
+  } catch (e) { /* ignore */ }
+}());
+</script>
+
+</body>
+</html>
